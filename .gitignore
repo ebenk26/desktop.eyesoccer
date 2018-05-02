@@ -1,0 +1,17 @@
+.htaccess
+application/config/database.php
+config/connect.php
+*.jpg
+*.png
+upload
+composer.json
+contributing.md
+readme.rst
+robot.txt
+robots.txt
+systems
+bs
+README.md
+img
+index.html-old
+manifest.json
