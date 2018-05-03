@@ -204,7 +204,7 @@
 							</tr>
 							<tr>
 								<td>Main</td>
-								<td align="center">?</td>
+								<td align="left">?</td>
 							</tr>
 						</tbody>
 					</table>
@@ -581,32 +581,32 @@
 				<h3 class="">Statistik <?=$r->name?></h3>
 				<table>
 					<thead>
-						<td >Tahun</td>
-						<td width="55" title="Main">MN</td>
-						<td width="55" title="Menang">M</td>	
-						<td width="55" title="%Menang">%M</td>
-						<td width="55" title="Seri">S</td>	
-						<td width="55" title="%Seri">%S</td>	
-						<td width="55" title="Kalah">K</td>	
-						<td width="55" title="%Kalah">%K</td>
-						<td width="55" title="Goal Memasukan">GM</td>	
-						<td width="55" title="%Goal Memasukan">GM</td>	
-						<td width="55" title="Kemasukan">GK</td>	
-						<td width="55" title="%Kemasukan">%GK</td>	
+						<th>Tahun</td>
+						<th width="55" title="Main">MN</th>
+						<th width="55" title="Menang">M</th>	
+						<th width="55" title="%Menang">%M</th>
+						<th width="55" title="Seri">S</th>	
+						<th width="55" title="%Seri">%S</th>	
+						<th width="55" title="Kalah">K</th>	
+						<th width="55" title="%Kalah">%K</th>
+						<th width="55" title="Goal Memasukan">GM</th>	
+						<th width="55" title="%Goal Memasukan">GM</th>	
+						<th width="55" title="Kemasukan">GK</th>	
+						<th width="55" title="%Kemasukan">%GK</th>	
 					</thead>
 					<tr>
-						<td align="center">?</td>
-						<td align="center">?</td>
-						<td align="center">?</td>	
-						<td align="center">?</td>
-						<td align="center">?</td>	
-						<td align="center">?</td>	
-						<td align="center">?</td>	
-						<td align="center">?</td>
-						<td align="center">?</td>	
-						<td align="center">?</td>	
-						<td align="center">?</td>	
-						<td align="center">?</td>	
+						<td align="left">?</td>
+						<td align="left">?</td>
+						<td align="left">?</td>	
+						<td align="left">?</td>
+						<td align="left">?</td>	
+						<td align="left">?</td>	
+						<td align="left">?</td>	
+						<td align="left">?</td>
+						<td align="left">?</td>	
+						<td align="left">?</td>	
+						<td align="left">?</td>	
+						<td align="left">?</td>	
 					</tr>
 				</table>
 			</div>	

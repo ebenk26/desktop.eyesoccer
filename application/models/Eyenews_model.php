@@ -7,15 +7,15 @@ class Eyenews_model extends CI_Model
 	public function get_headline()
 	{
 		$query = $this->db->query(" SELECT
-                                        A.*
+                                        *
                                     FROM
-                                        tbl_eyenews A
+                                        tbl_eyenews
 									WHERE
-										A.publish_on <= NOW()
+										publish_on <= NOW()
 									AND
-										A.ads not in (1)
+										ads !=1
                                     ORDER BY 
-                                        A.publish_on DESC
+                                        publish_on DESC
                                     Limit 5
                                         ")->row();
             return $query; 
@@ -164,7 +164,31 @@ class Eyenews_model extends CI_Model
 									WHERE
 										A.publish_on <= NOW()
 									AND
-										A.ads not in (1)
+										A.ads!=1
+                                    ORDER BY 
+                                    	A.publish_on DESC
+                                    LIMIT 5
+                                        ")->result_array();
+        return $query;
+	}
+	
+	public function get_terkini_list_detail($eyenews_id)
+    {
+    	$query = $this->db->query(" SELECT
+                                        A.title,
+                                        A.eyenews_id,
+                                        A.thumb1,
+                                        A.publish_on,
+										A.url,
+										A.news_view,
+										A.createon
+                                    FROM
+                                        tbl_eyenews A
+									WHERE
+										A.publish_on <= NOW()
+									AND
+										A.ads!=1
+									AND A.eyenews_id!='$eyenews_id'
                                     ORDER BY 
                                     	A.publish_on DESC
                                     LIMIT 5
@@ -304,7 +328,7 @@ class Eyenews_model extends CI_Model
 								")->row();
 		return $query;
 	}
-	public function get_eyenews_similar($news_type)
+	public function get_eyenews_similar()
 	{
 		$query = $this->db->query("	SELECT
 										a.eyenews_id,
@@ -316,14 +340,10 @@ class Eyenews_model extends CI_Model
 										a.news_view
 									FROM
 										tbl_eyenews a
-									WHERE
-										a.news_type = '$news_type'
-									AND
-										a.publish_on <= NOW()
 									ORDER BY
 										a.publish_on DESC
 									LIMIT
-										4
+										1,6
 								")->result_array();
 		return $query;
 	}

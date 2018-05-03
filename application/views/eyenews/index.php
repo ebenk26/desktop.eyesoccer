@@ -85,8 +85,6 @@
 				$i = 0;
 				foreach ($eyenews_similar as $row)
 				{
-				    if ($i != 0)
-				    {
 					?>							
 					    <li>
 						<span>
@@ -94,9 +92,7 @@
 						<?= $row['title']; ?></a>									
 						</span>
 					    </li>
-					<?php			
-				    }
-				    $i++;
+					<?php		
 				}
 			    ?>
 			</ul>
@@ -115,8 +111,9 @@
 			$i = 0;
 			if(isset($paggingads)){
 				$x = count($paggingads);
-				$n = count($pagging['row']) - $x;
-				$pagging['row'] = array_slice($pagging['row'],$x);
+				$n = count($pagging['row']);
+				$x = $n - $x;
+				$pagging['row'] = array_slice($pagging['row'],0,$x);
 			}
 			foreach ($pagging['row'] as $similar)
 			{
