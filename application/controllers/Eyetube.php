@@ -517,8 +517,8 @@ class Eyetube extends CI_Controller {
 	public function kategori($kategori)
 	{
 		$data["meta"]["title"] 			= "";
-		$data["meta"]["image"] 			= base_url()."/assets/img/tab_icon.png";
-		$data["meta"]["description"]	= "Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
+		$data["meta"]["image"] 			= set_meta('',['url'=> EYETUBE,'result'=> 'images']);
+		$data["meta"]["description"]	= set_meta('',['url'=> EYETUBE,'result'=> 'desc']);
 		$data["extrascript"] 			= $this->load->view('eyetube/script_index', '', true);
 
 		$data['eyetube_rekomendasi'] 	= $this->Eyetube_model->get_eyetube_rekomendasi();
