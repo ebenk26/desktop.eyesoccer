@@ -920,7 +920,7 @@ th{
 }
 footer{
     background-color: #616161;
-    /* margin-top: 100px; */
+    /*margin-top: 100px; */
 }
 .f-w{
     width: 870px;
@@ -1282,7 +1282,6 @@ ul, li {
     outline: none;
     font-size: .75em;
     border-radius: 3px;
-    -webkit-appearance: none;
     appearance: none;
 }
 .btn-orange{
@@ -5217,4 +5216,7 @@ img.loading {
 }
 .min{
     width: 40px;height: 40px;border-radius:50%
+}
+.m-t20-lr0-b30{
+    margin: 20px 0 30px;
 }
