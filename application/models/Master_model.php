@@ -703,7 +703,8 @@ class Master_model extends CI_Model
 		";
 	}
 	public function checkLogin($page =''){ // page == halamaan yang di tuju 
-		$userid = $this->session->userdata('id_member');
+		$sess = $this->session->userdata('member');
+		$userid = $sess['id'];
 		if($userid == ''){
 			$this->backwardPage('Anda belum login , Silahkan login',base_url().($page == '' ? 'member' : 'member?page='.$page));
 			return false;

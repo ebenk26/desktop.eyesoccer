@@ -45,10 +45,11 @@ var html      = "",//html comment
     DPIC      = '<?php echo DPIC?>',
     MEIMG     = '<?php echo MEIMG?>',
     MEPROFILE = '<?php echo MEPROFILE?>',
-    IMGSTORE  = '<?php echo IMGSTORE?>';
-    MEURL     = '<?php echo MEURL?>';
-    MYPROFILE = MEPROFILE + '<?php echo $myusername?>';
+    IMGSTORE  = '<?php echo IMGSTORE?>',
+    MEURL     = '<?php echo MEURL?>',
+    MYPROFILE = MEPROFILE + '<?php echo $myusername?>',
     loadingAni= $('#loading'); //Loading Animation 
+
     
 $('.img_more').click(function(event) {
     /* Act on the event */  
@@ -152,7 +153,7 @@ var valCom = $(this).val();
         $this   = $(this);
         //console.log($(this).serializ  var com     = $(this).val();
         html        += "<li>";
-        html        += "<a href=\"<?php echo MEPROFILE.$_SESSION['username']?>\"><?php echo $_SESSION['username']?></a>";
+        html        += "<a href=\"<?php echo MEPROFILE.$myusername?>\"><?php echo $myusername?></a>";
         html        += "<span>"+ inputS(valCom)+"</span>";
         html        += "</li>";
         
