@@ -383,7 +383,7 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
             
-                <img src="<?php echo base_url()?>assets/img/iklanbanner/banner 425x100 px-01.jpg" alt="banner ads full width" style="height: unset;position: absolute;top: 0px;left: 0px;">
+                <img src="<?php echo base_url()?>assets/img/iklanbanner/banner 425x100 px-01.jpg" alt="banner ads full width" style="height: unset;position: absolute;top: 0px;left: 0px;width: 100%;">
             </div>
 			
             </div>
