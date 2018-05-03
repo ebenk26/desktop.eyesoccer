@@ -340,7 +340,7 @@
                         <h4><a href="<?php echo base_url();?>eyenews/terkini">BERITA TERKINI</a></h4>
 						<?php
 						$this->load->helper('my');
-						foreach ($terkini as $trendnya_news)
+						foreach ($terkini_list_detail as $trendnya_news)
 						{
 						?>						
                         <div class="pd">

@@ -3,7 +3,7 @@
 class Eyeprofile_model extends CI_Model
 {
 //membaca tabel database
-		private function __xurl() { return $this->config->item('api_url_lab'); }
+		private function __xurl() { return $this->config->item('api_url'); }
     	private function __xkey() { return $this->config->item('credential'); }
 
         public function listing(){
@@ -177,7 +177,7 @@ class Eyeprofile_model extends CI_Model
 									where ".$compt." and nationality not in ('".$nationality."','".ucwords($nationality)."','".strtoupper($nationality)."','".strtolower($nationality)."','wni','WNI','') and b.active = 1")->result_array();
 		return $query;
 	}
-
+	
 	public function get_profile_club()
 	{
 		$query = $this->db->query("SELECT 
@@ -668,6 +668,8 @@ class Eyeprofile_model extends CI_Model
 	public function __getListPlayer($competition = '',$page = '1',$limit='10'){
 		$query = array('page' => $page, 'limit' => $limit, 'competition' => $competition);
 		$res  = $this->excurl->remoteCall($this->__xurl().'profile',$this->__xkey(),$query);
+		p($res);
+		exit;
 		return $res;
 	}
 	
@@ -780,7 +782,8 @@ class Eyeprofile_model extends CI_Model
 	public function get_result_klub($cidclub)
 	{
 		$query = $this->db->query("SELECT
-									a.*,c.club_id as club_id_a,
+									a.*,
+									c.club_id as club_id_a,
 									d.club_id as club_id_b,
 									a.tim_a as tim_a,
 									a.tim_b as tim_b,
@@ -791,9 +794,7 @@ class Eyeprofile_model extends CI_Model
 									c.logo as logo_a,
 									d.logo as logo_b,
 									c.name as club_a,
-									d.name as club_b,
-									c.url as link_klub,
-									c.competition
+									d.name as club_b
 									FROM tbl_jadwal_event a 
 									LEFT JOIN tbl_event b ON b.id_event=a.id_event 
 									INNER JOIN tbl_club c ON c.club_id=a.tim_a 
@@ -804,6 +805,7 @@ class Eyeprofile_model extends CI_Model
 									LIMIT 5")->result_array();
 		return $query;
 	}
+
 	public function get_hasil_klub($club_id)
 	{
 		$query = $this->db->query("SELECT 
@@ -815,7 +817,8 @@ class Eyeprofile_model extends CI_Model
 									d.logo as logo_b,
 									c.name as club_a,
 									d.name as club_b,
-									c.url as link_klub,
+									c.url as url_a,
+									d.url as url_b,
 									c.competition
 									FROM tbl_jadwal_event a 
 									LEFT JOIN tbl_event b ON b.id_event=a.id_event 
@@ -872,7 +875,39 @@ class Eyeprofile_model extends CI_Model
 		}
 		return $query;
 	}
+	
+	public function get_all_kompetisi()
+	{
+		$query  = array('page' => '1','limit' => '10');
+		$r  = $this->excurl->remoteCall($this->__xurl().'competition',$this->__xkey(),$query);
+		$r = json_decode($r)->data;
 
+		$r[count($r)] = $r[0];
+		//order values of array 
+		for($i= 0 ;$i < count($r);$i++){
+		
+			$r[$i] = $r[$i+1];
+			if($i == 5){
+				unset($r[5]);
+			}
+
+		}
+		$res = array_values($r);
+		return $res;
+	}
+	
+	public function get_all_liga()
+	{
+		$query  = array('page' => '1','limit' => '10');
+		$res  = $this->excurl->remoteCall($this->__xurl().'league',$this->__xkey(),$query);
+		$res = json_decode($res)->data;
+		return $res;
+	}
+	
+	public function get_official_detail($url){
+		$query = $this->db->query("select a.*,b.name as club_name,b.url as club_url from tbl_official_team a left join tbl_club b on a.club_now=b.club_id where a.url='".$url."'")->result_array();
+		return $query;
+	}
 	
 	public function get_list_karir_klub($requestData,$club_id)
 	{
@@ -941,35 +976,6 @@ class Eyeprofile_model extends CI_Model
 		$res   = $this->excurl->remoteCall($this->__xurl().'profile-club', $this->__xkey(), $query);
 		return $res;
 	}
-	//api begin
-	public function get_all_kompetisi()
-	{
-		$query  = array('page' => '1','limit' => '10');
-		$r  = $this->excurl->remoteCall($this->__xurl().'competition',$this->__xkey(),$query);
-		$r = json_decode($r)->data;
-
-		$r[count($r)] = $r[0];
-		//order values of array 
-		for($i= 0 ;$i < count($r);$i++){
-		
-			$r[$i] = $r[$i+1];
-			if($i == 5){
-				unset($r[5]);
-			}
-
-		}
-		$res = array_values($r);
-		return $res;
-	}
-	
-	public function get_all_liga()
-	{
-		$query  = array('page' => '1','limit' => '10');
-		$res  = $this->excurl->remoteCall($this->__xurl().'league',$this->__xkey(),$query);
-		$res = json_decode($res)->data;
-		return $res;
-	}
-	
 	public function __official_detail($slug){
 		$query = ['url'=> $slug];
 		$res = $this->excurl->remoteCall($this->__xurl().'profile-official/'.$slug,$this->__xkey(),$query);
