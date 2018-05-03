@@ -18,16 +18,15 @@ class Eyenews extends CI_Controller {
 	{
 		$data["meta"]["title"] 			="";
 		$data["meta"]["image"] 			=base_url()."/assets/img/tab_icon.png";
-		$data["meta"]["description"] 		="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";		
-		$data["page"] 				="eyenews";		
-		
-		$data['all_news'] 			= $this->Eyenews_model->get_all_news();
+		$data["meta"]["description"] 	="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";		
+		$data["page"] 					="eyenews";	
+		$data['all_news'] 				= $this->Eyenews_model->get_all_news();
 		$data['soccer_seri'] 			= $this->Eyenews_model->get_soccer_seri();
 		$data['eyenews_main'] 			= $this->Eyenews_model->get_eyenews_main();
-		$data['eyenews_rekomendasi']		= $this->Eyenews_model->get_eyenews_rekomendasi();
-		$news_type 				= $data['eyenews_main']->news_type;
-		$data['eyenews_similar'] 		= $this->Eyenews_model->get_eyenews_similar($news_type);		
-		$data['headline'] 			= $this->Eyenews_model->get_headline();		
+		$data['eyenews_rekomendasi']	= $this->Eyenews_model->get_eyenews_rekomendasi();
+		$news_type= $data['eyenews_main']->news_type;
+		$data['eyenews_similar'] 		= $this->Eyenews_model->get_eyenews_similar();		
+		$data['headline'] 				= $this->Eyenews_model->get_headline();		
 		$data['eyenews_populer']		= $this->Eyenews_model->get_eyenews_populer();	
 		$data['video_eyetube'] 			= $this->Eyenews_model->get_eyetube_satu();
 		$data['jadwal_today'] 			= $this->Eyenews_model->get_jadwal_today();
@@ -57,16 +56,15 @@ class Eyenews extends CI_Controller {
 	{
 		$data["meta"]["title"] 			="";
 		$data["meta"]["image"] 			=base_url()."/assets/img/tab_icon.png";
-		$data["meta"]["description"] 		="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";		
-		$data["page"] 				="eyenews";		
-		
-		$data['all_news'] 			= $this->Eyenews_model->get_all_news();
+		$data["meta"]["description"] 	="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";		
+		$data["page"] 					="eyenews";
+		$data['all_news'] 				= $this->Eyenews_model->get_all_news();
 		$data['soccer_seri'] 			= $this->Eyenews_model->get_soccer_seri();
 		$data['eyenews_main'] 			= $this->Eyenews_model->get_eyenews_main();
-		$data['eyenews_rekomendasi']		= $this->Eyenews_model->get_eyenews_rekomendasi();
-		$news_type 				= $data['eyenews_main']->news_type;
+		$data['eyenews_rekomendasi']	= $this->Eyenews_model->get_eyenews_rekomendasi();
+		$news_type= $data['eyenews_main']->news_type;
 		$data['eyenews_similar'] 		= $this->Eyenews_model->get_eyenews_similar($news_type);		
-		$data['headline'] 			= $this->Eyenews_model->get_headline();		
+		$data['headline']	 			= $this->Eyenews_model->get_headline();		
 		$data['eyenews_populer']		= $this->Eyenews_model->get_eyenews_populer();	
 		$data['video_eyetube'] 			= $this->Eyenews_model->get_eyetube_satu();
 		$data['jadwal_today'] 			= $this->Eyenews_model->get_jadwal_today();
