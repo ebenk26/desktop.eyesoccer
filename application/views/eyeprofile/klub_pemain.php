@@ -3,6 +3,10 @@
     top: 0px;
     position: relative;
 	}
+
+	.live_pert{position:relative;background-color:#ffa7265c;padding:5px;border-radius:15px;width:200px;top:20px;}
+	.liga_name{background-color:#ff000017;}
+	.jadwallistresult{font-size:10px;font-weight:500;}
 	.sjrh{
 		font-size: 1.2em;
 		font-weight: 500;
@@ -14,27 +18,29 @@
 		text-align: left !important;
 		padding-top: 40px;
 	}
-
 	.class-W{
 		background-color:#1dd163;
 		border-radius:15px;
-		border: 5px solid white;
 		font-weight:bold;
-		max-width: 8px;
+		padding:5px 0px 5px 0px;
+		width:30px;
+		margin:-6px -6px 9px -6px;
 	}
 	.class-L{
 		background-color:#d81c1c;
 		border-radius:15px;
-		border: 5px solid white;
 		font-weight:bold;
-		max-width: 8px;
+		padding:5px 0px 5px 0px;
+		width:30px;
+		margin:-6px -6px 9px -6px;
 	}
 	.class-D{
 		background-color:#d5b41b;
 		border-radius:15px;
-		border: 5px solid white;
 		font-weight:bold;
-		max-width: 8px;
+		padding:5px 0px 5px 0px;
+		width:30px;
+		margin:-6px -6px 9px -6px;
 	}
 	.class-W:hover{
 		background-color:#00ab42;
@@ -45,15 +51,18 @@
 	.class-D:hover{
 		background-color:#c7a400;
 	}
-	.div-W{background-color:#1dd163;padding:5px 0px 5px 0px;border-radius:50px;font-weight:bold;}
-	.div-D{background-color:#d5b41b;padding:5px 0px 5px 0px;border-radius:50px;font-weight:bold;}
-	.div-L{background-color:#d81c1c;padding:5px 0px 5px 0px;border-radius:50px;font-weight:bold;}
+	.div-W{width:20px;background-color:#1dd163;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px;}
+	.div-D{width:20px;background-color:#d5b41b;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
+	.div-L{width:20px;background-color:#d81c1c;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
 	.div-W:hover{background-color:#00a942;}
 	.div-D:hover{background-color:#af9000;}
 	.div-L:hover{background-color:#bf0000;}
 	.listmatch:hover{
 		background-color:#fdd79f38;
 		}
+	.score_style_a{font-weight:bold;font-size:14px;border:2px solid;border-color:#ffa72645;border-radius:12px;background-color:#afa7a72e;padding:10px 5px 10px 5px;width:20px;margin-left:10px;}
+	.score_style_b{font-weight:bold;font-size:14px;border:2px solid;border-color:#ffa72645;border-radius:12px;background-color:#afa7a72e;padding:10px 5px 10px 5px;width:20px;margin-right:10px;}
+
 </style>
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 </div>
@@ -195,7 +204,7 @@
 							</tr>
 							<tr>
 								<td>Main</td>
-								<td>-</td>
+								<td align="center">?</td>
 							</tr>
 						</tbody>
 					</table>
@@ -251,7 +260,7 @@
 	
 		<div class="center-desktop m-0">
 		<div class="et-content1">
-					<h3 style="font-size: .8em;text-transform: uppercase;color: #ef9a00;font-weight: 600;margin-top: 36px;">Pertandingan Sebelumnya</h3>
+					<h3 class="h3-oranye" style="margin-left: 20px;margin-top: 24px;margin-bottom: -10px;width:445px;">Pertandingan <?=$r->name?> Sebelumnya</h3>
                     <div class="border-box" style="margin-top: 22px;">
 							<div id="result_club">
 							<table class="table border-b" width="800px">
@@ -271,7 +280,7 @@
 							?>
 								<tbody>
 									<tr class="listmatch">
-										<td><?php
+										<td align="center"><?php
 										if ($row['tim_a']==$club_id){
 											if($row['score_a'] > $row['score_b'] ){
 												$rowform="W";
@@ -298,6 +307,7 @@
 										}
 										echo "<div title='".$titleform."' align='center' class='div-".$rowform."'>".$rowform."</div>"; 
 										?>
+										<span class="jadwallistresult"><?=$row['jadwal_pertandingan']?></span>
 										</td>
 										<td class="tx-r">
 										<a href="<?php 
@@ -312,11 +322,15 @@
                                 
                                 					echo $href_a ?>">
 										<span class="clb"><?=$row["club_a"]?></span></a></td>
-										<td style="width: 20px;"><span class="i-l"><img class="lazy" src="<?=imgUrl()?>systems/club_logo/<?php print $row['logo_a']; ?>" alt=""></span></td>
-										<td width="100" align="center" style="font-weight:bold;">
-											<?=$row["score_a"]?> - <?=$row["score_b"]?>
+										<td style="width: 20px;"><span class="i-l"><img style="margin-top: -10px;" class="lazy" src="<?=imgUrl()?>systems/club_logo/<?php print $row['logo_a']; ?>" alt=""></span></td>
+										<td width="25">
+											<div class="score_style_a" align="center"><?=$row["score_a"]?></div>
 										</td>
-										<td style="width: 20px;"><span class="i-r"><img class="lazy" src="<?=imgUrl()?>systems/club_logo/<?php print $row['logo_b']; ?>" alt=""></span></td>
+										<td> X </td>
+										<td width="25">	
+											<div class="score_style_b" align="center"><?=$row["score_b"]?></div>
+										</td>
+										<td style="width: 20px;"><span class="i-r"><img style="margin-top: -10px;" class="lazy" src="<?=imgUrl()?>systems/club_logo/<?php print $row['logo_b']; ?>" alt=""></span></td>
 										<td class="tx-l">
 										<a href="<?php 
                                                 if(($row["liga_b"]=='Liga Lainnya') OR ($row["liga_b"]=='Liga International'))
@@ -343,17 +357,21 @@
 			<?php 
 				if(count($get_hasil_klub) > 0){
 			?>
-			<div class="w-40 pd-t-20">
-				<h3 class="">Pertandingan Selanjutnya</h3>
-				<div class="container box-pertandingan" style="margin-left: 20px;margin-top: 24px;width:445px;">
-					<table>
+			<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
+				<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan <?=$r->name?> Selanjutnya</h3>
+				<div class="container box-pertandingan" style="margin-left: -1px;margin-top: 22px;width:440px;">
+					<table style="margin-bottom: 29px !important;margin-right: 30px !important;">
 						<tbody>
-							<tr>
+							<tr class="liga_name">
 								<td colspan="3">
 									<?php foreach($get_klub_detail as $row){ ?>
-									<h4 style="margin-top: 6px;"><?php echo strtoupper($row['competition'])?></h4>
+									<h4 style="font-weight: 600;font-size: 18px;margin:33px;"><?php echo strtoupper($row['competition'])?></h4>
 									<?php } ?>
-									<?php foreach($get_hasil_klub as $row){
+								</td>
+							</tr>
+							<tr align="center">
+								<td colspan="3" style:"padding: 8px 8px 8px 6px;">
+								<?php foreach($get_hasil_klub as $row){
 										$datetime = new DateTime($row['jadwal_pertandingan']);
 										if($datetime->format('l') == 'Monday'){
 											$hari = 'Senin';
@@ -373,22 +391,29 @@
 											$hari = $datetime->format('l');
 										}
 									?>
-									<span class="date-box-pertandingan" style="line-height: 1.5em;margin-top: 20px;display:  block;margin-bottom: 15px;"><?php echo $hari.", ".$datetime->format('d M Y')?>
+									<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin: 23px;font-weight:550;">
+										<?php echo $hari.", ".$datetime->format('d M Y')?>
 										<br><?php echo $datetime->format('H:i')." WIB";?>
 										<br><?php echo $row['lokasi_pertandingan']?>
+										<div class="live_pert"><?php echo $row['live_pertandingan']?></div>
 									</span>
 								</td>
 							</tr>
 							<tr class="t-20">
 								<td width="40%">
 									<!--<i class="material-icons i-l-pertandingan">keyboard_arrow_left</i>-->
-									<img src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_a']?>" alt=""> <?php echo $row['club_a'];?>
+									<img src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_a']?>"> 
 								</td>
 								<td width="20%" style="font-weight: 600;font-size: 40px;">vs</td>
 								<td width="40%">
-									<img src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_b']?>" alt=""> <?php echo $row['club_b'];?>
+									<img src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_b']?>"> 
 									<!--<i class="material-icons i-r-pertandingan">keyboard_arrow_right</i>-->
 								</td>
+							</tr>
+							<tr>
+								<td><strong><a href="<?=base_url()?>eyeprofile/klub_detail/<?=$row['url_a']?>"><?php echo $row['club_a'];?></a></strong></td>
+								<td></td>
+								<td><strong><a href="<?=base_url()?>eyeprofile/klub_detail/<?=$row['url_b']?>"><?php echo $row['club_b'];?></a></strong></td>
 							</tr>
 							<tr>
 								<td>
@@ -415,8 +440,8 @@
 													}
 												}
 											?>
-											<td title="<?=$mh['club_a']." ".$mh['score_a']."-".$mh['score_b']." ".$mh['club_b'];?>" align="center" class="class-<?=$mhform;?>">
-												<?=$mhform;?>
+											<td align="center" title="<?php echo $mh['club_a']." ".$mh['score_a']."-".$mh['score_b']." ".$mh['club_b'];?>" align="center">
+												<div title="<?php echo $mh['club_a']." ".$mh['score_a']."-".$mh['score_b']." ".$mh['club_b'];?>" class="class-<?=$mhform;?>"><?=$mhform?></div>
 											</td>
 										<?php }
 										?>
@@ -425,7 +450,7 @@
 								</td>
 								<td>
 								</td>
-								<td style="padding: 24px;">
+								<td>
 									<table>
 										<tr>
 										<?php
@@ -451,8 +476,8 @@
 													}
 												}
 												?>
-											<td title="<?php echo $mv['club_a']." ".$mv['score_a']."-".$mv['score_b']." ".$mv['club_b'];?>" align="center" class="class-<?=$mvform;?>">
-												<?=$mvform;?>
+											<td align="center" title="<?php echo $mv['club_a']." ".$mv['score_a']."-".$mv['score_b']." ".$mv['club_b'];?>" align="center">
+												<div title="<?php echo $mv['club_a']." ".$mv['score_a']."-".$mv['score_b']." ".$mv['club_b'];?>" class="class-<?=$mvform;?>"><?=$mvform?></div>
 											</td>
 										<?php }
 										?>
@@ -552,6 +577,39 @@
 			</script> -->
 				<!-- <img src="../../assets/img/iklanbanner/banner 425x200 px-01.jpg" alt="Right ads"> -->
 			<!-- </div> -->
+			<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;">
+				<h3 class="">Statistik <?=$r->name?></h3>
+				<table>
+					<thead>
+						<td >Tahun</td>
+						<td width="55" title="Main">MN</td>
+						<td width="55" title="Menang">M</td>	
+						<td width="55" title="%Menang">%M</td>
+						<td width="55" title="Seri">S</td>	
+						<td width="55" title="%Seri">%S</td>	
+						<td width="55" title="Kalah">K</td>	
+						<td width="55" title="%Kalah">%K</td>
+						<td width="55" title="Goal Memasukan">GM</td>	
+						<td width="55" title="%Goal Memasukan">GM</td>	
+						<td width="55" title="Kemasukan">GK</td>	
+						<td width="55" title="%Kemasukan">%GK</td>	
+					</thead>
+					<tr>
+						<td align="center">?</td>
+						<td align="center">?</td>
+						<td align="center">?</td>	
+						<td align="center">?</td>
+						<td align="center">?</td>	
+						<td align="center">?</td>	
+						<td align="center">?</td>	
+						<td align="center">?</td>
+						<td align="center">?</td>	
+						<td align="center">?</td>	
+						<td align="center">?</td>	
+						<td align="center">?</td>	
+					</tr>
+				</table>
+			</div>	
 			<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;">
 				<h3 class="">Prestasi Klub</h3>
 				<table class="table table-stripped table-hover">
