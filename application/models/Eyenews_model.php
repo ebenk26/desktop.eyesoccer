@@ -599,7 +599,7 @@ public function get_trending_eyenews()
 										A.publish_on <= NOW()
                                     ORDER BY 
                                         A.publish_on DESC
-                                    Limit 4
+                                    Limit 5
                                         ")->result_array();
             return $query; 
 	}
