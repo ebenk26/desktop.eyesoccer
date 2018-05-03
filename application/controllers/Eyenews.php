@@ -450,4 +450,8 @@ class Eyenews extends CI_Controller {
 
 		$this->load->view('template/static',$data);		
 	}
+	
+	public function now(){
+		echo date();exit;
+	}
 }
