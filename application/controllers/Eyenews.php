@@ -173,6 +173,7 @@ class Eyenews extends CI_Controller {
 		
 		$data['model'] 			= $this->Eyenews_model->get_detail($eyenews_id);
 		$data['terkini'] 		= $this->Eyenews_model->get_terkini();
+		$data['terkini_list_detail']= $this->Eyenews_model->get_terkini_list_detail($eyenews_id);
 		$data['terpopuler'] 	= $this->Eyenews_model->get_terpopuler();
 		$data['ads_right'] 		= $this->Eyenews_model->get_ads_right();
 		$data['new_eyetube'] 	= $this->Eyenews_model->get_new_eyetube();

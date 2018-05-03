@@ -170,6 +170,30 @@ class Eyenews_model extends CI_Model
                                     LIMIT 5
                                         ")->result_array();
         return $query;
+	}
+	
+	public function get_terkini_list_detail($eyenews_id)
+    {
+    	$query = $this->db->query(" SELECT
+                                        A.title,
+                                        A.eyenews_id,
+                                        A.thumb1,
+                                        A.publish_on,
+										A.url,
+										A.news_view,
+										A.createon
+                                    FROM
+                                        tbl_eyenews A
+									WHERE
+										A.publish_on <= NOW()
+									AND
+										A.ads!=1
+									AND A.eyenews_id!='$eyenews_id'
+                                    ORDER BY 
+                                    	A.publish_on DESC
+                                    LIMIT 5
+                                        ")->result_array();
+        return $query;
     }
 
     public function get_terpopuler()
@@ -321,7 +345,7 @@ class Eyenews_model extends CI_Model
 									ORDER BY
 										a.publish_on DESC
 									LIMIT
-										1,5
+										1,6
 								")->result_array();
 		return $query;
 	}
