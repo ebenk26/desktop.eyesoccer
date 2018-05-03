@@ -340,8 +340,6 @@ class Eyenews_model extends CI_Model
 										a.news_view
 									FROM
 										tbl_eyenews a
-									WHERE
-										a.publish_on <= NOW()
 									ORDER BY
 										a.publish_on DESC
 									LIMIT
