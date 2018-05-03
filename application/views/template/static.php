@@ -267,7 +267,7 @@
                             }
                         ?>
                     </div> 
-                    <div class="container banner-a1 img-banner" style="background: unset;">
+                    <div class="container banner-a1 img-banner" style="background: unset; display:none;">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Eyesoccer 1#dekstopHomeTopBanner -->
                     <ins class="adsbygoogle"
@@ -280,7 +280,7 @@
                     </script>
                         <!-- <img src="<?php echo base_url()?>assets/img/iklanbanner/banner  320x60 px-01.jpg" alt="Static ads"> -->
                     </div>  
-                    <div class="container banner-a1 img-banner" style="background: unset;">
+                    <div class="container banner-a1 img-banner" style="background: unset;display:none;">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- Eyesoccer 1b#dekstopHomeTopBanner -->
                     <ins class="adsbygoogle"

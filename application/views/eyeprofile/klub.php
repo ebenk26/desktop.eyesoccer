@@ -237,7 +237,7 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
                 </div>
             </div>
         </div>
-		<div class="container banner-150 img-banner mt-20 tx-c" style="height:auto; background-color:unset;">
+		<div class="container banner-150 img-banner mt-20 tx-c" style="background-color: unset;text-align: center;height: unset;background: url('https://www.eyesoccer.id/assets/img/banner/1065X255px.png');background-repeat: no-repeat;line-height: 0px;">
 			<!-- <img src="<?php echo base_url()?>assets/img/banner-home.jpeg" alt="banner ads full width"> -->
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- EyesoccerDekstop 15a#EyeprofileLigaBanner970x250 -->
@@ -372,7 +372,7 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 					</div>
           		</div>			
                 </span>	
-				<div class="container img-banner tx-c" style="width: 100%;position: relative;overflow: unset;height: unset;min-height: 150px !important;">
+				<div class="container img-banner tx-c" style="width: 100%;position: relative;overflow: unset;height: unset;min-height: 150px !important;background-color: unset;">
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- EyesoccerDekstop 11#EyeprofileLigaKlub336x280 -->
                             <ins class="adsbygoogle"
@@ -382,14 +382,12 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
                             <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             </script>
-            
-                <img src="<?php echo base_url()?>assets/img/iklanbanner/banner 425x100 px-01.jpg" alt="banner ads full width" style="height: unset;position: absolute;top: 0px;left: 0px;width: 100%;">
-            </div>
+                        </div>
 			
             </div>
         </div>
         <div class="w-40 pd-t-20">
-            <div class="container">
+            <div class="container" style="max-height: 525px;overflow:  scroll;border-radius: 5px;border-bottom: 1px solid gainsboro;">
                 <h3>Transfer Terbaru</h3>
 				<table width="400" id="liga_indonesia" class="radius table table-striped" cellspacing="0" cellpadding="0">
 					<thead>
@@ -502,13 +500,15 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 				<!-- <img src="<?php echo base_url()?>assets/img/iklanbanner/banner 425x100 px-01.jpg" alt="banner ads full width"> -->
 			<!-- </div>	 -->
 			 <div class="container" style="margin-top:7px;" align="center">
+			 <h3 class="tx-l">Statistik Liga</h3>
 									
-					<button id="topskorer" class="tab-active"><a href="#" onclick="return false;">Top Scorer</a></button>
-					<button id="topassist" class=" "><a href="#" onclick="return false;">Top Assist</a></button>
-					<button id="kk" class=" "><a href="#" onclick="return false;">Yellow Card</a></button>
-					<button id="km" class=" "><a href="#" onclick="return false;">Red Card</a></button>
-					<button id="pass" class=" "><a href="#" onclick="return false;">Passing</a></button>
-
+					<button id="topskorer" class="btn-orange-soft tab-active" ><a href="#" onclick="return false;">Top Scorer</a></button>
+					<button id="topassist" class="btn-orange-soft "><a href="#" onclick="return false;">Top Assist</a></button>
+					<button id="kk" class="btn-orange-soft "><a href="#" onclick="return false;">Yellow Card</a></button>
+					<button id="km" class="btn-orange-soft "><a href="#" onclick="return false;">Red Card</a></button>
+					<button id="pass" class="btn-orange-soft "><a href="#" onclick="return false;">Passing</a></button>
+					<div class="container" style="max-height: 281px;overflow: auto;margin-bottom: 20px;border-radius: 5px;border-top: 1px solid gainsboro;border-bottom: 1px solid gainsboro;">
+						<div class="container">
 				<table id="top_scorer" class="radius table table-striped" cellspacing="0" cellpadding="0">
 					<thead>
 						<tr>
@@ -667,7 +667,9 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 					<?php
 					}
 				?>
-            </div>
+				</div>
+		</div>
+				</div>
                 <div class="nav-pencetak-gol" style="margin-bottom:50px;display:none;">
                     <ul>
                         <li>
