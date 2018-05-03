@@ -111,8 +111,9 @@
 			$i = 0;
 			if(isset($paggingads)){
 				$x = count($paggingads);
-				$n = count($pagging['row']) - $x;
-				$pagging['row'] = array_slice($pagging['row'],$x);
+				$n = count($pagging['row']);
+				$x = $n - $x;
+				$pagging['row'] = array_slice($pagging['row'],0,$x);
 			}
 			foreach ($pagging['row'] as $similar)
 			{
