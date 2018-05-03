@@ -85,8 +85,6 @@
 				$i = 0;
 				foreach ($eyenews_similar as $row)
 				{
-				    if ($i != 0)
-				    {
 					?>							
 					    <li>
 						<span>
@@ -94,9 +92,7 @@
 						<?= $row['title']; ?></a>									
 						</span>
 					    </li>
-					<?php			
-				    }
-				    $i++;
+					<?php		
 				}
 			    ?>
 			</ul>
