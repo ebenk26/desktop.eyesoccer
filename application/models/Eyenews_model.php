@@ -472,7 +472,7 @@ public function get_jadwal_today()
 										AND
 										jadwal_pertandingan>='".date("Y-m-d")."' 
 									ORDER BY
-										jadwal_pertandingan ASC LIMIT 6
+										jadwal_pertandingan ASC LIMIT 7
 								")->result_array();
 		return $query;
 	}
