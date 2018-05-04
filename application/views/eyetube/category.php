@@ -18,7 +18,7 @@
     overflow: hidden;
 }
 .news-rcm-r2 td {
-	padding: 4.5px 0px;
+	padding: 6.5px 0px 5.5px;
 }
 body{
         margin-top: -10px;

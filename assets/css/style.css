@@ -920,7 +920,7 @@ th{
 }
 footer{
     background-color: #616161;
-    /* margin-top: 100px; */
+    /*margin-top: 100px; */
 }
 .f-w{
     width: 870px;
@@ -1282,7 +1282,6 @@ ul, li {
     outline: none;
     font-size: .75em;
     border-radius: 3px;
-    -webkit-appearance: none;
     appearance: none;
 }
 .btn-orange{
@@ -3846,7 +3845,7 @@ ul, li {
     color: gray;
 }
 .news-rcm-r2 td{
-    padding: 0px;
+    padding: 6px 0px 7px;
     text-align: center;
 }
 .b-t-g{
@@ -5218,7 +5217,9 @@ img.loading {
 .min{
     width: 40px;height: 40px;border-radius:50%
 }
-
+.m-t20-lr0-b30{
+    margin: 20px 0 30px;
+}
 .btn-orange-soft{
     font-size: .8em;
     font-weight: 500;
@@ -5232,4 +5233,8 @@ img.loading {
 }
 .btn-orange-soft.tab-active {
     background-color: #f9ab00 !important;
+}
+.container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
