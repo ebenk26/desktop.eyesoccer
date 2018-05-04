@@ -87,7 +87,6 @@ $route['eyeprofile'] 							= "eyeprofile/klub";
 $route['author/(:any)'] 						= "author/index/$1";
 $route['author'] 							    = "author/home";
 
-
 //$route['seo/sitemap\.xml'] = "seo/sitemap";
 
 
