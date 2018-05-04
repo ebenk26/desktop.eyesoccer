@@ -220,7 +220,7 @@
                 <h4>JADWAL LIVE</h4>  
             </div>
             <div class="line-b"></div>
-            <div>
+            <div class="container cat-widget">
                 <table>
                 <?php 
                     if (empty($jadwal_today))
@@ -298,7 +298,7 @@
                 <div class="line-b"></div>
                 <div class="fl-r">
                     <a href="">
-                        <p class="lp" style="margin:0px;"><a href="<?php echo base_url();?>eyevent">Lihat selengkapnya ></a></p>
+                        <p class="lp mt-10 mb-30"><a href="<?php echo base_url();?>eyevent">Lihat selengkapnya ></a></p>
                     </a>
                 </div>
             </div>

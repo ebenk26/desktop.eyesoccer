@@ -5238,3 +5238,8 @@ img.loading {
     width: 0px;
     background: transparent;
 }
+.cat-widget{
+    height: 612px;
+    overflow: scroll;
+    border-bottom: 1px solid gainsboro;
+}
