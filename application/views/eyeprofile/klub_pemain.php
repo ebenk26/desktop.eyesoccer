@@ -577,78 +577,121 @@
 			</script> -->
 				<!-- <img src="../../assets/img/iklanbanner/banner 425x200 px-01.jpg" alt="Right ads"> -->
 			<!-- </div> -->
-			<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;">
-				<h3 class="">Statistik <?=$r->name?></h3>
-				<table>
-					<thead>
-						<th>Tahun</td>
-						<th width="55" title="Main">MN</th>
-						<th width="55" title="Menang">M</th>	
-						<th width="55" title="%Menang">%M</th>
-						<th width="55" title="Seri">S</th>	
-						<th width="55" title="%Seri">%S</th>	
-						<th width="55" title="Kalah">K</th>	
-						<th width="55" title="%Kalah">%K</th>
-						<th width="55" title="Goal Memasukan">GM</th>	
-						<th width="55" title="%Goal Memasukan">GM</th>	
-						<th width="55" title="Kemasukan">GK</th>	
-						<th width="55" title="%Kemasukan">%GK</th>	
-					</thead>
-					<tr>
-						<td align="left">?</td>
-						<td align="left">?</td>
-						<td align="left">?</td>	
-						<td align="left">?</td>
-						<td align="left">?</td>	
-						<td align="left">?</td>	
-						<td align="left">?</td>	
-						<td align="left">?</td>
-						<td align="left">?</td>	
-						<td align="left">?</td>	
-						<td align="left">?</td>	
-						<td align="left">?</td>	
-					</tr>
-				</table>
-			</div>	
-			<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;">
-				<h3 class="">Prestasi Klub</h3>
-				<table class="table table-stripped table-hover">
+			
+			<div class="container">
+			<?php $now=getdate();$tahun=$now['year']?>
+				<h3 class="h3-oranye" style="margin-left: 20px;margin-top: 24px;margin-bottom: -10px;width:445px;">Statistik <?=$r->name?> <?=$tahun?></h3>
+				<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
+					<div class="container box-pertandingan" style="border-radius: 15px;overflow: hidden;">
+						<table>
+							<thead>
+								<tr>
+									<th align="center" title="Main">Main</th>
+									<th align="center" title="Menang (%Menang)">Menang</th>
+									<th align="center" title="Seri (%Seri)">Seri</th>		
+									<th align="center" title="Kalah (%Kalah)">Kalah</th>	
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td align="center">?</td>
+									<td align="center">?</td>	
+									<td align="center">?</td>
+									<td align="center">?</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
+					<div class="container box-pertandingan" style="border-radius: 15px;overflow: hidden;">
+						<table>
+							<thead>
+								<tr>
+									<th align="center" title="Goal Memasukan (%GM)">Memasukan
+										<table>
+											<thead>
+												<th align="center" title="Home">Home</th>	
+												<th align="center" title="Away">Away</th>
+											</thead>
+										</table>
+									</th>	
+									<th align="center" title="Goal Kemasukan (%GK)">Kemasukan
+										<table>
+											<thead>
+												<th align="center" title="Home">Home</th>	
+												<th align="center" title="Away">Away</th>
+											</thead>
+										</table>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td align="center">
+										<table>
+											<tr>
+												<td align="center">?</td>
+												<td align="center">?</td>
+											</tr>
+										</table>
+									</td>	
+									<td align="center">
+										<table>
+											<tr>
+												<td align="center">?</td>
+												<td align="center">?</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>	
+				</br>
+				<h3 class="h3-oranye" style="margin-left: 20px;margin-top: 24px;margin-bottom: -10px;width:445px;">Prestasi Klub</h3>
+				<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
+					<div class="container box-pertandingan" style="border-radius: 15px;overflow: hidden;">
+						<table class="table table-stripped table-hover">
+							
+							<thead>
+								<tr>
+									<th>NO</th>
+									<th>Bulan</th>
+									<th>Tahun</th>
+									<th>Turnamen</th>
+									<th>peringkat</th>
+									<th>pelatih</th>
+								</tr>
+							</thead>
+							<tbody>
+								
+								<?php
+									$no = 0 ;
+									for($i= 0 ;$i <count($cr);$i++){
+										$no++;
+										echo '<tr>';
+										echo '<td>'.$no.'</td>';
+										echo '<td>'.$cr[$i]->month.'</td>';
+										echo '<td>'.$cr[$i]->year.'</td>';
+										echo '<td>'.$cr[$i]->tournament.'</td>';
+										echo '<td>'.$cr[$i]->rank.'</td>';	
+										echo '<td>'.$cr[$i]->coach.'</td>';
+										echo '</tr>';
+
+									}
+
+								?>
+								
+							</tbody>
+						</table>
+					</div>
+					<!-- <div class="box-bg" style="height:200px">
 					
-					<thead>
-						<tr>
-							<th>NO</th>
-							<th>Bulan</th>
-							<th>Tahun</th>
-							<th>Turnamen</th>
-							<th>peringkat</th>
-							<th>pelatih</th>
-						</tr>
-					</thead>
-					<tbody>
-						
-						<?php
-							$no = 0 ;
-							for($i= 0 ;$i <count($cr);$i++){
-								$no++;
-								echo '<tr>';
-								echo '<td>'.$no.'</td>';
-								echo '<td>'.$cr[$i]->month.'</td>';
-								echo '<td>'.$cr[$i]->year.'</td>';
-								echo '<td>'.$cr[$i]->tournament.'</td>';
-								echo '<td>'.$cr[$i]->rank.'</td>';	
-								echo '<td>'.$cr[$i]->coach.'</td>';
-								echo '</tr>';
-
-							}
-
-						?>
-						
-					</tbody>
-				</table>
-				<!-- <div class="box-bg" style="height:200px">
-				
-				
-				</div> -->
+					
+					</div> -->
+				</div>
 			</div>
 			<div class="container pd-b-50" style="padding-bottom: 100px;display:none;">
 				<div id="em2Slide" class="carousel slide">
