@@ -19,7 +19,7 @@ class MemberMod extends CI_Model
         $refer = ($refer === null || $refer === '' ? 'member' : str_replace('-', '/', $refer));
         $email = $this->input->post('email');
         $pass = $this->input->post('password');
-        $query = array('email' => $email, 'password' => $pass,'is_check'=> true);
+        $query = array('email' => $email, 'password' => $pass);
         $res = $this->excurl->remoteCall($this->__xurl() . 'login', $this->__xkey(), $query);
         $res = json_decode($res);
 
@@ -120,6 +120,7 @@ class MemberMod extends CI_Model
                 $v = $res->data[0];
                 $sess = array(
                     'id' => $v->id,
+                    'id_member' => $v->id_member,
                     'username' => $v->username,
                     'fullname' => $v->fullname,
                     'name' => $v->name,
