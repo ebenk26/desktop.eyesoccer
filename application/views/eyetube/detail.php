@@ -503,9 +503,9 @@
 
                         </div>
                     </div>
-                    <div class="container tx-c mb-30">
+                    <!-- <div class="container tx-c mb-30">
                         <button class="btn-white mt-10 mb-30" type="button">Tampilkan lebih banyak</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

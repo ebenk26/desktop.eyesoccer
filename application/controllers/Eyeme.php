@@ -14,8 +14,12 @@ class Eyeme extends CI_Controller {
 			$this->load->model('Master_model','mod');
 			$this->load->helper('path');
 			$this->getSetting = $this->mod->getAll('setting');
-			$this->id_member  = @$this->session->userdata('id_member');#id_member login 
-			$this->username   = @$this->session->userdata('username');
+			$this->sess = @$this->session->userdata('member');
+			if(is_array($this->sess)){
+				$this->id_member  = $this->sess['id_member'];#id_member login 
+				$this->username   = $this->sess['username'];
+			}
+			
 			/*
 				variabel userdata
 			*/
