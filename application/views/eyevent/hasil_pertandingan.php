@@ -22,7 +22,7 @@ background-color:#fdd79f38;
         <ul>
         <li><a href='<?php echo base_url(); ?>' style='display: unset'>Home</a></li>
         <li><a href='<?php echo base_url().'eyevent'; ?>' style='display: unset'>EyEvent</a></li>
-        <li><a href='<?php echo base_url().'hasil-pertandingan'; ?>' style='display: unset'>Hasil Pertandingan</a></li>
+        <li><a href='<?php echo base_url().'eyevent/hasil-pertandingan'; ?>' style='display: unset'>Hasil Pertandingan</a></li>
         </ul>
     </div>
     <h3 class="o">Hasil Pertandingan Sebelumnya</h3>
