@@ -341,8 +341,8 @@ switch (ENVIRONMENT)
  *
  */
 if($_SERVER['SERVER_NAME'] === 'localhost'){
-    define('SUBCDN', 'http://localhost:8081/project/aplikasi/eyesoccer/liveeye/livedev.eyesoccer.id/'); //'http://cdn.eyesoccer.id/';
-    define('SUBSTATIC', 'http://localhost:8081/project/aplikasi/eyesoccer/liveeye/livedev.eyesoccer.id/'); //'http://static.eyesoccer.id/';
+    define('SUBCDN', 'http://localhost/desktop.eyesoccer/'); //'http://cdn.eyesoccer.id/';
+    define('SUBSTATIC', 'http://localhost/desktop.eyesoccer/'); //'http://static.eyesoccer.id/';
 }else{
     define('SUBCDN', 'https://www.eyesoccer.id/'); //'http://cdn.eyesoccer.id/';
     define('SUBSTATIC', 'https://www.eyesoccer.id/'); //'http://static.eyesoccer.id/';

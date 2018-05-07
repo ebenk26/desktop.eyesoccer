@@ -9,7 +9,7 @@
 			padding: 10px 0px;
 		}
 		.listmatch:hover{
-		background-color:#fdd79f38;
+		background-color:#00a71a14;
 		}
 
 
@@ -192,7 +192,7 @@
             <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyetube.png" alt="">
             <h2 class="title et"><a href="<?php echo base_url();?>eyetube">EyeTube</a></h2>
             <hr class="x-et">
-            <div class="et-content m-b-100">
+            <div class="et-content">
                 <div class="et-content1 m-t-22">
 				<?php
 				foreach ($video_eyetube as $videonya)
@@ -217,7 +217,7 @@
 					<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>" style="text-decoration: unset;">
 						<h1 class="et-title"><?= $videonya['title']; ?></h1>
 					</a>
-                    <p class="et-d" style="max-height:95px; overflow:hidden;">
+                    <p class="et-d" style="max-height:60px; overflow:hidden;">
 					<?php
 						$keterangan = strip_tags($videonya['description']);
 						echo word_limiter($keterangan,25);
@@ -261,7 +261,7 @@
                 </div>					
             </div>
 
-            <div class="container tab" style="padding-top: 60px;">
+            <div class="container tab">
                 <span href="" id="star" data-target="#esTab" data-slide-to="0" class="active nonactive" active="true">eyesoccer star</span>
                 <span href="" id="vpopuler" data-target="#esTab" data-slide-to="1" class="nonactive">video popular</span>
                 <span href="" id="vkamu" data-target="#esTab" data-slide-to="2" class="nonactive">video kamu</span>
