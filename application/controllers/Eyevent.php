@@ -17,7 +17,7 @@ class Eyevent extends CI_Controller {
 		$data["meta"]["description"]="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
 		$data["meta"]["share"]='
 			<!-- Begin of SEO Meta Tags -->
-			<title>Jadwal dan Hasil Pertandingan Sepakbola- EyeEvent | EyeSoccer</title>
+			<title>Jadwal dan Hasil Pertandingan Sepakbola- EyEvent | EyeSoccer</title>
 			<meta name="title" content="Jadwal dan Hasil Pertandingan Sepakbola" />
 			<meta name="googlebot-news" content="index,follow" />
 			<meta name="googlebot" content="index,follow" />
@@ -117,8 +117,8 @@ class Eyevent extends CI_Controller {
 		$data["meta"]["description"]="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
 		$data["meta"]["share"]='
 			<!-- Begin of SEO Meta Tags -->
-			<title>Hasil Pertandingan Sepakbola Lengkap- EyeEvent | EyeSoccer</title>
-			<meta name="title" content="Hasil Pertandingan Sepakbola Lengkap" />
+			<title>Hasil Pertandingan Sepakbola Indonesia dan Dunia - EyEvent | EyeSoccer</title>
+			<meta name="title" content="Hasil Pertandingan Sepakbola Indonesia dan Dunia" />
 			<meta name="googlebot-news" content="index,follow" />
 			<meta name="googlebot" content="index,follow" />
 			<meta name="robots" content="index,follow" />
@@ -128,15 +128,15 @@ class Eyevent extends CI_Controller {
 			<meta http-equiv="content-language" content="In-Id" />
 			<meta name="geo.placename"content="Indonesia" />
 			<link rel="publisher" href="https://plus.google.com/u/1/105520415591265268244" />
-			<link rel="canonical" href="https://www.eyesoccer.id/eyevent/hasil_pertandingan" />
+			<link rel="canonical" href="https://www.eyesoccer.id/eyevent/hasil-pertandingan" />
 			<!-- End of SEO Meta Tags-->
 
 			<!-- Begin of Facebook Open graph data-->
 			<meta property="fb:app_id" content="140611863350583" />
 			<meta property="og:site_name" content="EyeSoccer" />
-			<meta property="og:url" content="https://www.eyesoccer.id/eyevent/hasil_pertandingan" />
+			<meta property="og:url" content="https://www.eyesoccer.id/eyevent/hasil-pertandingan" />
 			<meta property="og:type" content="Website" />
-			<meta property="og:title" content="EyeVent: Temukan Acara Hebat Seputar Sepak Bola Di Sekitarmu | EyeSoccer" />
+			<meta property="og:title" content="Hasil Pertandingan Sepakbola Indonesia dan Dunia - EyEvent | EyeSoccer" />
 			<meta property="og:description" content="Info update acara-acara seputar sepak bola: turnamen sepak bola, acara nonton bareng pertandingan sepak bola, acara komunitas supporter, dan acara lainnya." />
 			<meta property="og:locale" content="id_ID" />
 			<meta property="og:image" content="'.base_url().'img/eyevent_nav.png" />
@@ -147,7 +147,7 @@ class Eyevent extends CI_Controller {
 			<meta name="twitter:site" content="@eyesoccer_id" />
 			<meta name="twitter:creator" content="@eyesoccer_id" />
 			<meta name="twitter:domain" content="EyeSoccer"/>
-			<meta name="twitter:title" content="Jadwal Pertandingan Sepakbola- EyeEvent | EyeSoccer" />
+			<meta name="twitter:title" content="Hasil Pertandingan Sepakbola Indonesia dan Dunia -  EyEvent | EyeSoccer" />
 			<meta name="twitter:description" content="Info update acara-acara seputar sepak bola: turnamen sepak bola, acara nonton bareng pertandingan sepak bola, acara komunitas supporter, dan acara lainnya." />
 			<meta name="twitter:image" content="'.base_url().'img/eyevent_nav.png" />
 			<!--end of twitter card data-->
@@ -173,8 +173,8 @@ class Eyevent extends CI_Controller {
 		$data["meta"]["description"]="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
 		$data["meta"]["share"]='
 			<!-- Begin of SEO Meta Tags -->
-			<title>Jadwal Pertandingan Sepakbola- EyeEvent | EyeSoccer</title>
-			<meta name="title" content="Jadwal dan Hasil Pertandingan Sepakbola" />
+			<title>Jadwal Pertandingan Sepakbola Indonesia dan Dunia -  EyEvent | EyeSoccer</title>
+			<meta name="title" content="Jadwal Pertandingan Sepakbola Indonesia dan Dunia -" />
 			<meta name="googlebot-news" content="index,follow" />
 			<meta name="googlebot" content="index,follow" />
 			<meta name="robots" content="index,follow" />
@@ -184,15 +184,15 @@ class Eyevent extends CI_Controller {
 			<meta http-equiv="content-language" content="In-Id" />
 			<meta name="geo.placename"content="Indonesia" />
 			<link rel="publisher" href="https://plus.google.com/u/1/105520415591265268244" />
-			<link rel="canonical" href="https://www.eyesoccer.id/eyevent/hasil_pertandingan" />
+			<link rel="canonical" href="https://www.eyesoccer.id/eyevent/jadwal-pertandingan" />
 			<!-- End of SEO Meta Tags-->
 
 			<!-- Begin of Facebook Open graph data-->
 			<meta property="fb:app_id" content="140611863350583" />
 			<meta property="og:site_name" content="EyeSoccer" />
-			<meta property="og:url" content="https://www.eyesoccer.id/eyevent/hasil_pertandingan" />
+			<meta property="og:url" content="https://www.eyesoccer.id/eyevent/jadwal-pertandingan" />
 			<meta property="og:type" content="Website" />
-			<meta property="og:title" content="Jadwal Pertandingan Sepakbola- EyeEvent | EyeSoccer" />
+			<meta property="og:title" content="Jadwal Pertandingan Sepakbola Indonesia dan Dunia - EyEvent | EyeSoccer" />
 			<meta property="og:description" content="Info update acara-acara seputar sepak bola: turnamen sepak bola, acara nonton bareng pertandingan sepak bola, acara komunitas supporter, dan acara lainnya." />
 			<meta property="og:locale" content="id_ID" />
 			<meta property="og:image" content="'.base_url().'img/eyevent_nav.png" />
@@ -203,7 +203,7 @@ class Eyevent extends CI_Controller {
 			<meta name="twitter:site" content="@eyesoccer_id" />
 			<meta name="twitter:creator" content="@eyesoccer_id" />
 			<meta name="twitter:domain" content="EyeSoccer"/>
-			<meta name="twitter:title" content="EyeVent: Temukan Acara Hebat Seputar Sepak Bola Di Sekitarmu | EyeSoccer" />
+			<meta name="twitter:title" content="Jadwal Pertandingan Sepakbola Indonesia dan Dunia - EyEvent | EyeSoccer" />
 			<meta name="twitter:description" content="Info update acara-acara seputar sepak bola: turnamen sepak bola, acara nonton bareng pertandingan sepak bola, acara komunitas supporter, dan acara lainnya." />
 			<meta name="twitter:image" content="'.base_url().'img/eyevent_nav.png" />
 			<!--end of twitter card data-->
