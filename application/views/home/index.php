@@ -542,7 +542,7 @@
                     <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyemarket.png" alt="">
                     <h2 class="title emar"><a href="<?php echo base_url();?>eyemarket">EyeMarket</a></h2>
                     <hr class="x-emar">
-                        <div class="rek-ber" style="margin-top: -14px;">			
+                        <div class="rek-ber" style="margin-top: -4px;">			
 							<?php foreach ($products as $produk)
 							{
 							?>
@@ -643,7 +643,7 @@
                 <div class="et-content1">
                     <span class="jp green">JADWAL PERTANDINGAN</span>
                     <div class="border-box" style="margin-top: 22px;">
-							<div id="jadwal_home">
+							<div id="jadwal_home" class="max-height-500">
 							<table class="table border-b">
 							<?php
 								if(empty($jadwal_home)){
@@ -730,9 +730,9 @@
 					}
 				?>
                 </select>
-				<div id="klasemen4liga">
+				<div id="klasemen4liga" class="max-height-500" style="margin-top: 23px;max-height: 572px;">
 						<div id="liga_indonesia" style="top:-10px;">
-								<table class="border-box radius" cellspacing="0" cellpadding="0" style="margin-top: 11px;">
+								<table class="border-box radius" cellspacing="0" cellpadding="0" style="margin:  unset;">
 									<thead>
 										<tr>
 											<th title="Posisi">#</th>
@@ -826,7 +826,7 @@
 								</div>
 						</div>
 						<div id="liga_inggris" style="display:none;">
-								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin-top: 11px;">
+								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
 									<thead>
 										<tr>
 											<th title="Posisi">#</th>
@@ -918,7 +918,7 @@
 								</div>
 						</div>
 						<div id="liga_italia" style="display:none;">
-								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin-top: 11px;">
+								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
 									<thead>
 										<tr>
 											<th title="Posisi">#</th>
@@ -1012,7 +1012,7 @@
 								</div>
 						</div>
 						<div id="liga_spanyol" style="display:none;">
-								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin-top: 11px;">
+								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
 									<thead>
 										<tr>
 											<th title="Posisi">#</th>
