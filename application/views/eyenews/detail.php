@@ -123,7 +123,7 @@
                     <div class="news-pic">
                         <h2><?= $value['title']; ?></h2>
                         <div style="width:100%;height:445px;overflow:hidden;">
-                            <img src="<?=imgUrl()?>systems/eyenews_storage/<?= $value['pic']; ?>" alt="" style="width:100%;min-height:100%;">
+                            <img src="<?=imgUrl()?>systems/eyenews_storage/<?= $value['pic']; ?>" alt="<?= $value['title']; ?>" style="width:100%;min-height:100%;">
                         </div>
 						<div style="font-size:14px;float:right;">
 							Credit : <?php echo $value['credit']; ?>

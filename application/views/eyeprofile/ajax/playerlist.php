@@ -34,7 +34,7 @@ $uri = ($competition == null ? 'Liga Indonesia 1' : $competition);
 	</tbody>
 	
 </table>
-<div class="pull-right">
+<div class="pull-right m-t20-lr0-b30">
 	
   <ul class="orange-default">
   	<?php echo ($page > 1 ? '<li>'.anchor(pPLAYER.$uri.'/page/'.($page-1) ,'Sebelumnya','display="block"').'</li>' : '')?>

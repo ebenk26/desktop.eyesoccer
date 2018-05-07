@@ -86,7 +86,8 @@ $route['newsletter/eyenews'] 					= "home/newsletter/eyenews";
 $route['eyeprofile'] 							= "eyeprofile/klub";
 $route['author/(:any)'] 						= "author/index/$1";
 $route['author'] 							    = "author/home";
-
+$route['eyevent/jadwal-pertandingan']		    = "eyevent/jadwal_pertandingan";
+$route['eyevent/hasil-pertandingan']		    = "eyevent/hasil_pertandingan";
 
 //$route['seo/sitemap\.xml'] = "seo/sitemap";
 

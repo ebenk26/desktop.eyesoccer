@@ -137,8 +137,9 @@ class Eyeme_model extends Master_model
 	*/
 	public function getExplore(){
 		$getImg = $this->mod->getAll('me_img','','',array('last_update'=> 'DESC'),20);
+		if(count($getImg) > 0 ){
 
-		for($i= 0 ; $i < count($getImg); $i++){
+		for($i= 0 ; $i <count($getImg);$i++){
 			$qry     = "SELECT 
 							* 
 						FROM tbl_member AS A			
@@ -153,13 +154,15 @@ class Eyeme_model extends Master_model
 			$comment = $this->mod->getAll('me_comment',
 								array('id_img' => $getImg[$i]->id_img));
 			
-			$getImg[$i]->username     = $dp[0]->username;
+			$getImg[$i]->username     = (count($dp) > 0 ? $dp[0]->username : '');
 			$getImg[$i]->countLike    = count($like);
 			$getImg[$i]->countComment = count($comment);
 
 			$getImg[$i]->comment      = $comment;
+			}
+			return $getImg;
 		}
-		return $getImg;
+		
 	}
 
 	/**
