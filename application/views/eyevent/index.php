@@ -58,7 +58,7 @@ body{
                             <div class="half2">          
                                 <div class="gambar2">
                                     <a href="<?php echo base_url(); ?>eyevent/detail/<?= $vent['url'];?>">                    
-                                        <img src="https://static.eyesoccer.id/v1/cache/images/<?php print $vent['thumb1']; ?>">
+                                        <img src="https://static.eyesoccer.id/v1/cache/images/<?php print $vent['pic']; ?>">
                                     </a>
                                     <div class="fl-r ae">
                                         <a href="">
