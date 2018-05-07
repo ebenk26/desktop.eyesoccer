@@ -53,7 +53,7 @@ $uri = ($competition == null ? 'Liga Indonesia 1' : $competition);
     	<li <?php echo ($page == $i ? 'class="active"' : '')?>><?php echo  anchor(pPLAYER.$uri.'/page/'.$i,$i)?></li>
 
     <?php endfor;?>
-    <?php if($totalPage > $page){?>
+    <?php if($totalPage-1 > $page){?>
 		<li>...</li>
 		<li><?php echo anchor(pPLAYER.$uri.'/page/'.$totalPage,$totalPage) ?></li>
     <?php }?>
