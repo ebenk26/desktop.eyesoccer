@@ -5243,3 +5243,52 @@ img.loading {
     overflow: scroll;
     border-bottom: 1px solid gainsboro;
 }
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    background-color: #00000036;
+}
+.modal.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+.box-popup {
+    position: relative;
+    width: 95%;
+    height: max-content;
+    background-color: white;
+    /* z-index: 15; */
+    /* left: 2.5%; */
+    box-shadow: 0 0 10px -4px #0000005e;
+    border-radius: 6px;
+    margin: 10px 2.5%;
+    /* top: 10px; */
+    float: unset;
+    padding: 10px 0px 25px;
+}
+.max-height-500{
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
