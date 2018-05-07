@@ -603,7 +603,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
@@ -613,7 +613,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
@@ -623,7 +623,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
