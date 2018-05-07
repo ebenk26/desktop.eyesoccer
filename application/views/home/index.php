@@ -9,7 +9,7 @@
 			padding: 10px 0px;
 		}
 		.listmatch:hover{
-		background-color:#fdd79f38;
+		background-color:#00a71a14;
 		}
 
 
@@ -192,7 +192,7 @@
             <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyetube.png" alt="">
             <h2 class="title et"><a href="<?php echo base_url();?>eyetube">EyeTube</a></h2>
             <hr class="x-et">
-            <div class="et-content m-b-100">
+            <div class="et-content">
                 <div class="et-content1 m-t-22">
 				<?php
 				foreach ($video_eyetube as $videonya)
@@ -217,7 +217,7 @@
 					<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>" style="text-decoration: unset;">
 						<h1 class="et-title"><?= $videonya['title']; ?></h1>
 					</a>
-                    <p class="et-d" style="max-height:95px; overflow:hidden;">
+                    <p class="et-d" style="max-height:60px; overflow:hidden;">
 					<?php
 						$keterangan = strip_tags($videonya['description']);
 						echo word_limiter($keterangan,25);
@@ -261,7 +261,7 @@
                 </div>					
             </div>
 
-            <div class="container tab" style="padding-top: 60px;">
+            <div class="container tab">
                 <span href="" id="star" data-target="#esTab" data-slide-to="0" class="active nonactive" active="true">eyesoccer star</span>
                 <span href="" id="vpopuler" data-target="#esTab" data-slide-to="1" class="nonactive">video popular</span>
                 <span href="" id="vkamu" data-target="#esTab" data-slide-to="2" class="nonactive">video kamu</span>
@@ -542,7 +542,7 @@
                     <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyemarket.png" alt="">
                     <h2 class="title emar"><a href="<?php echo base_url();?>eyemarket">EyeMarket</a></h2>
                     <hr class="x-emar">
-                        <div class="rek-ber" style="margin-top: -14px;">			
+                        <div class="rek-ber" style="margin-top: -4px;">			
 							<?php foreach ($products as $produk)
 							{
 							?>
@@ -603,7 +603,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="https://static.eyesoccer.id/v1/cache/images/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
@@ -613,7 +613,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="https://static.eyesoccer.id/v1/cache/images/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
@@ -623,7 +623,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="https://static.eyesoccer.id/v1/cache/images/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
@@ -643,7 +643,7 @@
                 <div class="et-content1">
                     <span class="jp green">JADWAL PERTANDINGAN</span>
                     <div class="border-box" style="margin-top: 22px;">
-							<div id="jadwal_home">
+							<div id="jadwal_home" class="max-height-500">
 							<table class="table border-b">
 							<?php
 								if(empty($jadwal_home)){
@@ -730,9 +730,9 @@
 					}
 				?>
                 </select>
-				<div id="klasemen4liga">
+				<div id="klasemen4liga" class="max-height-500" style="margin-top: 23px;max-height: 572px;">
 						<div id="liga_indonesia" style="top:-10px;">
-								<table class="border-box radius" cellspacing="0" cellpadding="0" style="margin-top: 11px;">
+								<table class="border-box radius" cellspacing="0" cellpadding="0" style="margin:  unset;">
 									<thead>
 										<tr>
 											<th title="Posisi">#</th>
@@ -826,7 +826,7 @@
 								</div>
 						</div>
 						<div id="liga_inggris" style="display:none;">
-								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin-top: 11px;">
+								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
 									<thead>
 										<tr>
 											<th title="Posisi">#</th>
@@ -918,7 +918,7 @@
 								</div>
 						</div>
 						<div id="liga_italia" style="display:none;">
-								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin-top: 11px;">
+								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
 									<thead>
 										<tr>
 											<th title="Posisi">#</th>
@@ -1012,7 +1012,7 @@
 								</div>
 						</div>
 						<div id="liga_spanyol" style="display:none;">
-								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin-top: 11px;">
+								<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
 									<thead>
 										<tr>
 											<th title="Posisi">#</th>
