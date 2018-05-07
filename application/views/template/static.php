@@ -422,15 +422,21 @@
 		$('img').renameAttr('src', 'data-src' );
 		$(function() {
 			var attr = $('img').attr('alt');
+			var attrclass = $(img).attr('class');
 
 			// For some browsers, `attr` is undefined; for others,
 			// `attr` is false.  Check for both.
 			if (typeof attr !== typeof undefined && attr !== false) {
 				$('img').attr('alt');
 			}
-			if (!$('img').hasClass("noLazyLoad")) {
+			if (typeof attrclass !== typeof undefined && attrclass !== false) {
+				if (!$('img').hasClass("noLazyLoad") || ) {
+					$('img').addClass('lazy');
+				}
+			}else{
 				$('img').addClass('lazy');
 			}
+			
 			/* $('.lazy').lazyload({
 				effect: "fadeIn",
 				effectTime: 5000
