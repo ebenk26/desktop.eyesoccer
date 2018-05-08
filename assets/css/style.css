@@ -5239,9 +5239,9 @@ img.loading {
     background: transparent;
 }
 .cat-widget{
-    height: 612px;
+    height: 584px;
     overflow: scroll;
-    border-bottom: 1px solid gainsboro;
+    border-bottom: 1px solid #dcdcdc;
 }
 .modal-open .modal {
     overflow-x: hidden;
