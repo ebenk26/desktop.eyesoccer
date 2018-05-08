@@ -675,7 +675,8 @@
                                 					echo $href_a ?>">
 										<span class="clb"><?=$row["club_a"]?></span></a></td>
 										<td><span class="i-l"><img class="lazy" src="<?=imgUrl()?>systems/club_logo/<?php print $row['logo_a']; ?>" alt=""></span></td>
-										<td class="tx-c"><?=date("H:i",strtotime($row["jadwal_pertandingan"]))?>
+										<td class="tx-c">
+										<span class="t-live"><?=$row["jadwal_pertandingan"]?></span>
 										<span
 													<?php
 													if($row['live_pertandingan']==NULL)

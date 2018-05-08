@@ -25,7 +25,7 @@ background-color:#fdd79f38;
         <li><a href='<?php echo base_url().'eyevent/jadwal-pertandingan'; ?>' style='display: unset'>Jadwal Pertandingan</a></li>
         </ul>
     </div>
-    <h3 class="o">Hasil Pertandingan Sebelumnya</h3>
+    <h3 class="o">Hasil Pertandingan Selanjutnya</h3>
     <table class="tb-hasil" id="tbl-date" style="display: none;">                    
         <thead>
             <tr>
