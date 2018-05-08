@@ -806,7 +806,7 @@ class Eyeprofile_model extends CI_Model
 		return $query;
 	}
 
-	public function get_hasil_klub($club_id)
+	public function get_jadw_klub($club_id)
 	{
 		$query = $this->db->query("SELECT 
 									a.*,c.club_id as club_id_a,
@@ -825,8 +825,35 @@ class Eyeprofile_model extends CI_Model
 									INNER JOIN tbl_club c ON c.club_id=a.tim_a 
 									INNER JOIN tbl_club d ON d.club_id=a.tim_b 
 									WHERE (a.tim_a='".$club_id."' OR a.tim_b='".$club_id."')
-									AND jadwal_pertandingan >now()
+									AND jadwal_pertandingan >= now()
 									ORDER BY jadwal_pertandingan ASC
+									LIMIT 1")->result_array();
+		return $query;
+	}
+
+	public function get_hasil_klub($club_id)
+	{
+		$query = $this->db->query("SELECT 
+									a.*,c.club_id as club_id_a,
+									d.club_id as club_id_b,
+									a.tim_a as tim_a,
+									a.tim_b as tim_b,
+									a.score_a as score_a,
+									a.score_b as score_b,
+									c.logo as logo_a,
+									d.logo as logo_b,
+									c.name as club_a,
+									d.name as club_b,
+									c.url as url_a,
+									d.url as url_b,
+									c.competition
+									FROM tbl_jadwal_event a 
+									LEFT JOIN tbl_event b ON b.id_event=a.id_event 
+									INNER JOIN tbl_club c ON c.club_id=a.tim_a 
+									INNER JOIN tbl_club d ON d.club_id=a.tim_b 
+									WHERE (a.tim_a='".$club_id."' OR a.tim_b='".$club_id."')
+									AND jadwal_pertandingan <now()
+									ORDER BY jadwal_pertandingan DESC
 									LIMIT 1")->result_array();
 		return $query;
 	}
@@ -855,6 +882,35 @@ class Eyeprofile_model extends CI_Model
 									LIMIT 5")->result_array();
 		return $query;
 	}
+
+
+	//Statistik Klub 2018
+	public function get_count_pwdl($cidclub)
+	{
+		$query = $this->db->query("SELECT 
+									COUNT(NULLIF(0, id_jadwal_event)) AS play,
+									SUM(CASE WHEN a.score_a > a.score_b THEN 1 ELSE 0 END) AS win,
+									SUM(CASE WHEN a.score_a = a.score_b THEN 1 ELSE 0 END) AS draw,
+									SUM(CASE WHEN a.score_a < a.score_b THEN 1 ELSE 0 END) AS lose
+									FROM tbl_jadwal_event a
+									WHERE (tim_a='".$cidclub."' OR tim_b='".$cidclub."')
+									AND year(jadwal_pertandingan)=2018")->result_array();
+		return $query;
+	}
+		//Statistik Goal Klub 2018
+		public function get_count_gkgt($cidclub)
+		{
+			$query = $this->db->query("SELECT 
+										SUM(CASE WHEN tim_a=$cidclub THEN a.score_a ELSE 0 END) AS goalm_kandang,
+										SUM(CASE WHEN tim_a=$cidclub THEN a.score_b ELSE 0 END) AS goalk_kandang,
+										SUM(CASE WHEN tim_b=$cidclub THEN a.score_b ELSE 0 END) AS goalm_tandang,
+										SUM(CASE WHEN tim_b=$cidclub THEN a.score_a ELSE 0 END) AS goalk_tandang
+										FROM tbl_jadwal_event a
+										WHERE (tim_a='".$cidclub."' OR tim_b='".$cidclub."')
+										AND year(jadwal_pertandingan)=2018")->result_array();
+			return $query;
+		}
+
 
 	public function get_manager($club_id){
 		$query = $this->db->query("select * from tbl_official_team where club_now = '".$club_id."' and  position in ('manager','manajer','menejer') limit 1");

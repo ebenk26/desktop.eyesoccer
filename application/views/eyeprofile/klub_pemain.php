@@ -5,7 +5,7 @@
 	}
 
 	.live_pert{position:relative;background-color:#ffa7265c;padding:5px;border-radius:15px;width:200px;top:20px;}
-	.liga_name{background-color:#ff000017;}
+	.liga_name{background-color:#74747417;}
 	.jadwallistresult{font-size:10px;font-weight:500;}
 	.sjrh{
 		font-size: 1.2em;
@@ -60,9 +60,14 @@
 	.listmatch:hover{
 		background-color:#fdd79f38;
 		}
-	.score_style_a{font-weight:bold;font-size:14px;border:2px solid;border-color:#ffa72645;border-radius:12px;background-color:#afa7a72e;padding:10px 5px 10px 5px;width:20px;margin-left:10px;}
-	.score_style_b{font-weight:bold;font-size:14px;border:2px solid;border-color:#ffa72645;border-radius:12px;background-color:#afa7a72e;padding:10px 5px 10px 5px;width:20px;margin-right:10px;}
-
+	.score_style_a{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-left:10px;}
+	.score_style_b{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-right:10px;}
+	.score_tim_a{width:35px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;right:50px;top:35px;font-size:40px;color:#CCC;background-color:#000000bf;}
+	.score_tim_b{width:35px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;left:50px;top:35px;font-size:40px;color:#CCC;background-color:#000000bf;}
+	
+	span.g-stats{font-size:30px;font-weight:bold;}
+	.b-stats{background-color:#e7e7e71a;border-radius:20px;}
+	.b-stats:hover{background-color:#ffa7266e;border-radius:20px;}
 </style>
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 </div>
@@ -355,7 +360,7 @@
                     </div>
                 </div>
 			<?php 
-				if(count($get_hasil_klub) > 0){
+				if(count($get_jadw_klub) > 0){
 			?>
 			<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
 				<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan <?=$r->name?> Selanjutnya</h3>
@@ -371,7 +376,7 @@
 							</tr>
 							<tr align="center">
 								<td colspan="3" style:"padding: 8px 8px 8px 6px;">
-								<?php foreach($get_hasil_klub as $row){
+								<?php foreach($get_jadw_klub as $row){
 										$datetime = new DateTime($row['jadwal_pertandingan']);
 										if($datetime->format('l') == 'Monday'){
 											$hari = 'Senin';
@@ -498,68 +503,149 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="container" style="display:none;">
-					<h3 class="pd-t-20">Pencetak Gol Terbanyak</h3>
-					<table id="liga_indonesia" class="pencetak-gol radius table table-striped" cellspacing="0" cellpadding="0">
-						<thead>
-							<tr>
-								<th>Pemain</th>
-								<th>Klub</th>
-								<th>Gol</th>
-								<th>Pinalti</th>
-								<th>S</th>
-							</tr>
-						</thead>
+			</div>
+			<?php
+				}else{
+			?>
+			<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
+				<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan Terakhir <?=$r->name?></h3>
+				<div class="container box-pertandingan" style="margin-left: -1px;margin-top: 22px;width:440px;">
+					<table style="margin-bottom: 29px !important;margin-right: 30px !important;">
 						<tbody>
-						<?php
-							$html = file_get_contents(LinkScrapingLigaIndonesia());
-							$premiere_doc = new DOMDocument();
-							libxml_use_internal_errors(TRUE); //disable libxml errors
-							if(!empty($html)){ //if any html is actually returned
-								$premiere_doc->loadHTML($html);
-								libxml_clear_errors(); //remove errors for yucky html
-								$pokemon_xpath = new DOMXPath($premiere_doc);
-								//get all the h2's with an id
-								$pokemon_row = $pokemon_xpath->query('//tr[@data-person_id]');
-								$pokemon_list = array();
-								$i = 0;
-								if($pokemon_row->length > 0){
-									foreach($pokemon_row as $row){
-										echo "<tr>";
-										if($i < 18){
-											$types = $pokemon_xpath->query('td', $row);
-											$n = 0;
-											foreach($types as $type){
-												if($type->nodeValue != ""){
-													$nodeValue = "<td>".$type->nodeValue.'</td>';
-													echo $nodeValue;
-												}
-												$n++;
-											}
-											$i ++;
+							<tr class="liga_name">
+								<td colspan="3">
+									<?php foreach($get_klub_detail as $row){ ?>
+									<h4 style="font-weight: 600;font-size: 18px;margin:33px;"><?php echo strtoupper($row['competition'])?></h4>
+									<?php } ?>
+								</td>
+							</tr>
+							<tr align="center">
+								<td colspan="3" style:"padding: 8px 8px 8px 6px;">
+								<?php foreach($get_hasil_klub as $row){
+										$datetime = new DateTime($row['jadwal_pertandingan']);
+										if($datetime->format('l') == 'Monday'){
+											$hari = 'Senin';
+										}elseif($datetime->format('l') == 'Tuesday'){
+											$hari = 'Selasa';
+										}elseif($datetime->format('l') == 'Wednesday'){
+											$hari = 'Rabu';
+										}elseif($datetime->format('l') == 'Thursday'){
+											$hari = 'Kamis';
+										}elseif($datetime->format('l') == 'Friday'){
+											$hari = 'Jumat';
+										}elseif($datetime->format('l') == 'Saturday'){
+											$hari = 'Sabtu';
+										}elseif($datetime->format('l') == 'Sunday'){
+											$hari = 'Minggu';
+										}else{
+											$hari = $datetime->format('l');
 										}
-										echo "</tr>";
-									}
-								}
-							} 
-						?>
+									?>
+									<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 75px 23px;font-weight:550;">
+										<?php echo $hari.", ".$datetime->format('d M Y')?>
+										<br><?php echo $datetime->format('H:i')." WIB";?>
+										<br><?php echo $row['lokasi_pertandingan']?>
+									</span>
+								</td>
+							</tr>
+							<tr class="t-20">
+								<td width="40%">
+									<!--<i class="material-icons i-l-pertandingan">keyboard_arrow_left</i>-->
+									<img src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_a']?>"> 
+								</td>
+								<td width="20%"><div class="score_tim_a"><?php echo $row['score_a']?></div> <strong style="font-size:20px;">-</strong> <div class="score_tim_b"><?php echo $row['score_b']?></div></td>
+								<td width="40%">
+									<img src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_b']?>"> 
+									<!--<i class="material-icons i-r-pertandingan">keyboard_arrow_right</i>-->
+								</td>
+							</tr>
+							<tr>
+								<td><strong><a href="<?=base_url()?>eyeprofile/klub_detail/<?=$row['url_a']?>"><?php echo $row['club_a'];?></a></strong></td>
+								<td></td>
+								<td><strong><a href="<?=base_url()?>eyeprofile/klub_detail/<?=$row['url_b']?>"><?php echo $row['club_b'];?></a></strong></td>
+							</tr>
+							<tr>
+								<td>
+									<table>
+										<tr>
+										<?php foreach($get_list_mh as $mh){
+												$mhform=0;
+												if ($mh['tim_a']==$club_id_a){
+													if($mh['score_a'] > $mh['score_b'] ){
+														$mhform="W";
+													}elseif($mh['score_a'] < $mh['score_b'] ){
+														$mhform="L";
+													}else{
+														$mhform="D";
+													}
+												}
+												elseif ($mh['tim_b']==$club_id_a){
+													if($mh['score_a'] > $mh['score_b'] ){
+														$mhform="L";
+													}elseif($mh['score_a'] < $mh['score_b'] ){
+														$mhform="W";
+													}else{
+														$mhform="D";
+													}
+												}
+											?>
+											<td align="center" title="<?php echo $mh['club_a']." ".$mh['score_a']."-".$mh['score_b']." ".$mh['club_b'];?>" align="center">
+												<div title="<?php echo $mh['club_a']." ".$mh['score_a']."-".$mh['score_b']." ".$mh['club_b'];?>" class="class-<?=$mhform;?>"><?=$mhform?></div>
+											</td>
+										<?php }
+										?>
+										</tr>
+									</table>
+								</td>
+								<td>
+								</td>
+								<td>
+									<table>
+										<tr>
+										<?php
+										foreach($get_list_mv as $mv){
+												$mvform="";
+												if ($mv['tim_b']==$club_id_b){
+													//echo $mv['score_a'].'/'.$mv['score_b'].'<br>';
+													if($mv['score_a'] > $mv['score_b'] ){
+														$mvform="L";
+													}elseif($mv['score_a'] < $mv['score_b'] ){
+														$mvform="W";
+													}else{
+														$mvform="D";
+													}
+												}
+												elseif ($mv['tim_a']==$club_id_b){
+													if($mv['score_a'] > $mv['score_b'] ){
+														$mvform="W";
+													}elseif($mv['score_a'] < $mv['score_b'] ){
+														$mvform="L";
+													}else{
+														$mvform="D";
+													}
+												}
+												?>
+											<td align="center" title="<?php echo $mv['club_a']." ".$mv['score_a']."-".$mv['score_b']." ".$mv['club_b'];?>" align="center">
+												<div title="<?php echo $mv['club_a']." ".$mv['score_a']."-".$mv['score_b']." ".$mv['club_b'];?>" class="class-<?=$mvform;?>"><?=$mvform?></div>
+											</td>
+										<?php }
+										?>
+										</tr>
+									</table>								
+								</td>
+							</tr>
+							<!--<tr class="t-20">
+								<td width="40%" style="font-size: 2em;font-weight: bold;color: orange;">
+									<?php // echo $row['score_a'];?>
+								</td>
+								<td width="20%" style="font-weight: 600;"></td>
+								<td width="40%" style="font-size: 2em;font-weight: bold;color: orange;">
+									<?php // echo $row['score_b']?>
+								</td>
+							</tr>-->
+							<?php } ?>
 						</tbody>
 					</table>
-					<div class="nav-pencetak-gol">
-						<ul>
-							<li>
-								<i class="material-icons left">keyboard_arrow_left</i>
-							</li>
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-							<li>4</li>
-							<li>5</li>
-							<li>
-								<i class="material-icons right">keyboard_arrow_right</i>
-							</li>
-						</ul>
-					</div>
 				</div>
 			</div>
 			<?php
@@ -594,10 +680,17 @@
 							</thead>
 							<tbody>
 								<tr>
-									<td align="center">?</td>
-									<td align="center">?</td>	
-									<td align="center">?</td>
-									<td align="center">?</td>
+									<?php 
+									foreach($get_pwdl_stats as $stats)
+									{
+									?>
+									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['play'];?>x</span></td>
+									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['win'];?>x</span></td>	
+									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['draw'];?>x</span></td>
+									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['lose'];?>x</span></td>
+									<?php
+									}
+									?>
 								</tr>
 							</tbody>
 						</table>
@@ -607,7 +700,7 @@
 					<div class="container box-pertandingan" style="border-radius: 15px;overflow: hidden;">
 						<table>
 							<thead>
-								<tr>
+								<tr>									
 									<th align="center" title="Goal Memasukan (%GM)">Memasukan
 										<table>
 											<thead>
@@ -623,34 +716,44 @@
 												<th align="center" title="Away">Away</th>
 											</thead>
 										</table>
-									</th>
+									</th>									
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
+									<?php 
+									foreach($get_gkgt_stats as $gstats)
+									{
+									?>
 									<td align="center">
 										<table>
 											<tr>
-												<td align="center">?</td>
-												<td align="center">?</td>
+												<td class="b-stats" align="center"><span class="g-stats"><?php echo $gstats['goalm_kandang'];?></span><strong>goal</strong></td>
+												<td class="b-stats" align="center"><span class="g-stats"><?php echo $gstats['goalm_tandang'];?></span><strong>goal</strong></td>
 											</tr>
 										</table>
 									</td>	
 									<td align="center">
 										<table>
 											<tr>
-												<td align="center">?</td>
-												<td align="center">?</td>
+												<td class="b-stats" align="center"><span class="g-stats"><?php echo $gstats['goalk_kandang'];?></span><strong>goal</strong></td>
+												<td class="b-stats" align="center"><span class="g-stats"><?php echo $gstats['goalk_tandang'];?></span><strong>goal</strong></td>
 											</tr>
 										</table>
-									</td>
+									</td>									
+									<?php
+									}
+									?>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-				</div>	
-				</br>
-				<h3 class="h3-oranye" style="margin-left: 20px;margin-top: 24px;margin-bottom: -10px;width:445px;">Prestasi Klub</h3>
+				</div>
+			</div>
+			</br>
+			</br>
+			</br>
+			<h3 class="container h3-oranye" style="margin-left: 20px;margin-top: 24px;margin-bottom: -10px;width:445px;">Prestasi Klub</h3>
 				<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
 					<div class="container box-pertandingan" style="border-radius: 15px;overflow: hidden;">
 						<table class="table table-stripped table-hover">
@@ -692,7 +795,6 @@
 					
 					</div> -->
 				</div>
-			</div>
 			<div class="container pd-b-50" style="padding-bottom: 100px;display:none;">
 				<div id="em2Slide" class="carousel slide">
 					<div role="listbox" class="carousel-inner">
