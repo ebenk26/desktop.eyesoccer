@@ -6,7 +6,7 @@
     <form class='form_multi' action="<?= base_url('member'); ?>" enctype="multipart/form-data">
         <input type="hidden" name="fn" class="cinput" value="regplayer">
         <div class="container data-profil">
-            <h2 style="text-align: center;font-weight: 400;">Registrasi Pemain</h2>
+            <h2 style="font-weight: 400;">Registrasi Pemain</h2>
             <div class="ff-12 mg-b15" style="font-weight:bold"><span class="cl-red">*</span> harus diisi</div>
             <table>
                 <?php if ($club == ''): ?>
@@ -119,7 +119,7 @@
                 }
             </script>
         </div>
-        <div class="tx-c">
+        <div class="tx-c simpan">
             <input type="submit" value="Simpan" class="klik-dsn" style="font-size:.85em;">
         </div>
     </form>

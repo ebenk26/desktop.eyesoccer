@@ -1,3 +1,9 @@
+ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
 .nav-top-section{
     position: relative;
 }
@@ -91,7 +97,7 @@
 .nav-dash{
     width: max-content;
     padding-right: 20px;
-    font-size: .85em;
+    font-size: 12px;
 }
 .nav-dash li{
     padding-right: 11px;
@@ -281,6 +287,7 @@
 }
 .player-tabs{
     width: 100%;
+    background-color: #e8e8e8 !important;
     overflow-x: auto;
 }
 .player-tab{
@@ -293,27 +300,85 @@
     color: rgb(245 166 35);
 }
 .player-galeri{
-    width: 135px;
-    height: 80px;
+    width: 33.33% !important;
+    /* height: 80px; */
+    margin: 5px 0;
     border-radius: 7px;
-    padding: 1px;
     overflow: hidden;
     position: relative;
-    display: inline-block;
-    background-color: gainsboro;
+    float: left;
 }
 .player-galeri input{
     position: absolute;
     z-index: 1;
     width: max-content;
 }
+.player-galeri .pad{
+    margin: 2px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.player-galeri .img{
+    display: block;
+    height: 140px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
 .player-galeri img{
     width: 100%;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); */
+}
+.player-galeri i{
+    float: right;
+    font-size: .9em;
+    position: relative;
+    top: 5px;
+    right: 17px;
+    color: white;
+    text-shadow: 0 0 8px #0000007a;
+}
+@media screen and (max-width: 800px) {
+    .player-galeri {
+        width: 20%!important;
+    }
+}
+@media screen and (max-width: 580px) {
+    .player-galeri {
+        width: 25%!important;
+    }
+}
+@media screen and (max-width: 425px) {
+    .player-galeri {
+        width: 33.3%!important;
+    }
+}
+@media screen and (max-width: 325px) {
+    .player-galeri {
+        width: 50%!important;
+    }
+}
+.gal-upload{
+    width: 240px;
+    height: 120px;
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 0 0 5px 1px #f1f1f1;
+    margin-bottom: 10px;
+}
+.gal-upload img{
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    color: #D8D8D8;
+    height: 100%;
 }
 .pd20{
     padding: 20px !important;
@@ -502,6 +567,36 @@
     background-color: rgb(62 62 62);
     color: white;
 }
+.submenu{
+    box-sizing: border-box;
+    font-size: 14px;
+    width: 100%;
+    overflow-x: auto;
+    background-color: #E0E0E0;
+}
+.submenus{
+    width: max-content;
+    padding: 12px 0;
+    margin: 0 auto;
+}
+.submenu ul{
+    text-align: center;
+    text-transform: capitalize;
+}
+.submenu li{
+    padding: 0 10px;
+}
+.black-notif {
+    position: absolute;
+    top: -1em;
+    font-size: .9em;
+    padding: 3px 6px;
+    background-color: #616161;
+    color: white;
+    font-weight: 600;
+    -webkit-font-smoothing: unset;
+    border-radius: 10px;
+}
 .x-form-daftar-pemain{
     padding: 20px;
     border-radius: 5px;
@@ -511,11 +606,11 @@
     background: rgb(253 253 253);
     position: relative;
 }
-.x-form-daftar-pemain i{
+/*.x-form-daftar-pemain i{
     position: absolute;
     top: 8px;
     right: 5px;
-}
+}*/
 .x-form-daftar-pemain span{
     display: block;
 }
@@ -603,6 +698,20 @@
     border-bottom: 2px solid #d8d8d8;
     box-sizing: border-box;
 }
+.data-profil textarea{
+    background-color: #fafafa;
+    border-radius: 5px;
+    padding: 7px;
+    font-size: 1em;
+    border: none;
+    border-bottom: 2px solid #d8d8d8;
+    appearance: unset;
+    box-sizing: border-box;
+}
+textarea {
+    max-width: 100%;
+    width: 100% !important;
+}
 .data-oficial td{
     padding: 5px 8px;
 }
@@ -619,6 +728,13 @@
 }
 .m-t-70{
     margin-top: -70px;
+}
+.tabel-lampiran td{
+    max-width: 100px;
+    text-align: center;
+}
+.tabel-lampiran td img{
+    width: 100%;
 }
 .data-profil{
     color: #505050;
@@ -641,6 +757,7 @@
 .container{
     width: unset;
     width: 100%;
+    text-align: left;
 }
 .box-radius-white{
     background-color: white;
@@ -660,6 +777,7 @@
     text-align: right;
 }
 .data-oficial select, .data-profil select{
+    width: 100%;
     background-color: #fafafa;
     border-radius: 5px;
     padding: 7px;
@@ -680,4 +798,125 @@
     display: inline-block;
     position: relative;
     /* left: 6%; */
+}
+.full-width {
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+    display: block;
+    padding: 0px 10px;
+    margin: 10px 0px;
+}
+.full-width .btn-blue {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.klik-dsn {
+    color: white;
+    background-color: #FFD000;
+    padding: 8px 30px 9px !important;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 6px -2px #ffb300;
+    max-height: unset !important;
+    font-size: .9em;
+    font-weight: 600;
+    text-align: center;
+    margin: 10px auto;
+}
+.tx-c {
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    padding: 8px;
+}
+body .ui-datepicker {
+    margin-bottom: 25px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px -3px #00000063;
+}
+body .ui-datepicker-header{
+    display: block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px;
+}
+body .ui-datepicker-title{
+    text-align: center;
+    font-weight: 600;
+    padding: 12px;
+}
+body .ui-datepicker-calendar td, .ui-datepicker-calendar th{
+    width: 14%;
+    text-align: center;
+    padding: 14px 8px;
+    font-size: 1.3em;
+}
+body .ui-datepicker-calendar tr{
+    border-bottom: .5px solid #EEEEEE;
+}
+body .ui-datepicker-current-day{
+    border: 1px solid #4CAF50;
+    background-color: #e8f5e961;
+    padding: 12px 6px !important;
+}
+body .ui-datepicker-today{
+    color: #4CAF50;
+    font-weight: 600;
+}
+body .ui-datepicker-week-end{
+    color: #9E9E9E;
+}
+body .ui-datepicker-calendar th{
+    background-color: white;
+}
+body .ui-datepicker-month, body .ui-datepicker-year{
+    -webkit-appearance: unset !important;
+    background-color: unset;
+    border: unset;
+    font-size: 1em;
+    color: white;
+    font-weight: 600;
+    padding: 0px;
+}
+body .ui-datepicker-next span{
+    content: url(https://www.eyesoccer.id/assets/img/arrowleft.png);
+    transform: rotate(180deg);
+    float: right;
+    position: relative;
+    top: 8.5px;
+}
+body .ui-datepicker-prev span{
+    content: url(https://www.eyesoccer.id/assets/img/arrowleft.png);
+    float: left;
+    position: relative;
+    top: 8.5px;
+}
+body #ui-datepicker-div{
+    position: fixed !important;
+    width: 98%;
+    max-width: 370px;
+    /* margin: 0 1%; */
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+    margin-bottom: unset !important;
+    box-shadow: 0 0 250px #00000059;
+}
+body ::-webkit-scrollbar {
+    height: 0px;
+    background: transparent;
+}
+body ::scrollbar {
+    height: 0px;
+    background: transparent;
 }

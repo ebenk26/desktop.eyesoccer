@@ -9,10 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="<?php echo SUBCDN."assets/$folder/img/fav.png" ?>" />
 
+    <link rel="stylesheet" href="<?php echo SUBCDN."assets/$folder/css/ext/bootstrap.css"; ?>">
     <link rel="stylesheet" href="<?php echo SUBCDN."assets/$folder/css/dev.css"; ?>">
-    <link rel="stylesheet" href="<?php echo SUBCDN."assets/$folder/css/style.css"; ?>">
-    <link rel="stylesheet" href="<?php echo SUBCDN."assets/$folder/css/dashboard.css"; ?>">
+    <link rel="stylesheet" href="<?php echo SUBCDN."assets/$folder/css/dashboard-desktop.css"; ?>">
     <link rel="stylesheet" href="<?php echo SUBCDN."assets/css/font-awesome/css/fontawesome-all.css"; ?>">
+    <link rel="stylesheet" href="<?php echo SUBCDN."assets/$folder/css/ext/style.css"; ?>">
+    <link rel="stylesheet" href="<?php echo SUBCDN."assets/$folder/css/ext/style-responsive.css"; ?>">
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -30,78 +32,39 @@
     <link href="<?php echo SUBCDN."assets/js/swalert/sweetalert.css" ?>" rel="stylesheet" />
     <script src="<?php echo SUBCDN."assets/js/swalert/sweetalert.min.js"; ?>"></script>
 </head>
-<body class="m-pd-t-100 body-responsive">
-    <?php $this->load->view($folder.'member/widget/top'); ?>
-
-    <div class="responsif-add-100px">
+<body>
+    <section id="container" >
+        <?php $this->load->view($folder.'member/widget/top'); ?>
         <?php $this->load->view($folder.'member/widget/menu'); ?>
-    </div>
 
-    <div id="isiContent" style="filter:none;">
-        <?php
-            $data['folder'] = $folder;
-            $this->load->view($folder.$content, $data);
-        ?>
-    </div>
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="col-lg-9 mg-t20">
+                    <?php
+                        $data['folder'] = $folder;
+                        $this->load->view($folder.$content, $data);
+                    ?>
+                </div>
+                <div class="col-lg-3 ds">
+                    <?php $this->load->view($folder . 'member/widget/notifside', $data); ?>
+                </div>
+            </section>
+        </section>
 
-    <div class='baseurl' val='<?php echo base_url(); ?>'></div>
+        <div class='baseurl' val='<?php echo base_url(); ?>'></div>
 
-    <div class='box_popup'>
-        <div class='loading'></div>
-        <div class='show_popup'></div>
-    </div>
-    <div class='xh'></div>
-
-    <!-- INBOX NOTIFICATION -->
-    <?php $this->load->view($folder.'member/widget/message'); ?>
-
-    <!-- NOTIFICATION -->
-    <?php $this->load->view($folder.'member/widget/notif'); ?>
+        <div class='box_popup'>
+            <div class='loading'></div>
+            <div class='show_popup'></div>
+        </div>
+        <div class='xh'></div>
+    </section>
 
     <script>
-        function myFunction() {
-            var x = document.getElementById("menuDashboard");
-            if (x.style.display == "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
         function closeFunction() {
             var y = document.getElementById("welcome");
             if (y.style.display == "block") {
                 y.style.display = "none";
-            }
-        }
-        function functionNotifInbox() {
-            var y = document.getElementById("notifInbox");
-            var p = document.getElementById("isiContent");
-            var q = document.getElementById("signNotifInbox");
-            var a = document.getElementById("notifications");
-            if (y.style.display == "none") {
-                y.style.display = "block";
-                q.style.display = "none";
-                p.style.filter = "blur(20px)";
-                a.style.display = "none";
-
-            } else {
-                y.style.display = "none";
-                p.style.filter = "unset";
-            }
-        }
-        function functionNotification() {
-            var a = document.getElementById("notifications");
-            var b = document.getElementById("isiContent");
-            var c = document.getElementById("signNotification");
-            var y = document.getElementById("notifInbox");
-            if (a.style.display == "none") {
-                a.style.display = "block";
-                c.style.display = "none";
-                b.style.filter = "blur(20px)";
-                y.style.display = "none";
-            } else {
-                a.style.display = "none";
-                b.style.filter = "unset";
             }
         }
     </script>
