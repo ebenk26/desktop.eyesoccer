@@ -275,7 +275,7 @@ class Home extends CI_Controller
             header("location:" . base_url() . "home/index");
         } else {
             $data['kanal'] = "registration";
-            $data["body"] = $this->load->view('member', $data);
+            $data["body"] = $this->load->view('login', $data);
         }
     }
 

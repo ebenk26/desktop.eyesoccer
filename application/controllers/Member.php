@@ -27,6 +27,7 @@ class Member extends CI_Controller
             }
         } else {
             $content = ($this->session->member ? 'member/home' : 'member/login');
+            $template = ($this->session->member ? 'member/template' : 'member/themes');
 
             if ($this->session->member) {
                 $query = array('id_member' => $this->session->member['id'], 'detail' => true, 'md5' => true);
@@ -57,7 +58,7 @@ class Member extends CI_Controller
             $data['meta_desc'] = $this->config->item('meta_desc');
             $data['meta_keyword'] = $this->config->item('meta_keyword');
 
-            $this->load->view($this->__theme() . 'member/template', $data);
+            $this->load->view($this->__theme() . $template, $data);
         }
     }
 
@@ -70,7 +71,7 @@ class Member extends CI_Controller
         $data['meta_desc'] = $this->config->item('meta_desc');
         $data['meta_keyword'] = $this->config->item('meta_keyword');
 
-        $this->load->view($this->__theme() . 'template', $data);
+        $this->load->view($this->__theme() . 'member/themes', $data);
     }
 
     function logout()

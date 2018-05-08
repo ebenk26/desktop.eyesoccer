@@ -7,7 +7,7 @@
             <li class="<?php echo ($active=='karir' ? 'active' : '')?>"><a href="<?php echo base_url()?>member/karir">prestasi</a></li>
             <li class="<?php echo ($active=='galeri' ? 'active' : '')?>"><a href="<?php echo base_url()?>member/galeri">galeri</a></li>
             <li class="<?php echo ($active=='verifikasi' ? 'active' : '')?>">
-                <a href="<?php echo base_url()?>member/verifikasi" style="position: relative;margin-right: 30px;">
+                <a href="<?php echo base_url()?>member/verifikasi" style="position: relative;">
                     verifikasi<span id="reqverifycount" class="loadverifycount black-notif" action="member" loading="off" clean="clsverifycount">
                         0
                         <input type='hidden' name='fn' value='verifycount' class='cinput'>
