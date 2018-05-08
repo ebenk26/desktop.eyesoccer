@@ -683,6 +683,10 @@
 									<?php 
 									foreach($get_pwdl_stats as $stats)
 									{
+										$stats['play']=$stats['play_a']+$stats['play_b'];
+										$stats['win']=$stats['win_a']+$stats['win_b'];
+										$stats['draw']=$stats['draw_a']+$stats['draw_b'];
+										$stats['lose']=$stats['lose_a']+$stats['lose_b'];
 									?>
 									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['play'];?>x</span></td>
 									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['win'];?>x</span></td>	

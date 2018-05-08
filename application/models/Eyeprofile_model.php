@@ -888,26 +888,30 @@ class Eyeprofile_model extends CI_Model
 	public function get_count_pwdl($cidclub)
 	{
 		$query = $this->db->query("SELECT 
-									COUNT(NULLIF(0, id_jadwal_event)) AS play,
-									SUM(CASE WHEN a.score_a > a.score_b THEN 1 ELSE 0 END) AS win,
-									SUM(CASE WHEN a.score_a = a.score_b THEN 1 ELSE 0 END) AS draw,
-									SUM(CASE WHEN a.score_a < a.score_b THEN 1 ELSE 0 END) AS lose
-									FROM tbl_jadwal_event a
+									SUM(CASE WHEN tim_a=$cidclub THEN 1 ELSE 0 END) AS play_a,
+									SUM(CASE WHEN tim_b=$cidclub THEN 1 ELSE 0 END) AS play_b,
+									SUM(CASE WHEN score_a > score_b AND tim_a=$cidclub THEN 1 ELSE 0 END) AS win_a,
+									SUM(CASE WHEN score_a < score_b AND tim_b=$cidclub THEN 1 ELSE 0 END) AS win_b,
+									SUM(CASE WHEN score_a = score_b AND tim_a=$cidclub THEN 1 ELSE 0 END) AS draw_a,
+									SUM(CASE WHEN score_a = score_b AND tim_b=$cidclub THEN 1 ELSE 0 END) AS draw_b,
+									SUM(CASE WHEN score_a < score_b AND tim_a=$cidclub THEN 1 ELSE 0 END) AS lose_a,
+									SUM(CASE WHEN score_a > score_b AND tim_b=$cidclub THEN 1 ELSE 0 END) AS lose_b
+									FROM tbl_jadwal_event
 									WHERE (tim_a='".$cidclub."' OR tim_b='".$cidclub."')
-									AND year(jadwal_pertandingan)=2018")->result_array();
+									AND jadwal_pertandingan >='2018-01-01 00:00:00' AND jadwal_pertandingan <='2018-12-31 23:59:59'")->result_array();
 		return $query;
 	}
 		//Statistik Goal Klub 2018
 		public function get_count_gkgt($cidclub)
 		{
 			$query = $this->db->query("SELECT 
-										SUM(CASE WHEN tim_a=$cidclub THEN a.score_a ELSE 0 END) AS goalm_kandang,
-										SUM(CASE WHEN tim_a=$cidclub THEN a.score_b ELSE 0 END) AS goalk_kandang,
-										SUM(CASE WHEN tim_b=$cidclub THEN a.score_b ELSE 0 END) AS goalm_tandang,
-										SUM(CASE WHEN tim_b=$cidclub THEN a.score_a ELSE 0 END) AS goalk_tandang
-										FROM tbl_jadwal_event a
+										SUM(CASE WHEN tim_a=$cidclub THEN score_a ELSE 0 END) AS goalm_kandang,
+										SUM(CASE WHEN tim_a=$cidclub THEN score_b ELSE 0 END) AS goalk_kandang,
+										SUM(CASE WHEN tim_b=$cidclub THEN score_b ELSE 0 END) AS goalm_tandang,
+										SUM(CASE WHEN tim_b=$cidclub THEN score_a ELSE 0 END) AS goalk_tandang
+										FROM tbl_jadwal_event
 										WHERE (tim_a='".$cidclub."' OR tim_b='".$cidclub."')
-										AND year(jadwal_pertandingan)=2018")->result_array();
+										AND jadwal_pertandingan >='2018-01-01 00:00:00' AND jadwal_pertandingan <='2018-12-31 23:59:59'")->result_array();
 			return $query;
 		}
 
