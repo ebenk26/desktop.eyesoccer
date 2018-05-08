@@ -2,13 +2,15 @@
     <div id="sidebar"  class="nav-collapse ">
         <ul class="sidebar-menu" id="nav-accordion">
             <div class="container bg-menu-pic">
-                <div class="menu-pic">
-                    <img src="<?php echo ($this->session->member != '') ? $this->session->member['url_pic'] : SUBCDN."assets/img/eyeme/user-discover.png"; ?>" alt="">
-                </div>
+                <a href="<?php echo base_url('member/profile'); ?>">
+                    <div class="menu-pic">
+                        <img src="<?php echo ($this->session->member != '') ? $this->session->member['url_pic'] : SUBCDN."assets/img/eyeme/user-discover.png"; ?>" alt="">
+                    </div>
 
-                <div class="tx-center mg-t20">
-                    <?php echo $this->session->member['name']; ?>
-                </div>
+                    <div class="tx-center mg-t20">
+                        <?php echo $this->session->member['name']; ?>
+                    </div>
+                </a>
             </div>
             <!--<p class="centered">
                 <a href="<?php /*echo base_url('member/profile'); */?>">
