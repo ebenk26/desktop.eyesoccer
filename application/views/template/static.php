@@ -422,13 +422,21 @@
 		$('img').renameAttr('src', 'data-src' );
 		$(function() {
 			var attr = $('img').attr('alt');
+			var attrclass = $(img).attr('class');
 
 			// For some browsers, `attr` is undefined; for others,
 			// `attr` is false.  Check for both.
 			if (typeof attr !== typeof undefined && attr !== false) {
 				$('img').attr('alt');
 			}
-			$('img').addClass('lazy');
+			if (typeof attrclass !== typeof undefined && attrclass !== false) {
+				if (!$('img').hasClass("noLazyLoad") || ) {
+					$('img').addClass('lazy');
+				}
+			}else{
+				$('img').addClass('lazy');
+			}
+			
 			/* $('.lazy').lazyload({
 				effect: "fadeIn",
 				effectTime: 5000
@@ -504,11 +512,11 @@
 			}
 		?>
         <div class="modal" id="popopo" role="dialog">
-        <div class="modal-dialog" style="left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 300px;">
+        <div class="modal-dialog" style="left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 900px;width: 80%;">
             <div class="box-popup">
                 <button style="padding: 0px;border:  none;font-size:  2em;opacity:  .3;position:  relative;float:  right;top:  -10px;right:  7px;" type="button" class="close" data-dismiss="modal">&times; </button>
-                <h3 style="font-size: 1.5em;margin:  0px;padding:  0px;text-align:  center;font-weight: 300;color:  #333;font-family: sans-serif;">Ayo Sukseskan!</h3>
-                <img style="width:  100%;box-sizing:  border-box;padding: 20px;" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3b/2018_Asian_Games_logo.svg/1200px-2018_Asian_Games_logo.svg.png" alt="">
+                <!-- <h3 style="font-size: 1.5em;margin:  0px;padding:  0px;text-align:  center;font-weight: 300;color:  #333;font-family: sans-serif;">Ayo Sukseskan!</h3> -->
+                <img class="noLazyLoad" style="width:  100%;box-sizing:  border-box;padding: 0px 20px;" src="<?php echo base_url(); ?>assets/img_storage/asiangamesbannerlsknv.jpg" alt="">
             </div>
         </div>
     </div>

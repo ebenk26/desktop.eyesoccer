@@ -618,7 +618,7 @@ class Home_model extends CI_Model
 
 	public function get_jadwal_home()
 	{
-		$query = $this->db->query("	SELECT a.*,c.club_id as club_id_a,d.club_id as club_id_b,c.logo as logo_a,d.logo as logo_b,c.name as club_a,d.name as club_b,c.competition as liga_a,d.competition as liga_b,c.url as url_a,d.url as url_b FROM tbl_jadwal_event a LEFT JOIN tbl_event b ON b.id_event=a.id_event INNER JOIN tbl_club c ON c.club_id=a.tim_a INNER JOIN tbl_club d ON d.club_id=a.tim_b where b.title !='' AND a.jadwal_pertandingan >= '".date("Y-m-d")."' order by jadwal_pertandingan ASC LIMIT 6
+		$query = $this->db->query("	SELECT a.*,c.club_id as club_id_a,d.club_id as club_id_b,c.logo as logo_a,d.logo as logo_b,c.name as club_a,d.name as club_b,c.competition as liga_a,d.competition as liga_b,c.url as url_a,d.url as url_b FROM tbl_jadwal_event a LEFT JOIN tbl_event b ON b.id_event=a.id_event INNER JOIN tbl_club c ON c.club_id=a.tim_a INNER JOIN tbl_club d ON d.club_id=a.tim_b where a.jadwal_pertandingan >= now() order by a.jadwal_pertandingan ASC LIMIT 16
 								")->result_array();
 		return $query;
 	}

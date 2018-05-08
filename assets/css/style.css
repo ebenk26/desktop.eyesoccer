@@ -5239,9 +5239,9 @@ img.loading {
     background: transparent;
 }
 .cat-widget{
-    height: 612px;
+    height: 584px;
     overflow: scroll;
-    border-bottom: 1px solid gainsboro;
+    border-bottom: 1px solid #dcdcdc;
 }
 .modal-open .modal {
     overflow-x: hidden;
@@ -5291,4 +5291,8 @@ img.loading {
     max-height: 500px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+#klasemen4liga::-webkit-scrollbar, #jadwal_home::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
 }

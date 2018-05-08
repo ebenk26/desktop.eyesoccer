@@ -603,7 +603,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="https://static.eyesoccer.id/v1/cache/images/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
@@ -613,7 +613,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="https://static.eyesoccer.id/v1/cache/images/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
@@ -623,7 +623,7 @@
 						?>
                             <div class="ev-box-content">
                                 <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
-								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="<?=imgUrl()?>systems/eyevent_storage/<?php print $row['thumb1']; ?>">								
+								<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="https://static.eyesoccer.id/v1/cache/images/<?php print $row['pic']; ?>">								
                             </a></div>
 						<?php }?>
                         </div>
@@ -675,7 +675,8 @@
                                 					echo $href_a ?>">
 										<span class="clb"><?=$row["club_a"]?></span></a></td>
 										<td><span class="i-l"><img class="lazy" src="<?=imgUrl()?>systems/club_logo/<?php print $row['logo_a']; ?>" alt=""></span></td>
-										<td class="tx-c"><?=date("H:i",strtotime($row["jadwal_pertandingan"]))?>
+										<td class="tx-c">
+										<span class="t-live"><?=$row["jadwal_pertandingan"]?></span>
 										<span
 													<?php
 													if($row['live_pertandingan']==NULL)
