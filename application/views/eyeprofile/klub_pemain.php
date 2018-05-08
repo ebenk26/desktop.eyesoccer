@@ -66,8 +66,29 @@
 	.score_tim_b{width:35px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;left:50px;top:35px;font-size:40px;color:#CCC;background-color:#000000bf;}
 	
 	span.g-stats{font-size:30px;font-weight:bold;}
-	.b-stats{background-color:#e7e7e71a;border-radius:20px;}
-	.b-stats:hover{background-color:#ffa7266e;border-radius:20px;}
+	.p-stats{background-color:#e2e2e2;}
+	.p-stats:hover{background-color:#e2e2e2;}
+	.w-stats{background-color:#daf8d2;}
+	.w-stats:hover{background-color:#1cc95c;}
+	.d-stats{background-color:#f7efd6;}
+	.d-stats:hover{background-color:#d5b41b;}
+	.l-stats{background-color:#efb9b969;}
+	.l-stats:hover{background-color:#d81c1c;}
+	.p-L_stats{background-color:#e2e2e2;}
+	.w-L_stats{background-color:#b3f9a270;}
+	.d-L_stats{background-color:#f4da884d;}
+	.l-L_stats{background-color:#f8e2e2;}
+	.goalm{background-color:#daf8d2;}
+	.goalk{background-color:#f8e2e2;}
+	.goalhm{background-color:#b0f9a2;}
+	.goalhk{background-color:#e35e5e;}
+	.goalak{background-color:#e63f3f;}
+	.goalam{background-color:#87fa70;}
+
+
+
+
+
 </style>
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 </div>
@@ -364,7 +385,7 @@
 			?>
 			<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
 				<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan <?=$r->name?> Selanjutnya</h3>
-				<div class="container box-pertandingan" style="margin-left: -1px;margin-top: 22px;width:440px;">
+				<div class="container box-pertandingan" style="margin:23px 23px 46px 0px;width:440px;">
 					<table style="margin-bottom: 29px !important;margin-right: 30px !important;">
 						<tbody>
 							<tr class="liga_name">
@@ -509,7 +530,7 @@
 			?>
 			<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
 				<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan Terakhir <?=$r->name?></h3>
-				<div class="container box-pertandingan" style="margin-left: -1px;margin-top: 22px;width:440px;">
+				<div class="container box-pertandingan" style="margin:23px 23px 46px 0px;width:440px;">
 					<table style="margin-bottom: 29px !important;margin-right: 30px !important;">
 						<tbody>
 							<tr class="liga_name">
@@ -672,10 +693,10 @@
 						<table>
 							<thead>
 								<tr>
-									<th align="center" title="Main">Main</th>
-									<th align="center" title="Menang (%Menang)">Menang</th>
-									<th align="center" title="Seri (%Seri)">Seri</th>		
-									<th align="center" title="Kalah (%Kalah)">Kalah</th>	
+									<th class="p-L_stats" width="40%" align="center" title="Main">Main</th>
+									<th class="w-L_stats" width="75" align="center" title="Menang (%Menang)">Menang</th>
+									<th class="d-L_stats" width="75" align="center" title="Seri (%Seri)">Seri</th>		
+									<th class="l-L_stats" width="75" align="center" title="Kalah (%Kalah)">Kalah</th>	
 								</tr>
 							</thead>
 							<tbody>
@@ -687,11 +708,22 @@
 										$stats['win']=$stats['win_a']+$stats['win_b'];
 										$stats['draw']=$stats['draw_a']+$stats['draw_b'];
 										$stats['lose']=$stats['lose_a']+$stats['lose_b'];
+										$p_win=($stats['win']/$stats['play'])*100;
+										$p_draw=($stats['draw']/$stats['play']*100);
+										$p_lose=($stats['lose']/$stats['play'])*100;
+
 									?>
-									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['play'];?>x</span></td>
-									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['win'];?>x</span></td>	
-									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['draw'];?>x</span></td>
-									<td class="b-stats" align="center"><span class="g-stats"><?php echo $stats['lose'];?>x</span></td>
+									<td class="p-stats" align="center"><span class="g-stats"><?php echo $stats['play'];?>x</span>
+									(<?=$stats['play_a']." Kandang & ".$stats['play_b']." Tandang";?>)</td>
+									<td class="w-stats" align="center"><span class="g-stats"><?php echo $stats['win'];?>x</span>
+									<strong style="font-size:16px;">(<?=number_format($p_win);?>%)</strong></br>
+									<?=$stats['win_a']." Kandang & ".$stats['win_b']." Tandang";?></td>	
+									<td class="d-stats" align="center"><span class="g-stats"><?php echo $stats['draw'];?>x</span>
+									<strong style="font-size:16px;">(<?=number_format($p_draw);?>%)</strong></br>
+									<?=$stats['draw_a']." Kandang & ".$stats['draw_b']." Tandang";?></td>
+									<td class="l-stats" align="center"><span class="g-stats"><?php echo $stats['lose'];?>x</span>
+									<strong style="font-size:16px;">(<?=number_format($p_lose);?>%)</strong></br>
+									<?=$stats['lose_a']." Kandang & ".$stats['lose_b']." Tandang";?></td>
 									<?php
 									}
 									?>
@@ -704,44 +736,44 @@
 					<div class="container box-pertandingan" style="border-radius: 15px;overflow: hidden;">
 						<table>
 							<thead>
-								<tr>									
-									<th align="center" title="Goal Memasukan (%GM)">Memasukan
+								<tr>
+									<?php 
+									foreach($get_gkgt_stats as $gstats)
+									{
+										$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
+										$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
+									?>									
+									<th class="goalm" align="center" title="Goal Memasukan (%GM)">Memasukan
 										<table>
-											<thead>
-												<th align="center" title="Home">Home</th>	
-												<th align="center" title="Away">Away</th>
+											<thead align="center">
+											</br><span class="g-stats"><?=$goalm;?></span></br><strong>goal</strong>
 											</thead>
 										</table>
 									</th>	
-									<th align="center" title="Goal Kemasukan (%GK)">Kemasukan
+									<th class="goalk" align="center" title="Goal Kemasukan (%GK)">Kemasukan
 										<table>
-											<thead>
-												<th align="center" title="Home">Home</th>	
-												<th align="center" title="Away">Away</th>
+											<thead align="center">
+											</br><span class="g-stats"><?=$goalk;?></span></br><strong>goal</strong>
 											</thead>
 										</table>
 									</th>									
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<?php 
-									foreach($get_gkgt_stats as $gstats)
-									{
-									?>
+								<tr>									
 									<td align="center">
 										<table>
 											<tr>
-												<td class="b-stats" align="center"><span class="g-stats"><?php echo $gstats['goalm_kandang'];?></span><strong>goal</strong></td>
-												<td class="b-stats" align="center"><span class="g-stats"><?php echo $gstats['goalm_tandang'];?></span><strong>goal</strong></td>
+												<td class="goalhm" align="center"><span class="g-stats"><?php echo $gstats['goalm_kandang'];?></span><strong>goal kandang</strong></td>
+												<td class="goalam" align="center"><span class="g-stats"><?php echo $gstats['goalm_tandang'];?></span><strong>goal tandang</strong></td>
 											</tr>
 										</table>
 									</td>	
 									<td align="center">
 										<table>
 											<tr>
-												<td class="b-stats" align="center"><span class="g-stats"><?php echo $gstats['goalk_kandang'];?></span><strong>goal</strong></td>
-												<td class="b-stats" align="center"><span class="g-stats"><?php echo $gstats['goalk_tandang'];?></span><strong>goal</strong></td>
+												<td class="goalhk" align="center"><span class="g-stats"><?php echo $gstats['goalk_kandang'];?></span><strong>goal kandang</strong></td>
+												<td class="goalak" align="center"><span class="g-stats"><?php echo $gstats['goalk_tandang'];?></span><strong>goal tandang</strong></td>
 											</tr>
 										</table>
 									</td>									
