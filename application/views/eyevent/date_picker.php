@@ -76,17 +76,16 @@
             foreach($video_eyetube as $newtube){
             ?>
             <div>
-                <div class="container h105">
-                    <a href="">
+                <div class="container h105" style="height: 100px;">
+                    <a href="<?php echo base_url(); ?>eyetube/detail/<?= $newtube['url'];?>" class="container">
                         <img src="<?php echo MEVID.$newtube['thumb']; ?>" alt="">
-                    </a>
                     <div class="drn">
                         <span></span>
                     </div>
                     <div class="container rv">
-                        <a href="<?php echo base_url(); ?>eyetube/detail/<?= $newtube['url'];?>">
+                        
                             <span style="margin-top:7px;"><?= $newtube['title']; ?></span>
-                        </a>
+                        
                         <div class="rr">
                             <span>
                                 <?php
@@ -97,6 +96,7 @@
                             </span>
                         </div>
                     </div>
+                </a>
                 </div>                              
             </div>
             <?php } ?>
@@ -105,7 +105,6 @@
 </div>
 <script>
     $(document).ready(function(){
-        $("#sidebar").sticky({topSpacing:60});
-        $("#sidebar").sticky({bottomSpacing:150});
+        $("#sidebar").sticky({topSpacing:60, bottomSpacing:0});
     });
 </script>
