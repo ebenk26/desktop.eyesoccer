@@ -511,17 +511,28 @@
 		<?php
 			}
 		?>
+		<?php
+			if(!$this->session->popupbanner){
+		?>
         <div class="modal" id="popopo" role="dialog">
         <div class="modal-dialog" style="left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 900px;width: 80%;">
             <div class="box-popup">
-                <button style="padding: 0px;border:  none;font-size:  2em;opacity:  .3;position:  relative;float:  right;top:  -10px;right:  7px;" type="button" class="close" data-dismiss="modal">&times; </button>
+                <button style="padding: 0px;border:  none;font-size:  2em;opacity:  .3;position:  relative;float:  right;top:  -10px;right:  7px;" type="button" class="close" data-dismiss="modal" onclick="sesPop()">&times; </button>
                 <!-- <h3 style="font-size: 1.5em;margin:  0px;padding:  0px;text-align:  center;font-weight: 300;color:  #333;font-family: sans-serif;">Ayo Sukseskan!</h3> -->
                 <img class="noLazyLoad" style="width:  100%;box-sizing:  border-box;padding: 0px 20px;" src="<?php echo base_url(); ?>assets/img_storage/asiangamesbannerlsknv.jpg" alt="">
             </div>
         </div>
     </div>
+		<?php
+			}
+		?>
     <script>
-    jQuery('#popopo').modal('show').on('hide.bs.modal')
+    jQuery('#popopo').modal('show').on('hide.bs.modal');
+	function sesPop(){
+		<?php
+			$this->session->popupbanner = true;
+		?>
+	}
     </script>
     </body>
 </html>
