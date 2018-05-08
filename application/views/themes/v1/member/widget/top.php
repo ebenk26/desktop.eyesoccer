@@ -1,4 +1,4 @@
-<div class="container stc">
+<div class="container stc m-0">
     <div class="container m-bar">
         <i class="fas fa-bars" onclick="myFunction()"></i>
         <!--<i class="far fa-envelope" onclick="functionNotifInbox()"></i><span id="signNotifInbox">1</span>
