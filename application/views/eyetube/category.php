@@ -295,7 +295,7 @@ body{
                         <div class="container subjudul">
                             <h4>JADWAL LIVE</h4>
                         </div>
-                        <div>
+                        <div class="container" style="height:560px; overflow:scroll; border-bottom: 1px solid gainsboro;">
                             <table>
 							<?php
 							foreach($jadwal_today as $row){
@@ -332,7 +332,7 @@ body{
                                 <a href="">
                                     <p class="lp" style="margin:0px;">Lihat selengkapnya ></p>
                                 </a>
-                            </div><br><br><br><br><br><br><br>
+                            </div>
                         </div>
                     </div>
                 </div>

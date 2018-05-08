@@ -1,28 +1,32 @@
 <?php
-$data['active'] = 'home';
-$this->load->view($folder . 'member/header', $data);
-$club = (!empty($clubstatus->data) ? $clubstatus->data[0] : "");
-$player = (!empty($playerstatus->data) ? $playerstatus->data[0] : "");
+    $data['active'] = 'home';
+    $this->load->view($folder . 'member/header', $data);
+    $club = (!empty($clubstatus->data) ? $clubstatus->data[0] : "");
+    $player = (!empty($playerstatus->data) ? $playerstatus->data[0] : "");
 ?>
 
-<div class="responsif-add-100px">
-    <div class="container wlc" id="welcome" style="display:block;">
-        <div>
-            <img src="<?php echo base_url('assets/img/email/background.png'); ?>" alt="">
-        </div>
-        <div class="close-wlcm">
-            <i class="fas fa-times" onclick="closeFunction()"></i>
-        </div>
-        <div class="wlcm">
-            <span>SELAMAT DATANG</span>
-            <span>DI EYESOCCER</span>
-            <span>UPDATE DATA PRIBADI KAMU</span>
+<div class="row mg-all20 pad-all">
+    <div class="col-12">
+        <div class="wlc" id="welcome" style="display:block;">
+            <div>
+                <img src="<?php echo base_url('assets/img/email/background.png'); ?>" alt="">
+            </div>
+            <div class="close-wlcm">
+                <i class="fas fa-times" onclick="closeFunction()"></i>
+            </div>
+            <div class="wlcm">
+                <span>SELAMAT DATANG</span>
+                <span>DI EYESOCCER</span>
+                <span>UPDATE DATA PRIBADI KAMU</span>
+            </div>
         </div>
     </div>
-    <div class="container daftar-pemain">
-        <?php
-        if ($club) {
-            ?>
+</div>
+<div class="row mg-lr mg-tb20">
+    <?php
+    if ($club) {
+        ?>
+        <div class="col-12">
             <div class="form-daftar-pemain">
                 <div class="pp-profil">
                     <?php $piclogo = (isset($clubpic)) ? explode('.', $clubpic->url_logo) : []; ?>
@@ -52,10 +56,12 @@ $player = (!empty($playerstatus->data) ? $playerstatus->data[0] : "");
                 }
                 ?>
             </div>
-            <?php
-        } else if ($player) {
-        } else {
-            ?>
+        </div>
+        <?php
+    } else if ($player) {
+    } else {
+        ?>
+        <div class="col-12">
             <div class="form-daftar-pemain">
                 <span>JIKA KAMU PEMILIK KLUB / SSB</span>
                 <span>DAFTARKAN KLUB KAMU</span>
@@ -63,12 +69,14 @@ $player = (!empty($playerstatus->data) ? $playerstatus->data[0] : "");
                     <button class="klik-dsn">KLIK DISINI</button>
                 </a>
             </div>
-            <?php
-        }
-        ?>
+        </div>
         <?php
-        if ($player) {
-            ?>
+    }
+    ?>
+    <?php
+    if ($player) {
+        ?>
+        <div class="col-12">
             <div class="form-daftar-pemain">
                 <div class="pp-profil">
                     <?php $picplayer = (isset($playerpic)) ? explode('.', $playerpic->url_logo) : []; ?>
@@ -91,10 +99,12 @@ $player = (!empty($playerstatus->data) ? $playerstatus->data[0] : "");
                 }
                 ?>
             </div>
-            <?php
-        } else if ($club) {
-        } else {
-            ?>
+        </div>
+        <?php
+    } else if ($club) {
+    } else {
+        ?>
+        <div class="col-12">
             <div class="form-daftar-pemain">
                 <span class="fs68">JIKA KAMU PEMAIN SEPAKBOLA</span>
                 <span>DAFTARKAN PEMAIN</span>
@@ -102,8 +112,8 @@ $player = (!empty($playerstatus->data) ? $playerstatus->data[0] : "");
                     <button class="klik-dsn">KLIK DISINI</button>
                 </a>
             </div>
-            <?php
-        }
-        ?>
-    </div>
+        </div>
+        <?php
+    }
+    ?>
 </div>

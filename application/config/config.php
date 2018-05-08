@@ -28,6 +28,15 @@ $config['xkeyback'] = 'eyeback:superb4cksm4rt3r';
 $config['themes'] = 'themes/v1/';
 
 /*
+ *
+ * Meta Default
+ *
+ */
+$config['meta_title'] = 'EyeSoccer: Portal Database & Berita Sepak Bola Terlengkap di Indonesia';
+$config['meta_desc'] = 'Berita sepak bola terbaru, jadwal dan hasil pertandingan, live score, transfer, klasemen liga Indonesia dan dunia & profil pemain & klub dari seluruh Indonesia.';
+$config['meta_keyword'] = 'jadwal bola, berita bola, sepak bola, jadwal siaran bola, jadwal sepak bola, berita bola terkini, berita bola terbaru, berita sepak bola, info bola, berita bola hari ini, bola hari ini';
+
+/*
 |--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
