@@ -89,9 +89,9 @@ class Eyenews extends CI_Controller {
 
 	public function detail($eyenews_id='',$action=null)
 	{
-		
+		 
 		$eyenews_id2 = $eyenews_id; //update rizki
-		$query=$this->db->query("SELECT * FROM tbl_eyenews WHERE url='".$eyenews_id."' LIMIT 1");
+		$query=$this->db->query("SELECT A.*,B.fullname,B.username FROM tbl_eyenews A INNER JOIN tbl_admin B	on B.admin_id = A.admin_id WHERE url='".$eyenews_id."' LIMIT 1");
 		$row=$query->row_array();
 		$data['news_type'] 				= $this->Master_model->getAll('tbl_news_types', $where = array(), $select = array('news_type'), $order = array(), $limit = '', $offset = '', $whereNotin = array('news_type',array('tulisan kamu')), $like = array());
 		$data['kategori']	= $this->Master_model->getAll('tbl_eyenews', $where = array('url'=>$eyenews_id), $select = array('news_type'), $order = array(), $limit = '', $offset = '', $whereNotin = array(), $like = array());
@@ -116,11 +116,46 @@ class Eyenews extends CI_Controller {
 		$data["meta"]["title"]="";
 		$data["meta"]["image"]=base_url()."/assets/img/tab_icon.png";
 		$data["meta"]["description"]="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
+		$abc=strip_tags($row['description']);
+		$string = htmlentities($abc, null, 'utf-8');
+		$content = str_replace("&amp;ndash;", "-", $string);
+		$contents =substr($content, 0, 200);
 		$data["meta"]["share"]='
-		<!-- Begin of SEO Meta Tags -->
+		<script type="application/ld+json">
+			{
+			"@context": "http://schema.org",
+			"@type": "NewsArticle",
+			"mainEntityOfPage": {
+				"@type": "WebPage",
+				"@id": "https://eyesoccer.id/eyenews/detail/'.$linksite.'"
+			},
+			"headline": "'.$row['title'].'",
+			"image": [
+				"https://static.eyesoccer.id/v1/cache/images/'.$row['pic'].'/small",
+				"https://static.eyesoccer.id/v1/cache/images/'.$row['pic'].'/medium",
+				"https://static.eyesoccer.id/v1/cache/images/'.$row['pic'].'"
+			],
+			"datePublished": "'.$row['publish_on'].'",
+			"dateModified": "'.$row['publish_on'].'",
+			"author": {
+				"@type": "Person",
+				"name": "'.$row['fullname'].'"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Eyesoccer Indonesia",
+				"logo": {
+				"@type": "ImageObject",
+				"url": "https://www.eyesoccer.id/img/logo2.png"
+				}
+			},
+			"description":"'.$contents.'"
+			}
+		</script>
+		<!-- Begin of SEO Meta Tags --> Egy Maunala viral
 		<title>'.$row['title'].' - EyeNews | EyeSoccer</title>
 		<meta name="title" content="'.$row['title'].' - EyeNews | EyeSoccer" />
-		<meta name="description" content="'.preg_replace('/\s+?(\S+)?$/', '', substr(strip_tags($row['description']), 0, 100)).'" />
+		<meta name="description" content="'.$contents.' |Berita Bola Terbaru| Viral | Terkini | Mancanegara " />
 		<meta name="googlebot-news" content="index,follow" />
 		<meta name="googlebot" content="index,follow" />
 		<meta name="robots" content="index,follow" />
@@ -140,7 +175,7 @@ class Eyenews extends CI_Controller {
 		<meta property="og:type" content="Website" />
 		<meta property="og:title" content="'.$row['title'].' - EyeNews | EyeSoccer" />
 		<meta property="og:image" content="http://eyesoccer.id/systems/eyenews_storage/'.$row['pic'].'" />
-		<meta property="og:description" content="'.preg_replace('/\s+?(\S+)?$/', '', substr(strip_tags($row['description']), 0, 100)).'" />
+		<meta property="og:description" content="'.$contents.'" />
 		<meta property="og:locale" content="id_ID" />
 		<!--End of Facebook open graph data-->
 		   
@@ -150,7 +185,7 @@ class Eyenews extends CI_Controller {
 		<meta name="twitter:creator" content="@eyesoccer_id" />
 		<meta name="twitter:domain" content="EyeSoccer"/>
 		<meta name="twitter:title" content="'.$row['title'].'" />
-		<meta name="twitter:description" content="'.preg_replace('/\s+?(\S+)?$/', '', substr(strip_tags($row['description']), 0, 100)).'" />
+		<meta name="twitter:description" content="'.$contents.'" />
 		<meta name="twitter:image" content="https://www.eyesoccer.id/systems/eyenews_storage/'.$row['pic'].'" />
 		<!--end of twitter card data-->
 		';
