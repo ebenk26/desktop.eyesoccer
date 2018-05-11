@@ -441,7 +441,7 @@
                             <div>
                                 <div class="container h105">
                                     <a href="">
-                                        <img src="<?php echo imgCache($populer['thumb'],'small'); ?>">
+                                        <img style="display: block;" src="<?php echo imgCache($populer['thumb'],'small'); ?>">
                                     </a>
 
                                     <div class="container rd">

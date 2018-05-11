@@ -7,7 +7,8 @@ $limit = $res[0]->query->limit;
 (int) $page  = $res[0]->query->page;
 $totalPage = ceil($countLocalPlayer/$limit); //total page
 $competition = $res[0]->query->competition;
-$uri = ($competition == null ? 'Liga Indonesia 1' : $competition);
+$league = ($res[0]->query->league == 'SSB / Akademi Sepakbola' ? 'SSB' :  $res[0]->query->league);
+$uri = ($competition == null ? 'Liga Indonesia 1' : ($league != null || $league != '' ? $competition.'/'.$league : $competition));
 ?>
 <table class="stripe cell-border table-striped table-hover" cellspacing="0" width="100%">
 	<thead id="back900">

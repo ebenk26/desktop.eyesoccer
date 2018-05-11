@@ -942,18 +942,18 @@ class Eyeprofile_model extends CI_Model
 		$r  = $this->excurl->remoteCall($this->__xurl().'competition',$this->__xkey(),$query);
 		$r = json_decode($r)->data;
 
-		$r[count($r)] = $r[0];
-		//order values of array 
-		for($i= 0 ;$i < count($r);$i++){
+		// $r[count($r)] = $r[0];
+		// //order values of array 
+		// for($i= 0 ;$i < count($r);$i++){
 		
-			$r[$i] = $r[$i+1];
-			if($i == 5){
-				unset($r[5]);
-			}
+		// 	$r[$i] = $r[$i+1];
+		// 	if($i == 5){
+		// 		unset($r[5]);
+		// 	}
 
-		}
-		$res = array_values($r);
-		return $res;
+		// }
+		// $res = array_values($r);
+		return $r;
 	}
 	
 	public function get_all_liga()
@@ -1043,15 +1043,9 @@ class Eyeprofile_model extends CI_Model
 		return $res;
 	}
 	public function  __getplayerlist(){
-		if($this->input->post('competition') == 'SSB ' || $this->input->post('competition') == 'non liga'){
-			$competition = 'SSB / Akademi Sepakbola';
-			$league = '';
-		}
-		else{
-			$competition = $this->input->post('competition');
-			$league = $this->input->post('league');
-		}
-		$page  = $this->input->post('page');
+		$competition = $this->input->post('competition');
+		$league = $this->input->post('league') == 'SSB' ? 'SSB / Akademi Sepakbola' : $this->input->post('league') ;	
+		$page =$this->input->post('page');
 		$query = array('page'=> $page,'limit' => '10','competition'=> $competition,'league'=> $league);
 		$query2 = $query;
 		$query2['playercount'] = true;
@@ -1063,14 +1057,9 @@ class Eyeprofile_model extends CI_Model
 
 	}
 	public function __getdataleague(){
-		if($this->input->post('competition') == 'SSB ' || $this->input->post('competition') == 'non liga'){
-			$competition = 'SSB / Akademi Sepakbola';
-			$league = '';
-		}
-		else{
-			$competition = $this->input->post('competition');
-			$league = $this->input->post('league');
-		}
+		$competition = $this->input->post('competition');
+		$league = $this->input->post('league') == 'SSB' ? 'SSB / Akademi Sepakbola' : $this->input->post('league') ;	
+		$page =$this->input->post('page');
 		$query = array('page'=> '1','limit' => '10','competition'=> $competition,'league'=> $league,'playercount'=> true,'count'=> true);
 		$data['player'] = $this->excurl->remoteCall($this->__xurl().'profile',$this->__xkey(),$query);
 		$data['club']  = $this->excurl->remoteCall($this->__xurl().'profile-club',$this->__xkey(),$query);
@@ -1079,15 +1068,9 @@ class Eyeprofile_model extends CI_Model
 		echo json_encode($arr);
 	}
 	public function __getclubdata(){
-		if($this->input->post('competition') == 'SSB ' || $this->input->post('competition') == 'non liga'){
-			$competition = 'SSB / Akademi Sepakbola';
-			$league = '';
-		}
-		else{
-			$competition = $this->input->post('competition');
-			$league = $this->input->post('league');
-		}
-
+		$competition = $this->input->post('competition');
+		$league = $this->input->post('league') == 'SSB' ? 'SSB / Akademi Sepakbola' : $this->input->post('league') ;	
+		$page =$this->input->post('page');
 		$query[0] = array('competition' => $competition,'league'=> $league,'playercount'=> true);
 		$query[1] = array('competition' => $competition,'league'=> $league,'count'=> true);
 		$data['res'][0] = $this->excurl->remoteCall($this->__xurl().'profile',$this->__xkey(),$query[0]);
@@ -1098,15 +1081,9 @@ class Eyeprofile_model extends CI_Model
 
 	}
 	public function __getlistofficial(){
-		if($this->input->post('competition') == 'SSB ' || $this->input->post('competition') == 'non liga'){
-			$competition = 'SSB / Akademi Sepakbola';
-			$league = '';
-		}
-		else{
-			$competition = $this->input->post('competition');
-			$league = $this->input->post('league');
-		}
-		$page = $this->input->post('page');
+		$competition = $this->input->post('competition');
+		$league = $this->input->post('league') == 'SSB' ? 'SSB / Akademi Sepakbola' : $this->input->post('league') ;	
+		$page =$this->input->post('page');
 		$query[0] = array('page'=> $page,'limit'=> '10','competition' => $competition,'league' => $league);
 		$query[1] = array('page'=> $page,'limit'=> '10','competition' => $competition,'league' => $league,'count'=> true);
 		$data['res'][0] = $this->excurl->remoteCall($this->__xurl().'profile-official',$this->__xkey(),$query[0]);
@@ -1118,16 +1095,10 @@ class Eyeprofile_model extends CI_Model
 	}
 	public function __getlistclub(){
 
-		if($this->input->post('competition') == 'SSB ' || $this->input->post('competition') == 'non liga'){
-			$competition = 'SSB / Akademi Sepakbola';
-			$league = '';
-		}
-		else{
-			$competition = $this->input->post('competition');
-			$league = $this->input->post('league');
-		}
-		
-		$page = $this->input->post('page');
+	
+		$competition = $this->input->post('competition');
+		$league = $this->input->post('league') == 'SSB' ? 'SSB / Akademi Sepakbola' : $this->input->post('league') ;	
+		$page =$this->input->post('page');
 		$query[0] = array('page'=> $page,'limit'=> '12','competition'=> $competition,'league' => $league);
 		$query[1] = array('count'=> true,'competition'=> $competition,'league' => $league);
 		$data['res'] = $this->excurl->remoteCall($this->__xurl().'profile-club',$this->__xkey(),$query[0]);

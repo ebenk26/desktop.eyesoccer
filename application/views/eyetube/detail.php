@@ -422,7 +422,7 @@
                                         <a href="<?= base_url() ?>eyetube/detail/<?= $tube_lain['url']; ?>">
                                             <div class="container h105">
                                                 <div>
-                                                    <img src="<?= MEVID.$tube_lain['thumb']; ?>/small" alt="">
+                                                    <img style="display: block;" src="<?= MEVID.$tube_lain['thumb']; ?>/small" alt="">
                                                     <div class="upr" style="background-color: unset;">
                                                         <span style="visibility: hidden;">2:30</span>
                                                     </div>
@@ -452,7 +452,7 @@
                     </div>
                     <div class="down-r-tube">
                         <div class="pd">
-                            <div class="container mt-20 banner-eyetube1 img-banner" style="background-color: unset;">
+                            <div class="container mt-20 banner-eyetube1 img-banner" style="background-color: unset;background: url('http://eyesoccer.id/assets/img/iklanbanner/banner 360x320px-01.jpg');background-repeat: no-repeat;">
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- EyesoccerDekstop 20#EeyetubeDetailSquareResponsive -->
                             <ins class="adsbygoogle"
@@ -475,7 +475,7 @@
                                 ?>
                                         <a href="<?= base_url() ?>eyetube/detail/<?= $populer['url']; ?>">
                                             <div class="container h105">
-                                                <img src="<?= MEVID.$populer['thumb']; ?>/small" alt="">
+                                                <img style="display: block;" src="<?= MEVID.$populer['thumb']; ?>/small" alt="">
                                                 <div class="upr" style="background-color: unset;">
                                                     <span style="visibility: hidden;">2:30</span>
                                                 </div>
