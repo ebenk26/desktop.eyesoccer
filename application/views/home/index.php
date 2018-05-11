@@ -716,7 +716,7 @@
 							</table>
 						</div>
                         <div class="t-c-b">
-                            <a href="<?=base_url()?>eyevent"><button type="" class="btn-green">Lihat Jadwal Lainnya</button></a>
+                            <a href="<?=base_url()?>eyevent/jadwal-pertandingan"><button type="" class="btn-green">Lihat Jadwal Lainnya</button></a>
                         </div>
                     </div>
                 </div>

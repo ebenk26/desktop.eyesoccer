@@ -118,7 +118,8 @@ class Eyeprofile extends CI_Controller {
         $data["meta"]["description"] = set_meta('',['url'=> pPLAYER,'result'=> 'share']);
         $data['get_klub_detail'] = $this->Eyeprofile_model->get_klub_detail($url);
         $data['get_klub_detail_row_array'] = $this->Eyeprofile_model->get_klub_detail_row_array($url);
-        $data['get_hasil_klub'] = $this->Eyeprofile_model->get_hasil_klub($data['get_klub_detail_row_array']['club_id']);
+		$data['get_jadw_klub'] = $this->Eyeprofile_model->get_jadw_klub($data['get_klub_detail_row_array']['club_id']);
+		$data['get_hasil_klub'] = $this->Eyeprofile_model->get_hasil_klub($data['get_klub_detail_row_array']['club_id']);
 		$cidclub=$data['get_klub_detail_row_array']['club_id'];
 		$data['get_result_klub'] = $this->Eyeprofile_model->get_result_klub($cidclub);
 		if($data['get_result_klub']==NULL){
@@ -126,6 +127,8 @@ class Eyeprofile extends CI_Controller {
 		}else{
 			$club_id=$cidclub;
 		}
+		$data['get_pwdl_stats'] = $this->Eyeprofile_model->get_count_pwdl($cidclub);
+		$data['get_gkgt_stats'] = $this->Eyeprofile_model->get_count_gkgt($cidclub);
 		$data['club_id']=$club_id;
 		$data['get_hasil_klub'] = $this->Eyeprofile_model->get_hasil_klub($data['get_klub_detail_row_array']['club_id']);
 		if($data['get_hasil_klub']==NULL){
