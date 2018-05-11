@@ -1,5 +1,7 @@
 <?php 
 $res = json_decode($res);
+// p($res);
+// exit;
 
 
 echo "<div class='ep2box fl-l pd-t-20'>";		

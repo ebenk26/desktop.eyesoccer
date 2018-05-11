@@ -1,6 +1,8 @@
 <?php 
 $comp = ($this->uri->segment(3) == '' ? 'Liga Indonesia 1' : urldecode($this->uri->segment(3)));
-$pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this->uri->segment(6) : $this->uri->segment(5)) : 1 );?>
+$pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' AND urldecode($this->uri->segment(5) != 'Akademi Sepakbola') ? $this->uri->segment(6) : $this->uri->segment(5)) : 1 );
+#echo urldecode($pageCtrl);?>
+
 <style>
 	.tab-active{
     background-color: #ffa7261f;
