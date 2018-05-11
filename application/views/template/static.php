@@ -516,10 +516,10 @@
 		?>
         <div class="modal" id="popopo" role="dialog">
         <div class="modal-dialog" style="left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 900px;width: 80%;">
-            <div class="box-popup">
-                <button style="padding: 0px;border:  none;font-size:  2em;opacity:  .3;position:  relative;float:  right;top:  -10px;right:  7px;" type="button" class="close" data-dismiss="modal" onclick="sesPop()">&times; </button>
+            <div class="box-popup" style="padding: unset;overflow: hidden;box-shadow: 0 0 25px -5px #7d7d7dfc;">
+                <button style="padding: unset;border:  none;font-size:  1.5em;opacity:  .3;position: absolute;float:  right;top: -5px;right:  7px;" type="button" class="close" data-dismiss="modal" onclick="sesPop()">&times; </button>
                 <!-- <h3 style="font-size: 1.5em;margin:  0px;padding:  0px;text-align:  center;font-weight: 300;color:  #333;font-family: sans-serif;">Ayo Sukseskan!</h3> -->
-                <img class="noLazyLoad" style="width:  100%;box-sizing:  border-box;padding: 0px 20px;" src="<?php echo base_url(); ?>assets/img_storage/asiangamesbannerlsknv.jpg" alt="">
+                <img class="noLazyLoad" style="width:  100%;box-sizing:  border-box;padding: unset;margin: -6px 0;" src="<?php echo base_url(); ?>assets/img_storage/asiangamesbannerlsknv.jpg" alt="">
             </div>
         </div>
     </div>
