@@ -88,9 +88,9 @@ $route['author/(:any)'] 						= "author/index/$1";
 $route['author'] 							    = "author/home";
 $route['jadwal-bola']               	        = "eyevent/jadwal_pertandingan";
 $route['hasil-pertandingan-bola']	    	    = "eyevent/hasil_pertandingan";
+$route['p/(:any)']                              = "eyeprofile/klub_detail/$1";
 
 //$route['seo/sitemap\.xml'] = "seo/sitemap";
-
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
