@@ -152,7 +152,7 @@ class Eyenews extends CI_Controller {
 			"description":"'.$contents.'"
 			}
 		</script>
-		<!-- Begin of SEO Meta Tags --> Egy Maunala viral
+		<!-- Begin of SEO Meta Tags -->
 		<title>'.$row['title'].' - EyeNews | EyeSoccer</title>
 		<meta name="title" content="'.$row['title'].' - EyeNews | EyeSoccer" />
 		<meta name="description" content="'.$contents.' |Berita Bola Terbaru| Viral | Terkini | Mancanegara " />
