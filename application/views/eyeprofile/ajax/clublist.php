@@ -41,8 +41,10 @@ $limit = $res->query->limit;
 (int) $page  = $res->query->page;
 $totalPage = ceil($totalRows/$limit); //total page
 $competition = $res->query->competition;
-$league = $res->query->league;
-$uri = ($competition == null ? 'Liga Indonesia 1' : ($league != null || $league != '' ? $competition.'/'.$league : $competition));?>
+$league = ($res->query->league == 'SSB / Akademi Sepakbola' ? 'SSB' :  $res->query->league);
+$uri = ($competition == null ? 'Liga Indonesia 1' : ($league != null || $league != '' ? $competition.'/'.$league : $competition));
+;?>
+
 
 <div class="pull-right">
 	
