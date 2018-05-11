@@ -110,7 +110,7 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 				
 				<option <?php echo ($r->competition == urldecode($this->uri->segment(3)) || substr($r->competition,0,4) == urldecode($this->uri->segment(3)) ? 'selected' : '')?> value="<?php echo ($r->competition =='Liga Usia Muda' ? 'Liga Usia Muda' : pCLUB.$r->competition)?>"><?php echo $r->competition;?></option>
 				<?php endforeach; ?>
-				<option <?php echo (urldecode($this->uri->segment(3)) == 'non liga' ? 'selected' : '') ?> value="<?php echo pCLUB."non liga"?>" >Non Liga</option>
+		
                 </select>
 				
 				<select id="chained_liga" name="" selected="true" class="slc-musim fl-r" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" style="margin: 0px 0px 2px;display:none;">

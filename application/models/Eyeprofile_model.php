@@ -942,18 +942,18 @@ class Eyeprofile_model extends CI_Model
 		$r  = $this->excurl->remoteCall($this->__xurl().'competition',$this->__xkey(),$query);
 		$r = json_decode($r)->data;
 
-		$r[count($r)] = $r[0];
-		//order values of array 
-		for($i= 0 ;$i < count($r);$i++){
+		// $r[count($r)] = $r[0];
+		// //order values of array 
+		// for($i= 0 ;$i < count($r);$i++){
 		
-			$r[$i] = $r[$i+1];
-			if($i == 5){
-				unset($r[5]);
-			}
+		// 	$r[$i] = $r[$i+1];
+		// 	if($i == 5){
+		// 		unset($r[5]);
+		// 	}
 
-		}
-		$res = array_values($r);
-		return $res;
+		// }
+		// $res = array_values($r);
+		return $r;
 	}
 	
 	public function get_all_liga()

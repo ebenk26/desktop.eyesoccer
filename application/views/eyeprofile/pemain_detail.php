@@ -5,14 +5,7 @@
     <div class="container">
         <div class="garis-banner over-in profile-pemain">
             <div class="left">
-                <!-- <svg style="height: 189px;">
-                    <g id="Layer_2" data-name="Layer 2">
-                        <g id="Layer_1-2" data-name="Layer 1">
-                            <polygon class="fill" points="132 0 22 190 0 190 110 0 132 0" />
-                            <polygon class="fill" points="330 0 330 190 42 190 152 0 330 0" />
-                        </g>
-                    </g>
-                </svg> -->
+               
                 <div class="box-img-radius">
                     <img src="<?php echo $res->url_pic.'/medium' ?>" alt="">                        
                 </div>
