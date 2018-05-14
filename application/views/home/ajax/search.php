@@ -16,7 +16,7 @@ $query = $query['search'];
 	?>
 		<div>
 			<a href="<?php echo $value->url?>"><?php echo str_replace(array($query,ucwords($query),strtoupper($query),strtolower($query)),'<span style="background-color:yellow;">'.$query.'</span>',$value->title)?></a><br>
-			<?php echo strip_tags(word_limiter($value->title,25));?>
+			
 		</div>
 		<hr>
 	<?php
@@ -36,7 +36,7 @@ $query = $query['search'];
 	?>
 		<div>
 			<a href="<?php echo base_url()?>eyetube/detail/<?php echo $value->slug?>"><?php echo str_replace(array($query,ucwords($query),strtoupper($query),strtolower($query)),'<span style="background-color:yellow;">'.$query.'</span>',$value->title)?></a><br>
-			<?php echo strip_tags(word_limiter($value->title,25));?>
+			
 		</div>
 		<hr>
 	<?php
