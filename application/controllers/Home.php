@@ -36,7 +36,7 @@ class Home extends CI_Controller
         else{
         $data["meta"]["title"] = "";
         $data["meta"]["image"] = base_url() . "/assets/img/tab_icon.png";
-        $data["meta"]["description"] = "Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
+        $data["meta"]["description"] = set_meta('',['url'=> base_url(),'result'=> 'desc']);
 
         $data['jadwal'] = $this->Home_model->get_all_jadwal();
         $data['jadwal_2'] = $this->Home_model->get_all_jadwal_2();
