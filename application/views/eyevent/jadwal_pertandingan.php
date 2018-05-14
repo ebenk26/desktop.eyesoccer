@@ -82,11 +82,11 @@ background-color:#fdd79f38;
                                 <span <?php
                                 if($get_jadwal['live_pertandingan']==NULL)
                                 {
-                                    $live='>';
+                                    $live='class="livechanel"> NO LIVE ';
                                 }
                                 else
                                 {
-                                    $live='class="livechanel"> Live '.$get_jadwal['live_pertandingan'];
+                                    $live='class="livechanel"> '.$get_jadwal['live_pertandingan'];
                                 }
 
                                 echo $live;
