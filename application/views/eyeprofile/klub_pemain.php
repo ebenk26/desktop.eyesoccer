@@ -9,6 +9,7 @@
     margin: 0 auto;
     display: block;
 	}
+	.vs_style{position:inherit;font-size:45px;font-weight:bold;margin:-30px;}
 	.live_pert{position:inherit;background-color:#ffa7265c;padding:5px;margin: 19px;border-radius:15px;width:200px;}
 	.liga_name{background-color:#74747417;}
 	.jadwallistresult{font-size:10px;font-weight:500;}
@@ -56,6 +57,11 @@
 	.class-D:hover{
 		background-color:#c7a400;
 	}
+	.score_style_a{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-left:10px;}
+	.score_style_b{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-right:10px;}
+	.score_tim_a{width:50px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;right:50px;top:25px;font-size:50px;color:#fff;background-color:#000000bf;}
+	.score_tim_b{width:50px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;left:50px;top:25px;font-size:50px;color:#fff;background-color:#000000bf;}
+	
 	.div-W{width:20px;background-color:#1dd163;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px;}
 	.div-D{width:20px;background-color:#d5b41b;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
 	.div-L{width:20px;background-color:#d81c1c;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
@@ -65,10 +71,6 @@
 	.listmatch:hover{
 		background-color:#fdd79f38;
 		}
-	.score_style_a{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-left:10px;}
-	.score_style_b{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-right:10px;}
-	.score_tim_a{width:50px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;right:40px;top:25px;font-size:50px;color:#fff;background-color:#000000bf;}
-	.score_tim_b{width:50px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;left:40px;top:25px;font-size:50px;color:#fff;background-color:#000000bf;}
 	span.g-stats{font-size:30px;font-weight:bold;}
 	.p-stats{background-color:#e4e2ff;}
 	.p-stats:hover{background-color:#aca7ff;}
@@ -395,9 +397,9 @@
 						if(count($get_jadw_klub) >= 1){
 					?>
 					<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
-						<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan Terakhir <?=$r->name?></h3>
+						<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan Selanjutnya</h3>
 						<div class="container box-pertandingan" style="margin:23px 23px 46px 0px;width:440px;">
-							<table style="margin-bottom: -4px !important;margin-right: 30px !important;">
+							<table style="margin-bottom: -4px !important;margin-right: 55px !important;">
 								<tbody>
 									<tr class="liga_name">
 										<td colspan="3">
@@ -433,7 +435,7 @@
 													$live_pert=$row['live_pertandingan'];
 												}
 											?>
-											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 61px 23px;font-weight:550;">
+											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 60px 23px;font-weight:550;">
 												<?php echo $hari.", ".$datetime->format('d M Y')?>
 												<br><?php echo $datetime->format('H:i')." WIB";?>
 												<br><?php echo $row['lokasi_pertandingan']?>
@@ -446,7 +448,7 @@
 											<!--<i class="material-icons i-l-pertandingan">keyboard_arrow_left</i>-->
 											<img  width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_a']?>"> 
 										</td>
-										<td width="20%"><div class="score_tim_a"><?php echo $row['score_a']?></div> <strong style="font-size:20px;">-</strong> <div class="score_tim_b"><?php echo $row['score_b']?></div></td>
+										<td width="20%"><span class="vs_style">Vs</span> </td>
 										<td width="40%">
 											<img  width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_b']?>"> 
 											<!--<i class="material-icons i-r-pertandingan">keyboard_arrow_right</i>-->
@@ -547,7 +549,7 @@
 					<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
 						<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan Terakhir <?=$r->name?></h3>
 						<div class="container box-pertandingan" style="margin:23px 23px 46px 0px;width:440px;">
-							<table style="margin-bottom: -4px !important;margin-right: 30px !important;">
+							<table style="margin-bottom: -4px !important;margin-right: 55px !important;">
 								<tbody>
 									<tr class="liga_name">
 										<td colspan="3">
@@ -583,7 +585,7 @@
 													$live_pert=$row['live_pertandingan'];
 												}
 											?>
-											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 61px 23px;font-weight:550;">
+											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 27px 23px;font-weight:550;">
 												<?php echo $hari.", ".$datetime->format('d M Y')?>
 												<br><?php echo $datetime->format('H:i')." WIB";?>
 												<br><?php echo $row['lokasi_pertandingan']?>
