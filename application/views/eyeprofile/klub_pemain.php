@@ -3,8 +3,14 @@
     top: 0px;
     position: relative;
 	}
-
-	.live_pert{position:inherit;background-color:#ffa7265c;padding:5px;border-radius:15px;width:200px;}
+	.box-pertandingan img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+	}
+	.vs_style{position:inherit;font-size:45px;font-weight:bold;margin:-30px;}
+	.live_pert{position:inherit;background-color:#ffa7265c;padding:5px;margin: 19px;border-radius:15px;width:200px;}
 	.liga_name{background-color:#74747417;}
 	.jadwallistresult{font-size:10px;font-weight:500;}
 	.sjrh{
@@ -51,6 +57,11 @@
 	.class-D:hover{
 		background-color:#c7a400;
 	}
+	.score_style_a{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-left:10px;}
+	.score_style_b{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-right:10px;}
+	.score_tim_a{width:50px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;right:50px;top:25px;font-size:50px;color:#fff;background-color:#000000bf;}
+	.score_tim_b{width:50px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;left:50px;top:25px;font-size:50px;color:#fff;background-color:#000000bf;}
+	
 	.div-W{width:20px;background-color:#1dd163;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px;}
 	.div-D{width:20px;background-color:#d5b41b;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
 	.div-L{width:20px;background-color:#d81c1c;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
@@ -60,30 +71,26 @@
 	.listmatch:hover{
 		background-color:#fdd79f38;
 		}
-	.score_style_a{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-left:10px;}
-	.score_style_b{font-weight:bold;font-size:14px;color:#CCC;border:2px solid;border-color:#CCC;border-radius:12px;background-color:#000000bf;padding:10px 5px 10px 5px;width:20px;margin-right:10px;}
-	.score_tim_a{width:35px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;right:50px;top:35px;font-size:40px;color:#CCC;background-color:#000000bf;}
-	.score_tim_b{width:35px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;left:50px;top:35px;font-size:40px;color:#CCC;background-color:#000000bf;}
-	
 	span.g-stats{font-size:30px;font-weight:bold;}
-	.p-stats{background-color:#e2e2e2;}
-	.p-stats:hover{background-color:#e2e2e2;}
+	.p-stats{background-color:#e4e2ff;}
+	.p-stats:hover{background-color:#aca7ff;}
 	.w-stats{background-color:#daf8d2;}
 	.w-stats:hover{background-color:#1cc95c;}
 	.d-stats{background-color:#f7efd6;}
 	.d-stats:hover{background-color:#d5b41b;}
 	.l-stats{background-color:#efb9b969;}
 	.l-stats:hover{background-color:#d81c1c;}
-	.p-L_stats{background-color:#e2e2e2;}
+	.p-L_stats{background-color:#e4e2ff;}
 	.w-L_stats{background-color:#b3f9a270;}
 	.d-L_stats{background-color:#f4da884d;}
 	.l-L_stats{background-color:#f8e2e2;}
+	.det-stats{font-size:15px;}
 	.goalm{background-color:#daf8d2;}
 	.goalk{background-color:#f8e2e2;}
-	.goalhm{background-color:#b0f9a2;}
-	.goalhk{background-color:#e35e5e;}
-	.goalak{background-color:#e63f3f;}
-	.goalam{background-color:#87fa70;}
+	.goalhm{background-color:#caffbc;}
+	.goalam{background-color:#daf8d2;}
+	.goalhk{background-color:#ffd7d7;}
+	.goalak{background-color:#f8e2e2;}
 
 
 
@@ -390,9 +397,9 @@
 						if(count($get_jadw_klub) >= 1){
 					?>
 					<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
-						<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan <?=$r->name?> Selanjutnya</h3>
+						<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan Selanjutnya</h3>
 						<div class="container box-pertandingan" style="margin:23px 23px 46px 0px;width:440px;">
-							<table style="margin-bottom: 65px !important;margin-right: 23px !important;">
+							<table style="margin-bottom: -4px !important;margin-right: 55px !important;">
 								<tbody>
 									<tr class="liga_name">
 										<td colspan="3">
@@ -422,21 +429,26 @@
 												}else{
 													$hari = $datetime->format('l');
 												}
+												if($row['live_pertandingan']==NULL OR empty($row['live_pertandingan'])){
+													$live_pert="NO LIVE";
+												}else{
+													$live_pert=$row['live_pertandingan'];
+												}
 											?>
-											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 61px 23pxpx;font-weight:550;">
+											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 60px 23px;font-weight:550;">
 												<?php echo $hari.", ".$datetime->format('d M Y')?>
 												<br><?php echo $datetime->format('H:i')." WIB";?>
 												<br><?php echo $row['lokasi_pertandingan']?>
-												<div class="live_pert"><?php echo $row['live_pertandingan']?></div>
+												<br><div class="live_pert"><?php echo $live_pert;?></div>
 											</span>
 										</td>
 									</tr>
 									<tr class="t-20">
 										<td width="40%">
 											<!--<i class="material-icons i-l-pertandingan">keyboard_arrow_left</i>-->
-											<img width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_a']?>"> 
+											<img  width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_a']?>"> 
 										</td>
-										<td width="20%" style="font-weight: 600;font-size: 40px;">vs</td>
+										<td width="20%"><span class="vs_style">Vs</span> </td>
 										<td width="40%">
 											<img  width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_b']?>"> 
 											<!--<i class="material-icons i-r-pertandingan">keyboard_arrow_right</i>-->
@@ -537,7 +549,7 @@
 					<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
 						<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan Terakhir <?=$r->name?></h3>
 						<div class="container box-pertandingan" style="margin:23px 23px 46px 0px;width:440px;">
-							<table style="margin-bottom: -4px !important;margin-right: 30px !important;">
+							<table style="margin-bottom: -4px !important;margin-right: 55px !important;">
 								<tbody>
 									<tr class="liga_name">
 										<td colspan="3">
@@ -567,11 +579,17 @@
 												}else{
 													$hari = $datetime->format('l');
 												}
+												if($row['live_pertandingan']==NULL OR empty($row['live_pertandingan'])){
+													$live_pert="NO LIVE";
+												}else{
+													$live_pert=$row['live_pertandingan'];
+												}
 											?>
-											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 61px 23px;font-weight:550;">
+											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 27px 23px;font-weight:550;">
 												<?php echo $hari.", ".$datetime->format('d M Y')?>
 												<br><?php echo $datetime->format('H:i')." WIB";?>
 												<br><?php echo $row['lokasi_pertandingan']?>
+												<br><div class="live_pert"><?php echo $live_pert;?></div>
 											</span>
 										</td>
 									</tr>
@@ -720,6 +738,7 @@
 												foreach($get_pwdl_stats as $stats)
 												{
 													$stats['play']=$stats['play_a']+$stats['play_b'];
+													$play=$stats['play'];
 													$stats['win']=$stats['win_a']+$stats['win_b'];
 													$stats['draw']=$stats['draw_a']+$stats['draw_b'];
 													$stats['lose']=$stats['lose_a']+$stats['lose_b'];
@@ -752,26 +771,44 @@
 									<table>
 										<thead>
 											<tr>
-												<?php 
-												foreach($get_gkgt_stats as $gstats)
-												{
-													$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
-													$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
-												?>									
-												<th class="goalm" align="center" title="Goal Memasukan (%GM)">Memasukan
+												<td colspan="2">
 													<table>
-														<thead align="center">
-														</br><span class="g-stats"><?=$goalm;?></span></br><strong>goal</strong>
-														</thead>
+														<tr>
+															<?php 
+															foreach($get_gkgt_stats as $gstats)
+															{
+																$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
+																$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
+																$tgoal=$goalm+$goalk;
+																$width_ms=($goalm/$tgoal)*100;
+																$width_ks=($goalk/$tgoal)*100;
+																$width_m=number_format($width_ms,0);
+																$width_k=number_format($width_ks,0);
+																if(isset($play)){
+																	$m_pp=number_format($goalm/$play,1);
+																	$k_pp=number_format($goalk/$play,1);
+																}
+
+															?>									
+															<td width="<?=$width_m;?>%" class="goalm" align="center" title="Goal Memasukan (%GM)"><strong>Memasukan</strong>
+																<table>
+																	<thead align="center">
+																	</br><span class="g-stats"><?=$goalm;?></span><strong>goal</strong>
+																	</br><span class="det-stats">( <strong><?=$m_pp;?></strong> gol memasukan/pertandingan )</span>
+																	</thead>
+																</table>
+															</td>	
+															<td width="<?=$width_k;?>%" class="goalk" align="center" title="Goal Kemasukan (%GK)"><strong>Kemasukan</strong>
+																<table>
+																	<thead align="center">
+																	</br><span class="g-stats"><?=$goalk;?></span><strong>goal</strong>
+																	</br><span class="det-stats">( <strong><?=$k_pp;?></strong> gol kemasukan/pertandingan)</span>
+																	</thead>
+																</table>
+															</td>
+														</tr>	
 													</table>
-												</th>	
-												<th class="goalk" align="center" title="Goal Kemasukan (%GK)">Kemasukan
-													<table>
-														<thead align="center">
-														</br><span class="g-stats"><?=$goalk;?></span></br><strong>goal</strong>
-														</thead>
-													</table>
-												</th>									
+												</td>
 											</tr>
 										</thead>
 										<tbody>
@@ -779,16 +816,16 @@
 												<td align="center">
 													<table>
 														<tr>
-															<td class="goalhm" align="center"><span class="g-stats"><?php echo $gstats['goalm_kandang'];?></span><strong>goal kandang</strong></td>
-															<td class="goalam" align="center"><span class="g-stats"><?php echo $gstats['goalm_tandang'];?></span><strong>goal tandang</strong></td>
+															<td class="goalhm" align="center"><strong>Home</strong></br><span class="g-stats"><?php echo $gstats['goalm_kandang'];?></span><strong>goal</strong></td>
+															<td class="goalam" align="center"><strong>Away</strong></br><span class="g-stats"><?php echo $gstats['goalm_tandang'];?></span><strong>goal</strong></td>
 														</tr>
 													</table>
 												</td>	
 												<td align="center">
 													<table>
 														<tr>
-															<td class="goalhk" align="center"><span class="g-stats"><?php echo $gstats['goalk_kandang'];?></span><strong>goal kandang</strong></td>
-															<td class="goalak" align="center"><span class="g-stats"><?php echo $gstats['goalk_tandang'];?></span><strong>goal tandang</strong></td>
+															<td class="goalhk" align="center"><strong>Home</strong></br><span class="g-stats"><?php echo $gstats['goalk_kandang'];?></span><strong>goal</strong></td>
+															<td class="goalak" align="center"><strong>Away</strong></br><span class="g-stats"><?php echo $gstats['goalk_tandang'];?></span><strong>goal</strong></td>
 														</tr>
 													</table>
 												</td>									
