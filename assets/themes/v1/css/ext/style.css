@@ -229,10 +229,11 @@ ul.top-menu > li > .logout {
 /*sidebar navigation*/
 
 #sidebar {
-    width: 210px;
+    width: 240px;
     height: 100%;
     position: fixed;
     background: #F3F3F3 !important;
+    left: 0px;
 }
 
 #sidebar h5 {
@@ -242,6 +243,7 @@ ul.top-menu > li > .logout {
 
 #sidebar ul li {
     position: relative;
+    display: block;
 }
 
 #sidebar .sub-menu > .sub li  {

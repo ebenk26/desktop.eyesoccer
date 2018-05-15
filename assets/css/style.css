@@ -5292,7 +5292,7 @@ img.loading {
     overflow-x: hidden;
     overflow-y: auto;
 }
-#klasemen4liga::-webkit-scrollbar, #jadwal_home::-webkit-scrollbar{
+#klasemen4liga::-webkit-scrollbar, #jadwal_home::-webkit-scrollbar, #klasemen4liga::-webkit-scrollbar-track, #jadwal_home::-webkit-scrollbar-track{
     width: 0px;
     background: transparent;
 }

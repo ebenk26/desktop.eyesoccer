@@ -368,7 +368,7 @@
                         </div>
 						<?php } ?>						
                     </div>
-                    <div class="container banner-eyenews1 img-banner mt-20" style="background-color: unset;">
+                    <div class="container banner-eyenews1 img-banner mt-20" style="background-color: unset;height: unset;background: url(https://www.eyesoccer.id/assets/img/banner/1065X255px.png);background-repeat: no-repeat;background-size: cover;">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- EyesoccerDekstop 16#EyenewsDetailSquare336x280 -->
                     <ins class="adsbygoogle"
