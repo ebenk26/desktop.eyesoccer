@@ -166,7 +166,7 @@
 		    <!--<div class="pagging-enews-home"><?php echo $pagging['pagging'];?></div>-->
 	    </div>
 	</div>
-	<div class="container banner-150 EyenewsHomeBanner970x90 tx-c" style="background-color: unset;">
+	<div class="container banner-150 EyenewsHomeBanner970x90 tx-c" style="background-color: unset;height: unset;background: url(https://www.eyesoccer.id/assets/img/banner/1065X100px.png);background-repeat: no-repeat;padding-top: 5px;">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- EyesoccerDekstop 18#EyenewsHomeBanner970x90 -->
 <ins class="adsbygoogle"

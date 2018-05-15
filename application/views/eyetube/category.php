@@ -280,7 +280,7 @@ body{
 					<?php } ?>
                     </div>
                     <div class="container news-rcm-r2">
-					<div class="container banner-eyenews4 img-banner mt-30" style="background: url('http://eyesoccer.id/assets/img/iklanbanner/banner 360x320px-01.jpg');background-repeat: no-repeat;">
+					<div class="container banner-eyenews4 img-banner mt-30" style="background-color: unset;background: url('http://eyesoccer.id/assets/img/iklanbanner/banner 360x320px-01.jpg');background-repeat: no-repeat;text-align:  center;padding-top:  20px;">
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 					<!-- EyesoccerDekstop 17b#EyenewsKategoriSquare336x280 -->
 					<ins class="adsbygoogle"

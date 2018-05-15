@@ -374,11 +374,11 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 					</div>
           		</div>			
                 </span>	
-				<div class="container img-banner tx-c" style="width: 100%;position: relative;overflow: unset;height: unset;min-height: 150px !important;background-color: unset;">
+				<div class="container img-banner tx-c" style="background-color: unset;text-align: center;height: unset;background: url('https://www.eyesoccer.id/assets/img/banner/1065X255px.png');background-repeat: no-repeat;line-height: 0px;min-height:  148px;">
                             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                             <!-- EyesoccerDekstop 11#EyeprofileLigaKlub336x280 -->
                             <ins class="adsbygoogle"
-                                style="display:inline-block;width:336px;height:280px"
+                                style="display:inline-block;width:100%;height:140px;"
                                 data-ad-client="ca-pub-7635854626605122"
                                 data-ad-slot="9007490396"></ins>
                             <script>
