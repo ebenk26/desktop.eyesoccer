@@ -96,7 +96,7 @@
                             </tr>
 							<tr>
                                 <td>Jenis Kelamin</td>
-                                <td>: <?php echo (!empty($res->gender) ? $res->gender : '')?></td>
+                                <td>: <?php echo (!empty($res->gender) ? ($res->gender == '1' ? 'Laki-laki' : 'Perempuan') : '')?></td>
                             </tr>
                         </tbody>
                     </table>
