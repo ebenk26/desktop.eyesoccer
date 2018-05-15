@@ -5296,3 +5296,20 @@ img.loading {
     width: 0px;
     background: transparent;
 }
+
+select{
+    padding: 8px 15px !important;
+    -webkit-appearance: unset;
+    background-color: #fafafa;
+    position: relative;
+}
+select::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-color: #333 transparent transparent transparent;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+}
