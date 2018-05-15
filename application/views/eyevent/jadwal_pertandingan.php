@@ -10,9 +10,9 @@ background-color:#fdd79f38;
 }
 .livechanel{
             color:#d19595;
-			padding: 3px 0px;
-			border-radius: 15px;
-			background-color:#fa4f4f52;
+            padding: 5px !important;
+            border-radius: 5px;
+            background-color: #fa4f4f52;
 }
 .livechanel:hover{
     background-color: #ff4141a3;
