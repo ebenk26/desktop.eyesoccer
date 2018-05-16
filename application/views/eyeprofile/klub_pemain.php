@@ -3,8 +3,14 @@
     top: 0px;
     position: relative;
 	}
-
-	.live_pert{position:inherit;background-color:#ffa7265c;padding:5px;border-radius:15px;width:200px;}
+	.box-pertandingan img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+	}
+	.listmatch:hover{background-color:#fafafa}
+	.live_pert{position:inherit;background-color:#ffa7265c;padding:5px;margin: 19px;border-radius:15px;width:200px;}
 	.liga_name{background-color:#74747417;}
 	.jadwallistresult{font-size:10px;font-weight:500;}
 	.sjrh{
@@ -289,8 +295,8 @@
 					<?php
 					if(!empty($get_result_klub)){
 					?>
-					<h3 class="h3-oranye" style="margin-top: 24px;margin-bottom: -10px;width:445px;">Pertandingan <?=$r->name?> Sebelumnya</h3>
-					<div class="border-box" style="margin-top: 22px;">
+					<h3 class="h3-oranye" style=";margin-top: 24px;margin-bottom: -10px;width:445px;">Pertandingan <?=$r->name?> Sebelumnya</h3>
+					<div class="border-box" style="    border: 1px solid #dcdcdc;margin-top: 22px; overflow-y: auto; height:499px;">
 							<div id="result_club">
 							<table class="table border-b" width="800px">
 							<?php
@@ -378,21 +384,19 @@
 						</div>
                     </div>
 					<?php }else{
-
 					}
 					?>
             </div>
 				<?php
 					if(empty($get_jadw_klub) AND empty($get_hasil_klub)){
-
 					}
 					else{
 						if(count($get_jadw_klub) >= 1){
 					?>
 					<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
-						<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan <?=$r->name?> Selanjutnya</h3>
-						<div class="container box-pertandingan" style="margin:23px 23px 46px 0px;width:440px;">
-							<table style="margin-bottom: 65px !important;margin-right: 23px !important;">
+						<h3 style="margin: 17px 0px -10px 25px;">Pertandingan Terakhir <?=$r->name?></h3>
+						<div class="container box-pertandingan" style="margin:23px 0px 46px 25px;width:440px;height: 500px;">
+							<table style="margin-bottom: -4px !important;margin-right: 30px !important;">
 								<tbody>
 									<tr class="liga_name">
 										<td colspan="3">
@@ -423,7 +427,7 @@
 													$hari = $datetime->format('l');
 												}
 											?>
-											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 61px 23pxpx;font-weight:550;">
+											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 61px 23px;font-weight:550;">
 												<?php echo $hari.", ".$datetime->format('d M Y')?>
 												<br><?php echo $datetime->format('H:i')." WIB";?>
 												<br><?php echo $row['lokasi_pertandingan']?>
@@ -436,7 +440,7 @@
 											<!--<i class="material-icons i-l-pertandingan">keyboard_arrow_left</i>-->
 											<img width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_a']?>"> 
 										</td>
-										<td width="20%" style="font-weight: 600;font-size: 40px;">vs</td>
+										<td width="20%"><div class="score_tim_a"><?php echo $row['score_a']?></div> <strong style="font-size:20px;">-</strong> <div class="score_tim_b"><?php echo $row['score_b']?></div></td>
 										<td width="40%">
 											<img  width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_b']?>"> 
 											<!--<i class="material-icons i-r-pertandingan">keyboard_arrow_right</i>-->
@@ -535,8 +539,8 @@
 						}else{
 					?>
 					<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
-						<h3 style="margin-left: 19px;margin-top: 17px;margin-bottom: -10px;">Pertandingan Terakhir <?=$r->name?></h3>
-						<div class="container box-pertandingan" style="margin:23px 23px 46px 0px;width:440px;">
+						<h3 style="margin: 17px 0px -10px 25px;">Pertandingan Terakhir <?=$r->name?></h3>
+						<div class="container box-pertandingan" style="margin:23px 0px 0px 25px;width:440px; height:500px;">
 							<table style="margin-bottom: -4px !important;margin-right: 30px !important;">
 								<tbody>
 									<tr class="liga_name">
@@ -704,11 +708,11 @@
 							?>
 							<h3 class="h3-oranye" style="margin-top: 24px;margin-bottom: -10px;width:445px;">Statistik <?=$r->name?> <?=$tahun?></h3>
 							<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
-								<div class="container box-pertandingan">
+								<div class="container box-pertandingan" style="border-radius: 3px;overflow: hidden;">
 									<table>
 										<thead>
 											<tr>
-												<th class="p-L_stats" width="75" align="center" title="Main">Main</th>
+												<th class="p-L_stats" width="40%" align="center" title="Main">Main</th>
 												<th class="w-L_stats" width="75" align="center" title="Menang (%Menang)">Menang</th>
 												<th class="d-L_stats" width="75" align="center" title="Seri (%Seri)">Seri</th>		
 												<th class="l-L_stats" width="75" align="center" title="Kalah (%Kalah)">Kalah</th>	
@@ -726,18 +730,17 @@
 													$p_win=($stats['win']/$stats['play'])*100;
 													$p_draw=($stats['draw']/$stats['play']*100);
 													$p_lose=($stats['lose']/$stats['play'])*100;
-
 												?>
 												<td class="p-stats" align="center"><span class="g-stats"><?php echo $stats['play'];?>x</span>
 												(<?=$stats['play_a']." Kandang & ".$stats['play_b']." Tandang";?>)</td>
 												<td class="w-stats" align="center"><span class="g-stats"><?php echo $stats['win'];?>x</span>
-												<strong style="font-size: 12px;font-weight: 500;color: gray;">(<?=number_format($p_win);?>%)</strong></br>
+												<strong style="font-size:16px;">(<?=number_format($p_win);?>%)</strong></br>
 												<?=$stats['win_a']." Kandang & ".$stats['win_b']." Tandang";?></td>	
 												<td class="d-stats" align="center"><span class="g-stats"><?php echo $stats['draw'];?>x</span>
-												<strong style="font-size: 12px;font-weight: 500;color: gray;">(<?=number_format($p_draw);?>%)</strong></br>
+												<strong style="font-size:16px;">(<?=number_format($p_draw);?>%)</strong></br>
 												<?=$stats['draw_a']." Kandang & ".$stats['draw_b']." Tandang";?></td>
 												<td class="l-stats" align="center"><span class="g-stats"><?php echo $stats['lose'];?>x</span>
-												<strong style="font-size: 12px;font-weight: 500;color: gray;">(<?=number_format($p_lose);?>%)</strong></br>
+												<strong style="font-size:16px;">(<?=number_format($p_lose);?>%)</strong></br>
 												<?=$stats['lose_a']." Kandang & ".$stats['lose_b']." Tandang";?></td>
 												<?php
 												}
@@ -748,7 +751,7 @@
 								</div>
 							</div>
 							<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
-								<div class="container box-pertandingan">
+								<div class="container box-pertandingan" style="border-radius: 3px;overflow: hidden;">
 									<table>
 										<thead>
 											<tr>
@@ -776,7 +779,7 @@
 										</thead>
 										<tbody>
 											<tr>									
-												<td align="center" style="border-right: 1px solid #dcdcdc;">
+												<td align="center">
 													<table>
 														<tr>
 															<td class="goalhm" align="center"><span class="g-stats"><?php echo $gstats['goalm_kandang'];?></span><strong>goal kandang</strong></td>
@@ -803,7 +806,6 @@
 							<?php
 								}
 							?>
-				
 			</div>
 			</br>
 			</br>
@@ -837,9 +839,7 @@
 										echo '<td>'.$cr[$i]->rank.'</td>';	
 										echo '<td>'.$cr[$i]->coach.'</td>';
 										echo '</tr>';
-
 									}
-
 								?>
 								
 							</tbody>
@@ -850,7 +850,7 @@
 					
 					</div> -->
 				</div>
-			<div class="container pd-b-50" style="padding-bottom: 100px;display:none;">
+			<!-- <div class="container pd-b-50" style="padding-bottom: 100px;display:none;">
 				<div id="em2Slide" class="carousel slide">
 					<div role="listbox" class="carousel-inner">
 						<div class="box item active" style="height: 225px;">
@@ -879,9 +879,9 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
         </div>
-		<div class="center-desktop m-0">
+		<div class="center-desktop m-0 mb-30">
 			<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 100%;">
 				<h3 class="">Galeri</h3>
 				<div id="em2Slide" class="carousel slide pemain-foto">
@@ -891,7 +891,6 @@
 								foreach ($gallery as $gl):
 									$exp = explode('/',$gl->url_pic);
 									$exp_img = explode('-',$exp[6]);
-
 									if(!empty($exp_img[1])):
 							?>
 										<div class="em-box">
@@ -917,6 +916,11 @@
 									endif;
 								endforeach;
 							?>
+						</div>
+						<div class="carousel-indicators bx-dot ep-dot">
+							<span data-target="#em2Slide" data-slide-to="0" class="dot active"></span>
+							<span data-target="#em2Slide" data-slide-to="1" class="dot"></span>
+							<span data-target="#em2Slide" data-slide-to="2" class="dot"></span>
 						</div>
 					</div>
                 </div>

@@ -906,6 +906,10 @@ th{
     border-radius: 5px;
     margin-top: 23px;
 }
+.border-box::-webkit-scrollbar{
+    background-color: transparent;
+    width: 0px;
+}
 .ttl{
     text-decoration: none;
     color: #66a647;
@@ -5295,4 +5299,21 @@ img.loading {
 #klasemen4liga::-webkit-scrollbar, #jadwal_home::-webkit-scrollbar, #klasemen4liga::-webkit-scrollbar-track, #jadwal_home::-webkit-scrollbar-track{
     width: 0px;
     background: transparent;
+}
+
+select{
+    padding: 8px 15px !important;
+    -webkit-appearance: unset;
+    background-color: #fafafa;
+    position: relative;
+}
+select::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-color: #333 transparent transparent transparent;
+    position: absolute;
+    top: 16px;
+    right: 10px;
 }
