@@ -789,17 +789,7 @@
 									<table>
 										<thead>
 											<tr>
-<<<<<<< HEAD
-												<?php 
-												foreach($get_gkgt_stats as $gstats)
-												{
-													$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
-													$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
-												?>									
-												<th class="goalm" align="center" title="Goal Memasukan (%GM)" style="border-right: 1px solid #dcdcdc;">Memasukan
-=======
 												<td colspan="2">
->>>>>>> 870d9a37a8db64b570336e832a4ad34686f16aae
 													<table>
 														<tr>
 															<?php 
