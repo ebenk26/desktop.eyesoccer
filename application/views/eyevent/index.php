@@ -93,8 +93,11 @@ body{
             <div class="tab tab-event">
                     
                 <ul class="nav nav-tabs" id="tab-nav" style="width: 100%;">
-                    <li class="active">
-                        <a href="#jadwal-pertandingan" data-toggle="tab">JADWAL & HASIL PERTANDINGAN</a>
+                    <li>
+                        <a style="text-align: center;bottom: unset;background-color: #5593a5;margin-bottom: 0;" class="btn-green-white" href="<?php echo base_url()?>eyevent/jadwal_pertandingan">JADWAL</a>
+                    </li>
+					<li>
+                        <a style="text-align: center;bottom: unset;background-color: #5593a5;margin-bottom: 0;width:240px;" class="btn-green-white" href="<?php echo base_url()?>eyevent/hasil_pertandingan">HASIL PERTANDINGAN</a>
                     </li>
                     <!--<li>
                         <a href="#klasemen" data-toggle="tab">KLASEMEN</a>
