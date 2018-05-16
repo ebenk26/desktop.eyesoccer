@@ -1,4 +1,13 @@
-    <style>
+    <?php
+		$totalPage = ceil($count / 12);
+		$urlpage = $this->uri->segment(3);
+		if($urlpage){
+			$page = $urlpage;
+		}else{
+			$page = 1;
+		}
+	?>
+	<style>
     body{
         margin-top: -10px; 
     }
@@ -31,6 +40,32 @@
         <?php        
             }
         ?>
+		<div class="pull-right m-t20-lr0-b30">
+		  <ul class="orange-default">
+			<?php echo ($page > 1 ? '<li>'.anchor(base_url().'eyevent/semua_event/'.($page-1) ,'Sebelumnya','display="block"').'</li>' : '')?>
+			<?php  
+				if($page > 4 ){?>
+
+				<li><?php echo anchor(base_url().'eyevent/semua_event/1','1')?></li>
+				<li>...</li>
+			<?php }
+		   
+			for($i=($page-2); $i < ($page+2);$i++):
+
+			if($i < 1 ){ continue; }
+			if($i > $totalPage){ break;}?>
+
+				<li <?php echo ($page == $i ? 'class="active"' : '')?>><?php echo  anchor(base_url().'eyevent/semua_event/'.$i,$i)?></li>
+
+			<?php endfor;?>
+			<?php if($totalPage-1 > $page){?>
+				<li>...</li>
+				<li><?php echo anchor(base_url().'eyevent/semua_event/'.$totalPage,$totalPage) ?></li>
+			<?php }?>
+
+		   <?php echo ($page < $totalPage ?'<li>'.anchor(base_url().'eyevent/semua_event/'.($page > 0 ? ($page+1) : $page),'Selanjutnya').'</li>' : '')?>
+		  </ul>
+		</div>
     </div>
     <div class="container"><?php /*echo $pagging['pagging'];*/?></div>
 </div>
