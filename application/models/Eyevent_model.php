@@ -213,7 +213,7 @@ class Eyevent_model extends CI_Model
 									ORDER BY
 										a.eyetube_id DESC
 									LIMIT
-										4
+										2
 								")->result_array();
 		return $query;
 	}	

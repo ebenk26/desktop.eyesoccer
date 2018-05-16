@@ -427,7 +427,7 @@
 													$hari = $datetime->format('l');
 												}
 											?>
-											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 61px 23px;font-weight:550;">
+											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 46px 23px;font-weight:550;">
 												<?php echo $hari.", ".$datetime->format('d M Y')?>
 												<br><?php echo $datetime->format('H:i')." WIB";?>
 												<br><?php echo $row['lokasi_pertandingan']?>
@@ -440,7 +440,7 @@
 											<!--<i class="material-icons i-l-pertandingan">keyboard_arrow_left</i>-->
 											<img width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_a']?>"> 
 										</td>
-										<td width="20%"><div class="score_tim_a"><?php echo $row['score_a']?></div> <strong style="font-size:20px;">-</strong> <div class="score_tim_b"><?php echo $row['score_b']?></div></td>
+										<td width="20%"></td>
 										<td width="40%">
 											<img  width="50" src="<?php echo imgUrl()?>systems/club_logo/<?php echo $row['logo_b']?>"> 
 											<!--<i class="material-icons i-r-pertandingan">keyboard_arrow_right</i>-->
@@ -572,7 +572,7 @@
 													$hari = $datetime->format('l');
 												}
 											?>
-											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 61px 23px;font-weight:550;">
+											<span class="date-box-pertandingan" style="line-height: 1.3em;display: block;margin:23px 23px 46px 23px;font-weight:550;">
 												<?php echo $hari.", ".$datetime->format('d M Y')?>
 												<br><?php echo $datetime->format('H:i')." WIB";?>
 												<br><?php echo $row['lokasi_pertandingan']?>
