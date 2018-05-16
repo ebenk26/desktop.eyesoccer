@@ -229,7 +229,7 @@ ul.top-menu > li > .logout {
 /*sidebar navigation*/
 
 #sidebar {
-    width: 240px;
+    width: 210px;
     height: 100%;
     position: fixed;
     background: #F3F3F3 !important;
