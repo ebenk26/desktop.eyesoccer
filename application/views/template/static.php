@@ -248,7 +248,7 @@
                             if(!isset($_SESSION["id_member"]))
                             {
                         ?>
-                                <span class="btn-reg" style="display:none;">Pendaftaran Liga</span><span class="btn-reg" style="background-color: #62A555;"><a style="text-decoration: none;" href="<?=base_url()?>member">Masuk</a></span>
+                                <span class="btn-reg mr-7"><a href="#">Daftarkan SSB</a></span><span class="btn-reg" style="background-color: #62A555;"><a style="text-decoration: none;" href="<?=base_url()?>member">Masuk</a></span>
 	                    <?php
                             }
                             else
