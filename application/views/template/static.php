@@ -243,24 +243,20 @@
 						</div>
 					</a>
                     <div class="btn-login" style="padding: 25px 15px 25px 5px;">
-					
+						<span class="btn-reg mr-7"><a href="<?php echo (!isset($this->session->member) ? base_url().'member/regis_klub' : base_url().'member/?from=member/regis_klub')?>">Daftar SSB</a></span>
                         <?php
-                            if(!isset($_SESSION["id_member"]))
+                            if(!isset($this->session->member))
                             {
                         ?>
-                                <span class="btn-reg mr-7"><a href="#">Daftarkan SSB</a></span><span class="btn-reg" style="background-color: #62A555;"><a style="text-decoration: none;" href="<?=base_url()?>member">Masuk</a></span>
+                                <span class="btn-reg" style="background-color: #62A555;"><a style="text-decoration: none;" href="<?=base_url()?>member">Masuk</a></span>
 	                    <?php
                             }
                             else
                             {
 	                    ?>
-	
-	                                <span class="btn-reg"> 
-                                        Pendaftaran Liga 
-                                    </span> 
                                     <span class="btn-btn-login"> 
-                                        <a style="text-decoration: none;" href="<?=base_url()?>home/member_area"> 
-                                            <img src="<?php if(load_top_avatar()!=''){echo MEIMG.load_top_avatar();} ?>" onerror="this.src='<?php echo DPIC?>'" class="img img-circle" width="30px" height="30px" style="border-radius: 20px;float: right;margin-left: 15px;" ><?=load_top_name();?> 
+                                        <a style="text-decoration: none;" href="<?=base_url()?>member"> 
+                                            <img src="<?php echo (!isset($this->session->member) ? load_top_avatar() : SUBCDN."assets/img/eyeme/user-discover.png")?>" class="img img-circle" width="30px" height="30px" style="border-radius: 20px;float: right;margin-left: 15px;" ><?=load_top_name();?> 
                                         </a> 
                                     </span>
 	                    <?php
