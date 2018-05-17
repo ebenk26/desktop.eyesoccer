@@ -109,6 +109,7 @@
 			$official = $res->data->official;
 			$cr = $res->data->careers;
 			$gallery = $res->data->gallery;
+			// p($gallery);
 		?>		
 			<input type="hidden" class="hidden_title" value="<?php echo $r->id_club; ?>"/>
 			<div class="left">
@@ -845,78 +846,44 @@
 							</tbody>
 						</table>
 					</div>
-					<!-- <div class="box-bg" style="height:200px">
-					
-					
-					</div> -->
 				</div>
-			<!-- <div class="container pd-b-50" style="padding-bottom: 100px;display:none;">
-				<div id="em2Slide" class="carousel slide">
-					<div role="listbox" class="carousel-inner">
-						<div class="box item active" style="height: 225px;">
-							<?php
-							foreach ($products as $produk):
-							?>					
-							<div class="em-box">
-								<h4><?=$produk["nama"]?></h4>
-								<div class="container">
-									<div class="w-40 m-r-1">
-										<img class="img-prod" src="<?= MEIMG; ?><?= $produk['image1'] ?>" alt="">
-									</div>
-									<div class="w-60">
-										<span>Harga</span>
-										<h5>Rp.<?= number_format($produk['harga'],0,',','.'); ?></h5>
-										<a href="<?= base_url(); ?>eyemarket/detail/<?= $produk['toko']; ?>/<?= $produk['title_slug']; ?>" ><button type="submit" class="beli">Beli</a></button>
-									</div>
-								</div>
-							</div>
-							<?php endforeach; ?>						
-						</div>
-						<div class="carousel-indicators bx-dot ep-dot">
-							<span data-target="#em2Slide" data-slide-to="0" class="dot active"></span>
-							<span data-target="#em2Slide" data-slide-to="1" class="dot"></span>
-							<span data-target="#em2Slide" data-slide-to="2" class="dot"></span>
-						</div>
-					</div>
-				</div>
-			</div> -->
+		
         </div>
 		<div class="center-desktop m-0 mb-30">
 			<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 100%;">
 				<h3 class="">Galeri</h3>
 				<div id="em2Slide" class="carousel slide pemain-foto">
 					<div role="listbox" class="carousel-inner">
-						<div class="box item active">
-							<?php 
-								foreach ($gallery as $gl):
-									$exp = explode('/',$gl->url_pic);
-									$exp_img = explode('-',$exp[6]);
-									if(!empty($exp_img[1])):
-							?>
-										<div class="em-box">
-											<img src="<?php echo $gl->url_pic;?>" alt="klub galeri" width="220">
-										</div>
-							<?php
-									endif;
-								endforeach;
-							?>
-						</div>
-						<div class="box item">
-							<?php 
-								foreach ($gallery as $gl):
-									$exp = explode('/',$gl->url_pic);
-									$exp_img = explode('-',$exp[6]);
+			<?php 
+			$gl = $gallery;
 
-									if(!empty($exp_img[1])):
-							?>
+				for($i = 0; $i < count($gallery) ;$i+=4):?>
+
+					<div class="box item <?php echo ($i == 0 ? 'active' : '')?>">
+						<?php 
+						$k =0;
+
+							for($j=$i;$j < count($gl);$j++):
+							$exp   = explode('/',$gl[$j]->url_pic);
+							$exp_img = explode('-',$exp[6]);
+								$k++;
+								if($k === 5 ){break;}
+									if(!empty($exp_img[1])):?>
 										<div class="em-box">
-											<img src="<?php echo $gl->url_pic;?>" alt="klub galeri" width="220">
+											<img src="<?php echo $gl[$j]->url_pic;?>" alt="klub galeri" width="220">
 										</div>
-							<?php
-									endif;
-								endforeach;
-							?>
-						</div>
+								<?php endif?>
+
+							<?php endfor;
+
+						?>
+					
+					</div>
+
+
+
+			<?php endfor;?>
+				
 						<div class="carousel-indicators bx-dot ep-dot">
 							<span data-target="#em2Slide" data-slide-to="0" class="dot active"></span>
 							<span data-target="#em2Slide" data-slide-to="1" class="dot"></span>
@@ -927,32 +894,3 @@
 			</div>
 		</div>
 	</div>
-<script>
-		function openTab(evt,tabbing){
-			// alert(tabbing);
-			var i, maintab, klubtab;
-			tabcontent = document.getElementsByClassName("maintab");
-			for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
-			}
-			tablinks = document.getElementsByClassName("klubtab");
-			for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-			}
-			document.getElementById(tabbing).style.display = "block";
-			evt.currentTarget.className += " active";
-		}
-	var fn = $(".hidden_title").val();
-	$('#tbl_karir_klub').DataTable( {
-		"order":[[1,"asc"]],
-		"processing": true,
-		"serverSide": true,
-		"ajax":{
-			url :"<?php echo base_url()?>eyeprofile/get_list_karir_klub/"+fn, // json datasource
-			type: "post",  // method  , by default get
-		},
-		"language": {
-			"url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Indonesian.json"
-		}
-	} );
-</script>
