@@ -8,7 +8,9 @@ class Eyevent extends CI_Controller {
 			// direct_m();
 		    $this->load->model('Eyevent_model');
 			date_default_timezone_set('Asia/Jakarta');
-			$this->load->helper('my');			
+			$this->load->model('Master_model');
+			$this->load->helper(array('form','url','text','date','my'));
+			$this->load->helper('my');		
     }
 	public function index()
 	{	
@@ -450,28 +452,33 @@ class Eyevent extends CI_Controller {
 		$data["meta"]["title"]="";
 		$data["meta"]["image"]=base_url()."/assets/img/tab_icon.png";
 		$data["meta"]["description"]="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
-
+		
 		$data["body"] 	= $this->load->view('eyevent/semua_event_abu', $data, true);
 		$data['kanal'] 	= "eyevent";
 		
 		$this->load->view('template/static',$data);
 	}
 
-	public function api_semua_event()
+	public function api_semua_event($page=1)
 	{
 		$cred 	= $this->config->item('credential');
 
 		//===== eyevent semua
 		$url_eyevent 	= $this->config->item('api_url')."event";
 		$event_data		= array(
-								'page' => '1',
-								'limit' => '40',
+								'page' => $page,
+								'limit' => '12',
 								'sortby' => 'newest',
 								'category' => '',
 		);
+		$count_data		= array(
+								'count' => 'true',
+		);
 		$eyevent 		=  $this->excurl->remoteCall($url_eyevent,$cred,$event_data);
-
+		$count 		=  $this->excurl->remoteCall($url_eyevent,$cred,$count_data);
+		
 		$data["eyevent"] = json_decode($eyevent);
+		$data["count"] = json_decode($count)->data[0]->cc;
 		$html = $this->load->view('eyevent/semua_event',$data, true);
 
 		echo json_encode(array('html' => $html));

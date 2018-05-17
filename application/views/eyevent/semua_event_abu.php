@@ -45,7 +45,7 @@
         <script type="text/javascript">
             jQuery(document).ready(function() {
                 $(window).on('load',function() {
-                    var urlnya          = "<?= base_url(); ?>Eyevent/api_semua_event/";
+                    var urlnya          = "<?= base_url(); ?>Eyevent/api_semua_event/<?php echo $this->uri->segment(3)?>";
                     $.ajax({
                         url: urlnya
                     })

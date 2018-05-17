@@ -906,6 +906,10 @@ th{
     border-radius: 5px;
     margin-top: 23px;
 }
+.border-box::-webkit-scrollbar{
+    background-color: transparent;
+    width: 0px;
+}
 .ttl{
     text-decoration: none;
     color: #66a647;

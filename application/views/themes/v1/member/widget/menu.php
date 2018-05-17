@@ -1,13 +1,13 @@
 <aside>
     <div id="sidebar"  class="nav-collapse ">
-        <ul class="sidebar-menu" id="nav-accordion">
+        <ul class="container sidebar-menu" id="nav-accordion">
             <div class="container bg-menu-pic">
                 <a href="<?php echo base_url('member/profile'); ?>">
                     <div class="menu-pic">
-                        <img src="<?php echo ($this->session->member != '') ? $this->session->member['url_pic'] : SUBCDN."assets/img/eyeme/user-discover.png"; ?>" alt="">
+                        <img src="<?php echo (!isset($this->session->member)) ? $this->session->member['url_pic'] : SUBCDN."assets/img/eyeme/user-discover.png"; ?>" alt="">
                     </div>
 
-                    <div class="tx-center mg-t20">
+                    <div class="container tx-center mg-t20">
                         <?php echo $this->session->member['name']; ?>
                     </div>
                 </a>

@@ -22,7 +22,7 @@
 <form class='form_multi' action="<?php echo base_url('member'); ?>" enctype="multipart/form-data">
     <div class="container">
         <div class="pp-profil">
-            <img src="<?php echo ($member AND $member->url_pic) ? $member->url_pic : SUBCDN . "assets/themes/v1/img/fav.png"; ?>" alt="Player" class="viewimg">
+            <img src="<?php echo ($member AND $member->url_pic) ? $member->url_pic : SUBCDN . "assets/img/eyeme/user-discover.png"; ?>" alt="Player" class="viewimg">
         </div>
         <div class="full-width">
             <label class="btn-blue disp-block mg-b10 mg-b15">

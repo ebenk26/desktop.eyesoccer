@@ -22,7 +22,7 @@
             <input type='hidden' name='fn' value='profile' class='cinput'>
             <div class="container mg-b15">
                 <div class="pp-profil">
-                    <img src="<?php echo SUBCDN . "assets/themes/v1/img/fav.png"; ?>" alt="Player">
+                    <img src="<?php echo SUBCDN . "assets/img/eyeme/user-discover.png"; ?>" alt="Player">
                 </div>
             </div>
             <div class="container data-profil">
