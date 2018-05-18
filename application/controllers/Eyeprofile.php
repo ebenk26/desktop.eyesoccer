@@ -14,11 +14,12 @@ class Eyeprofile extends CI_Controller {
 			$this->load->model('Home_model');
 			$this->load->helper(array('form','url','text','date'));
 			$this->load->helper('my');
+			$this->load->helper('url');
     }
 	
 	public function index()
 	{
-		
+		redirect('/eyeprofile/klub');
 		
 		$data["page"]="eyeprofile";		
 		$data['meta']['share'] = set_meta(['uri'=> 'player']);
