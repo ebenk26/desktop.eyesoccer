@@ -155,107 +155,180 @@ function formatDate($date,$str = ' '){
     }
 
 }
-function set_meta($d ='', $opt = ['url']){
-    if($d != ''){
-        $meta_share = '
-            <!-- Begin of SEO Meta Tags -->
-            <title>'.$d->name.' - Database Klub Sepak Bola | EyeProfile - Eyesoccer.ID</title>
-            <meta name="title" content="'.$d->name.' - Profile Database Klub Sepak Bola | EyeProfile - Eyesoccer.ID" />
-            <meta name="description" content="('.$d->name.')Lihat profil dan statistik klub sepak bola Indonesia selengkapnya >> />
-            <meta name="googlebot-news" content="index,follow" />
-            <meta name="googlebot" content="index,follow" />
-            <meta name="image" content="'.$d->url_logo.'"/>
-            <meta name="robots" content="index,follow" />
-            <meta name="author" content="EyeSoccer.id" />
-            <meta name="language" content="id" />
-            <meta name="geo.country" content="id" name="geo.country" />
-            <meta http-equiv="content-language" content="In-Id" />
-            <meta name="geo.placename"content="Indonesia" />
-            <link rel="publisher" href="https://plus.google.com/u/1/105520415591265268244" />
-            <link rel="canonical" href="'.$opt['url'].$d->slug.'" />
-            <!-- End of SEO Meta Tags-->
 
-            <!-- Begin of Facebook Open graph data-->
-            <meta property="fb:app_id" content="140611863350583" />
-            <meta property="og:site_name" content="EyeSoccer" />
-            <meta property="og:url" content="'.$opt['url'].$d->slug.'" />
-            <meta property="og:type" content="Website" />
-            <meta property="og:title" content=" '.$d->name.' - EyeProfile | EyeSoccer" />
-            <meta property="og:image" content="" />
-            <meta property="og:description" content="('.$d->name.')Lihat profil dan detail klub selengkapnya.." />
-            <meta property="og:locale" content="id_ID" />
-            <!--End of Facebook open graph data-->
-               
-            <!--begin of twitter card data-->
-            <meta name="twitter:card" content="summary" />    
-            <meta name="twitter:site" content="@eyesoccer_id" />
-            <meta name="twitter:creator" content="@eyesoccer_id" />
-            <meta name="twitter:domain" content="EyeSoccer"/>
-            <meta name="twitter:title" content="'.$d->name.'" />
-            <meta name="twitter:description" content="Lihat profil dan detail klub sepak bola indonesia selengkapnya.." />
-            <meta name="twitter:image" content="'.$d->url_logo.'" />
-            <!--end of twitter card data-->
-            ';
+/**
+*set_meta function
+*@param $opt is array('url'=> 'uri dari yang akan di kasih meta['official,player,jadwal-bola']','data'=> (optional) data from api)
+*@return $meta;
 
-    }else{
-        $meta_share = '
-            <!-- Begin of SEO Meta Tags -->
-            <title>Database Pemain Sepak Bola | EyeProfile - Eyesoccer.ID</title>
-            <meta name="title" content="Database Pemain Sepak Bola | EyeProfile - Eyesoccer.ID" />
-            <meta name="description" content="Lihat profil dan statistik pemain sepak bola Indonesia selengkapnya >> />
-            <meta name="googlebot-news" content="index,follow" />
-            <meta name="googlebot" content="index,follow" />
-            <meta name="image" content="" />
-            <meta name="robots" content="index,follow" />
-            <meta name="author" content="EyeSoccer.id" />
-            <meta name="language" content="id" />
-            <meta name="geo.country" content="id" name="geo.country" />
-            <meta http-equiv="content-language" content="In-Id" />
-            <meta name="geo.placename"content="Indonesia" />
-            <link rel="publisher" href="https://plus.google.com/u/1/105520415591265268244" />
-            <link rel="canonical" href="https://eyesoccer.id/eyeprofile/pemain" />
-            <!-- End of SEO Meta Tags-->
+*/
 
-            <!-- Begin of Facebook Open graph data-->
-            <meta property="fb:app_id" content="140611863350583" />
-            <meta property="og:site_name" content="EyeSoccer" />
-            <meta property="og:url" content="https://eyesoccer.id/eyeprofile/pemain" />
-            <meta property="og:type" content="Website" />
-            <meta property="og:title" content=" Profil Database pemain sepak bola - EyeProfile | EyeSoccer" />
-            <meta property="og:image" content="" />
-            <meta property="og:description" content="Lihat profil dan detail pemain sepak bola indonesia selengkapnya.." />
-            <meta property="og:locale" content="id_ID" />
-            <!--End of Facebook open graph data-->
-               
-            <!--begin of twitter card data-->
-            <meta name="twitter:card" content="summary" />    
-            <meta name="twitter:site" content="@eyesoccer_id" />
-            <meta name="twitter:creator" content="@eyesoccer_id" />
-            <meta name="twitter:domain" content="EyeSoccer"/>
-            <meta name="twitter:title" content="Database pemain sepak bola Indonesia" />
-            <meta name="twitter:description" content="Lihat profil dan detail pemain sepak bola indonesia selengkapnya.." />
-            <meta name="twitter:image" content="" />
-            <!--end of twitter card data-->
-            ';
-     }
-    
-    
-        $meta_desc = 'Website dan Social Media khusus sepak bola terkeren dan terlengkap dengan data base seluruh stakeholders sepak bola Indonesia';
-        $meta_img = base_url() . "/assets/img/tab_icon.png";
+function set_meta($opt = ['uri','data']){
 
-        switch ($opt['result']) {
-            case 'share':
-                    return $meta_share;
-                break;
-            case 'image':
-                    return $meta_img;
-                break;
+    $meta  = '<!-- Begin of SEO Meta Tags -->'.PHP_EOL;
+    $m_img ='';
+    $pic   = '';
+    $name  = '';
+    $desc  = '';
+    $og_desc  = '';
+    $og_img = '';
+    $url    = base_url();
+    $d = (isset($opt['data'])  ? $opt['data'] : '' );
+    $canonical ='';
+
+    switch($opt['uri']){
+
+        case 'official':
+            $title   = 'Berita Sepak Bola Indonesia Terbaru | Jadwal Bola | Database Pemain Bola | Eyesoccer';
+            $desc    = 'Berikut jadwal live siaran langsung pertandingan sepak bola terbaru hari ini, jadwal bola malam ini hingga jadwal bola minggu ini dari jadwal sepak bola indonesia hingga jadwal bola di tv dunia';
+
+            if(is_object($d)){
+                $pic = $d->url_logo;
+                $url = $d->share_url;
+                $name = $d->name;
+                $m_img = '<meta name="image" content="'.$d->url_logo.'"/>';
+                $t_title = '<title>'.$name.' | '.$title.'</title>';
+                $m_title = '<meta name="title" content="'.$name.' | '.$title.'"/>';
+                $m_desc  = '<meta name="description" content="'.$name.'" />';
+                $canonical= '<link rel="canonical" href="'.$url.'" />';
+                $og_img = '<meta property="og:image" content="'.$pic.'" />';
+                $og_desc  = '<meta property="og:description" content="'.$name.'" />';
+
+            }
+            else{
+                $url = pOFFICIAL;
+                $name = $title;
+                $t_title = '<title>'.$title.'</title>';
+                $m_title = '<meta name="title" content="'.$title.'"/>';
+                $m_desc  = '<meta name="description" content="'.$desc.'" />';
+                $canonical = '<link rel="canonical" href="'.pOFFICIAL.'" />';
+                $og_desc = '<meta property="og:description" content="'.$name.' Lihat profil selengkapnya.." />';
+
+            }
             
-            default:
-                    return $meta_desc;
-                break;
-        }
-   
+        break;
+
+          case 'club':
+            $title  = 'Database Klub Sepak Bola | EyeProfile - Eyesoccer.ID';
+            $desc   = 'Lihat profil dan statistik club sepak bola Indonesia selengkapnya';
+            if(is_object($d)){
+                $pic = $d->url_logo;
+                $url = $d->share_url;
+                $m_img = '<meta name="image" content="'.$pic.'"/>';
+                $name = $d->name;
+                $t_title = '<title>'.$name.' | '.$title.'</title>';
+                $m_title = '<meta name="title" content="'.$name.' | '.$title.'"/>';
+                $m_desc  = '<meta name="description" content="'.$name.'" />';
+                $canonical = '<link rel="canonical" href="'.$url.'" />';
+                $og_img = '<meta property="og:image" content="'.$pic.'" />';
+                $og_desc = '<meta property="og:description" content="'.$name.'" />';
+
+            }
+            else{
+                $url = pCLUB;
+                $name = $title;
+                $t_title = '<title>'.$title.'</title>';
+                $m_title = '<meta name="title" content="'.$title.'"/>';
+                $m_desc  = '<meta name="description" content="'.$desc.'"/>';
+                $canonical = '<link rel="canonical" href="'.$url.'" />';
+                $og_desc = '<meta property="og:description" content="'.$name.' Lihat profil club selengkapnya.." />';
+            }    
+
+        break;
+        case 'player':
+            $title  = 'Database Klub Sepak Bola | EyeProfile - Eyesoccer.ID';
+            $desc   = 'Lihat profil dan statistik Pemain sepak bola Indonesia selengkapnya';
+
+            if(is_object($d)){
+
+                $pic = $d->url_pic;
+                $url = $d->share_url;
+                $m_img = '<meta name="image" content="'.$pic.'"/>';
+                $name = $d->name;
+                $t_title = '<title>'.$d->name.' | '.$title.'</title>';
+                $m_title = '<meta name="title" content="'.$name.' | '.$title.'"/>';
+                $m_desc  = '<meta name="description" content="'.$name.'" />';
+                $canonical = '<link rel="canonical" href="'.$url.'" />';
+                $og_img = '<meta property="og:image" content="'.$pic.'" />';
+                $og_desc = '<meta property="og:description" content="'.$name.'" />';
+
+            }
+            else{
+                $url = pPLAYER;
+                $name = $desc;
+                $t_title = '<title>'.$title.'</title>';
+                $m_title = '<meta name="title" content="'.$title.'"/>';
+                $m_desc  = '<meta name="description" content="'.$desc.'"/>';
+                $canonical = '<link rel="canonical" href="'.$url.'" />';
+                $og_desc = '<meta property="og:description" content="'.$name.' Lihat profil Pemain selengkapnya.." />';
+            }    
+
+        break;
+        case 'jadwal-bola':
+
+            $url = base_url().'jadwal-bola';
+            $title   = 'Jadwal Bola Malam Ini | Jadwal Siaran Sepak Bola Hari Ini - Eyesoccer';
+            $desc    = 'Berikut jadwal live siaran langsung pertandingan sepak bola terbaru hari ini, jadwal bola malam ini hingga jadwal bola minggu ini dari jadwal sepak bola indonesia hingga jadwal bola di tv dunia';
+            $name = $title;
+            $t_title = '<title>'.$title.'</title>';
+            $m_title = '<meta name="title" content="'.$title.'"/>';
+            $m_desc  = '<meta name="description" content="'.$desc.'">';
+            $canonical = '<link rel="canonical" href="'.$url.'" />';
+            $og_desc = '<meta property="og:description" content="'.$name.' Lihat profil selengkapnya.." />';
+
+         break;
+
+        default:
+            $url = base_url();
+            $title   = 'Berita Sepak Bola Indonesia Terbaru | Jadwal Bola | Database Pemain Bola | Eyesoccer';
+            $desc    = 'Portal Berita sepak bola indonesia terbaru, jadwal bola, database pemain bola, transfer pemain bola, klub bola, pelatih, manager, ofisial bola, supporter bola dan event sepak bola terlengkap di Indonesia';
+            $name = $title;
+            $t_title = '<title>'.$title.'</title>';
+            $m_title = '<meta name="title" content="'.$title.'"/>';
+            $m_desc =  '<meta name="description" content="'.$desc.'">';
+            $canonical = '<link rel="canonical" href="'.$url.'" />';
+            $og_desc = '<meta property="og:description" content="'.$name.' Lihat profil selengkapnya.." />';
+           
+        break;
+
+    }
+    
+        $meta .= $t_title.PHP_EOL;
+        $meta .= $m_title.PHP_EOL;
+        $meta .= $m_desc.PHP_EOL;
+        $meta .= '<meta name="googlebot-news" content="index,follow" />'.PHP_EOL;
+        $meta .= '<meta name="googlebot" content="index,follow" />'.PHP_EOL;
+        $meta .= $m_img.PHP_EOL;
+        $meta .= '<meta name="robots" content="index,follow" />'.PHP_EOL;
+        $meta .= '<meta name="author" content="EyeSoccer.id" />'.PHP_EOL;
+        $meta .= '<meta name="language" content="id" />'.PHP_EOL;
+        $meta .= '<meta name="geo.country" content="id" name="geo.country" />'.PHP_EOL;
+        $meta .= '<meta http-equiv="content-language" content="In-Id" />'.PHP_EOL;
+        $meta .= '<meta name="geo.placename"content="Indonesia" />'.PHP_EOL;
+        $meta .= '<link rel="publisher" href="https://plus.google.com/u/1/105520415591265268244" />'.PHP_EOL;
+        $meta .= $canonical.PHP_EOL;
+        $meta .= ' <!-- End of SEO Meta Tags-->'.PHP_EOL;
+        $meta .= '<!-- Begin of Facebook Open graph data-->'.PHP_EOL;
+        $meta .= '<meta property="fb:app_id" content="140611863350583" />'.PHP_EOL;
+        $meta .= '<meta property="og:site_name" content="EyeSoccer" />'.PHP_EOL;
+        $meta .= '<meta property="og:url" content="'.$url.'" />'.PHP_EOL;
+        $meta .= '<meta property="og:type" content="Website" />'.PHP_EOL;
+        $meta .= '<meta property="og:title" content=" '.$name.' - EyeProfile | EyeSoccer" />'.PHP_EOL;
+        $meta .= $og_img.PHP_EOL;
+        $meta .= $og_desc.PHP_EOL;
+        $meta .= '<meta property="og:locale" content="id_ID" />'.PHP_EOL;
+        $meta .= '<!--End of Facebook open graph data-->'.PHP_EOL;        
+        $meta .= '<!--begin of twitter card data-->'.PHP_EOL;
+        $meta .= '<meta name="twitter:card" content="summary" /> '.PHP_EOL;   
+        $meta .= '<meta name="twitter:site" content="@eyesoccer_id" />'.PHP_EOL;
+        $meta .= '<meta name="twitter:creator" content="@eyesoccer_id" />'.PHP_EOL;
+        $meta .= '<meta name="twitter:domain" content="EyeSoccer"/>'.PHP_EOL;
+        $meta .= '<meta name="twitter:title" content="'.$name.'" />'.PHP_EOL;
+        $meta .= '<meta name="twitter:description" content="'.$desc.'" />'.PHP_EOL;
+        $meta .= '<meta name="twitter:image" content="'.$pic.'" />'.PHP_EOL;
+        $meta .= '<!--end of twitter card data-->'.PHP_EOL;
+
+    return $meta;
     
 }
 function imgCache($url, $size = "medium")
@@ -636,7 +709,7 @@ function imgUrl()
 function load_top_avatar()
 {
     $CI =& get_instance();
-    $prof_pic = $CI->db->query("SELECT b.pic FROM tbl_member a left join tbl_gallery b ON b.id_gallery=a.profile_pic WHERE id_member='" . $_SESSION["id_member"] . "'")->row()->pic;
+    $prof_pic = $_SESSION["member"]["url_pic"];
 
     return $prof_pic;
 }
@@ -644,7 +717,7 @@ function load_top_avatar()
 function load_top_name()
 {
     $CI =& get_instance();
-    $prof_name = $CI->db->query("SELECT a.name FROM tbl_member a left join tbl_gallery b ON b.id_gallery=a.profile_pic WHERE id_member='" . $_SESSION["id_member"] . "'")->row()->name;
+    $prof_name = $_SESSION["member"]["name"];
 
     return $prof_name;
 }

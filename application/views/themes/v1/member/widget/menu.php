@@ -4,7 +4,7 @@
             <div class="container bg-menu-pic">
                 <a href="<?php echo base_url('member/profile'); ?>">
                     <div class="menu-pic">
-                        <img src="<?php echo ($this->session->member != '') ? $this->session->member['url_pic'] : SUBCDN."assets/img/eyeme/user-discover.png"; ?>" alt="">
+                        <img src="<?php echo (!isset($this->session->member)) ? $this->session->member['url_pic'] : SUBCDN."assets/img/eyeme/user-discover.png"; ?>" alt="">
                     </div>
 
                     <div class="container tx-center mg-t20">

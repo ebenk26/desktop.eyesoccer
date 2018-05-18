@@ -119,9 +119,8 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 					<option value="">--Pilih Kategori Liga--</option>
 
 				<?php foreach($get_all_liga as $row):
-					$league = ($row->league == 'SSB / Akademi Sepakbola' ?  'SSB' :$row->league);
-					?>
-					<option <?php echo ($league == urldecode($this->uri->segment(4)) ? 'selected' :'')?> value="<?php echo pCLUB.'Liga Usia Muda/'.$league?>"><?php echo $row->league?></option>';  
+					$league = ($row->league == 'SSB / Akademi Sepakbola' ?  'SSB' :$row->league);?>
+					<option <?php echo ($league == urldecode($this->uri->segment(4)) ? 'selected' :'')?> value="<?php echo pCLUB.'Liga Usia Muda/'.$league?>"><?php echo $row->league?></option> 
 
 				<?php endforeach;?>
                 </select>
