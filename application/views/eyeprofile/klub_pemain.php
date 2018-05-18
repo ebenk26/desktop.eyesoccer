@@ -25,7 +25,7 @@
 		padding-top: 40px;
 	}
 	.class-W{
-		background-color:#1dd163;
+		background-color:#8bc24c;
 		border-radius:15px;
 		font-weight:bold;
 		padding:5px 0px 5px 0px;
@@ -33,7 +33,7 @@
 		margin:-6px -6px 9px -6px;
 	}
 	.class-L{
-		background-color:#d81c1c;
+		background-color:#f44236;
 		border-radius:15px;
 		font-weight:bold;
 		padding:5px 0px 5px 0px;
@@ -41,7 +41,7 @@
 		margin:-6px -6px 9px -6px;
 	}
 	.class-D{
-		background-color:#d5b41b;
+		background-color:#fec009;
 		border-radius:15px;
 		font-weight:bold;
 		padding:5px 0px 5px 0px;
@@ -712,7 +712,7 @@
 									<table>
 										<thead>
 											<tr>
-												<th class="p-L_stats" width="40%" align="center" title="Main">Main</th>
+												<th class="p-L_stats" width="75" align="center" title="Main">Main</th>
 												<th class="w-L_stats" width="75" align="center" title="Menang (%Menang)">Menang</th>
 												<th class="d-L_stats" width="75" align="center" title="Seri (%Seri)">Seri</th>		
 												<th class="l-L_stats" width="75" align="center" title="Kalah (%Kalah)">Kalah</th>	
@@ -731,7 +731,7 @@
 													$p_draw=($stats['draw']/$stats['play']*100);
 													$p_lose=($stats['lose']/$stats['play'])*100;
 												?>
-												<td class="p-stats" align="center"><span class="g-stats"><?php echo $stats['play'];?>x</span>
+												<td class="p-stats" align="center" rowspan="2"><span class="g-stats"><?php echo $stats['play'];?>x</span>
 												(<?=$stats['play_a']." Kandang & ".$stats['play_b']." Tandang";?>)</td>
 												<td class="w-stats" align="center"><span class="g-stats"><?php echo $stats['win'];?>x</span>
 												<strong style="font-size:16px;">(<?=number_format($p_win);?>%)</strong></br>
@@ -745,6 +745,15 @@
 												<?php
 												}
 												?>
+											</tr>
+											<tr>
+												<td colspan="3">
+														<div class="statistika">
+																<div class="container statist w-33 statistik_a" style="width:43%;"></div>
+																<div class="container statist w-33 statistik_b" style="width:50%;"></div>
+																<div class="container statist w-33 statistik_c" style="width:7%;"></div>
+															</div>
+												</td>
 											</tr>
 										</tbody>
 									</table>
@@ -807,9 +816,65 @@
 								}
 							?>
 			</div>
-			</br>
-			</br>
-			</br>
+
+			<div class="container">
+				<h3 class="h3-oranye">Statistik</h3>
+				<div class="statistika">
+					<div class="statist w-100 statistik_a"></div>
+					<div class="statist w-33 statistik_b"></div>
+					<div class="statist w-33 statistik_c"></div>
+				</div>
+				<table class="tb-statistik">
+					<thead>
+						<tr>
+							<th>Main</th>
+							<th>14
+								<p>8 Kandang dan 6 Tandang</p>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Menang</td>
+							<td>
+								<div class="statistika" style="width:43%;">
+									<div class="statist w-100 statistik_a">
+										<span>6</span>
+										<p>5 Kandang dan 1 Tandang</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Seri</td>
+							<td>
+								<div class="statistika" style="width:50%;">
+									<div class="statist w-100 statistik_b">
+										<span>7</span>
+										<p>3 Kandang dan 4 Tandang</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Kalah</td>
+							<td>
+								<div class="statistika" style="width:7%;">
+									<div class="statist w-100 statistik_c">
+										<span>1</span>
+										<p>0 Kandang dan 1 Tandang</p>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+						
+					
+				</table>
+			</div>
+
+			
+
 			<h3 class="container h3-oranye" style="margin-top: 24px;margin-bottom: -10px;width:445px;">Prestasi Klub</h3>
 				<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
 					<div class="container box-pertandingan">
