@@ -1080,7 +1080,14 @@ class Eyeprofile_model extends CI_Model
 		echo json_encode($arr);
 
 	}
-	public function __getlistofficial(){
+	public function __getlistofficial($club = ''){
+		if($club != ''){
+			$query = array('page'=> '1','limit'=> '10','search'=> $club);
+			$result = $this->excurl->remoteCall($this->__xurl().'profile-official',$this->__xkey(),$query);
+			return $result;
+			exit;
+		}
+		
 		$competition = $this->input->post('competition');
 		$league = $this->input->post('league') == 'SSB' ? 'SSB / Akademi Sepakbola' : $this->input->post('league') ;	
 		$page =$this->input->post('page');

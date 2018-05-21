@@ -150,3 +150,21 @@ if(uri_segment !== undefined && uri_segment !== null){
         $('#chained_liga').show();
     }
 }
+
+function openTab(evt,tabbing){
+                    // alert(tabbing);
+    var i, maintab, klubtab;
+    tabcontent = document.getElementsByClassName("maintab");
+    console.log(tabcontent);
+    if(tabcontent !== undefined && tabcontent !== null){
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("klubtab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabbing).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+}

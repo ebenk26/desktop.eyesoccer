@@ -106,6 +106,8 @@ class Eyeprofile extends CI_Controller {
 	public function klub_detail($url = '')
     {
     	$res= $this->pmod->__club_detail($url);
+    	$club = ($res->status == 'Success' ? $res->data->name : '' );
+    	$official = $this->pmod->__getlistofficial($club);
         if ($url == "" || $res->status == 'Error') {
             redirect("eyeprofile/klub/Liga Indonesia 1");
         }
@@ -142,6 +144,7 @@ class Eyeprofile extends CI_Controller {
 		$data['meta']['share'] = set_meta(['uri'=> 'club','data'=> $r]);
         $data['kanal'] = "home";
         $this->load->view('config-session', $data);
+        $data['official'] = $official;
         $data["body"] = $this->load->view('eyeprofile/klub_pemain', $data, true);
         $this->load->view('template/static', $data);
     }
