@@ -32,7 +32,7 @@ body{
 			<ul>
 			<li><a href='<?php echo base_url(); ?>' style='display: unset'>Home</a></li>
 			<li><a href='<?php echo base_url().'eyetube'; ?>' style='display: unset'>EyeTube</a></li>
-			<li><a href='#' style='display: unset'><?php echo str_replace('-',' ',urldecode(end($link_array)));?></a></li>
+			<li><a href='#' style='display: unset'><?php echo str_replace('-',' ',urldecode(end($this->uri->segments)));?></a></li>
 			</ul>
 		</div>
         <div class="center-desktop m-0">

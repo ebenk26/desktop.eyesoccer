@@ -336,8 +336,12 @@ class Eyenews extends CI_Controller {
 		$data["meta"]["description"] 		="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";		
 		$data["page"] 				="eyenews";		
 		
-		$data['select_cat']			= urldecode($cat);
-		$data['select_subcat']			= urldecode($subcat);
+		// $data['select_cat']			= urldecode($cat);
+		$data['select_cat']			= urldecode(str_replace('-',' ',$cat)); // ganti %20 ke -
+		$cat			= str_replace('-','%20',$cat); // ganti %20 ke -
+		// $data['select_subcat']			= urldecode($subcat);
+		$data['select_subcat']			= urldecode(str_replace('-',' ',$subcat)); // ganti %20 ke -
+		$subcat			= str_replace('-','%20',$subcat); // ganti %20 ke -
 		$data['all_news'] 			= $this->Eyenews_model->get_all_news();
 		$data['soccer_seri'] 			= $this->Eyenews_model->get_soccer_seri();
 		$data['eyenews_main'] 			= $this->Eyenews_model->get_eyenews_main();
