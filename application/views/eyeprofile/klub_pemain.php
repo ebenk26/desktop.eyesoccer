@@ -50,13 +50,13 @@
 		margin:-6px -6px 9px -6px;
 	}
 	.class-W:hover{
-		background-color:#00ab42;
+		background-color:#8bc24cc4;
 	}
 	.class-L:hover{
-		background-color:#a00000;
+		background-color:#f44236d9;
 	}
 	.class-D:hover{
-		background-color:#c7a400;
+		background-color:#fec009cc;
 	}
 	.div-W{width:20px;background-color:#1dd163;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px;}
 	.div-D{width:20px;background-color:#d5b41b;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
@@ -711,17 +711,6 @@
 							<h3 class="h3-oranye" style="margin-top: 24px;margin-bottom: -10px;width:445px;">Statistik <?=$r->name?> <?=$tahun?></h3>
 							<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
 								<div class="container box-pertandingan" style="border-radius: 3px;overflow: hidden;">
-									<table>
-										<thead>
-											<tr>
-												<th class="p-L_stats" width="75" align="center" title="Main">Main</th>
-												<th class="w-L_stats" width="75" align="center" title="Menang (%Menang)">Menang</th>
-												<th class="d-L_stats" width="75" align="center" title="Seri (%Seri)">Seri</th>		
-												<th class="l-L_stats" width="75" align="center" title="Kalah (%Kalah)">Kalah</th>	
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
 												<?php 
 												foreach($get_pwdl_stats as $stats)
 												{
@@ -733,149 +722,89 @@
 													$p_draw=($stats['draw']/$stats['play']*100);
 													$p_lose=($stats['lose']/$stats['play'])*100;
 												?>
-												<td class="p-stats" align="center" rowspan="2"><span class="g-stats"><?php echo $stats['play'];?>x</span>
-												(<?=$stats['play_a']." Kandang & ".$stats['play_b']." Tandang";?>)</td>
-												<td class="w-stats" align="center"><span class="g-stats"><?php echo $stats['win'];?>x</span>
-												<strong style="font-size:16px;">(<?=number_format($p_win);?>%)</strong></br>
-												<?=$stats['win_a']." Kandang & ".$stats['win_b']." Tandang";?></td>	
-												<td class="d-stats" align="center"><span class="g-stats"><?php echo $stats['draw'];?>x</span>
-												<strong style="font-size:16px;">(<?=number_format($p_draw);?>%)</strong></br>
-												<?=$stats['draw_a']." Kandang & ".$stats['draw_b']." Tandang";?></td>
-												<td class="l-stats" align="center"><span class="g-stats"><?php echo $stats['lose'];?>x</span>
-												<strong style="font-size:16px;">(<?=number_format($p_lose);?>%)</strong></br>
-												<?=$stats['lose_a']." Kandang & ".$stats['lose_b']." Tandang";?></td>
-												<?php
-												}
-												?>
-											</tr>
-											<tr>
-												<td colspan="3">
-														<div class="statistika">
-																<div class="container statist w-33 statistik_a" style="width:43%;"></div>
-																<div class="container statist w-33 statistik_b" style="width:50%;"></div>
-																<div class="container statist w-33 statistik_c" style="width:7%;"></div>
-															</div>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
-								<div class="container box-pertandingan" style="border-radius: 3px;overflow: hidden;">
-									<table>
-										<thead>
-											<tr>
+									<div class="container">
+										<div class="statistika">
+											<div class="container statist statistik_a" style="width:<?=number_format($p_win);?>%;">
+												<span><?=number_format($p_win);?>%</span>
+											</div>
+											<div class="container statist statistik_b" style="width:<?=number_format($p_draw);?>%;">
+												<span><?=number_format($p_draw);?>%</span>
+											</div>
+											<div class="container statist statistik_c" style="width:<?=number_format($p_lose);?>%;">
+												<span><?=number_format($p_lose);?>%</span>
+											</div>
+										</div>
+										<div class="container ketr-statist">
+											<div class="ket-statist ket-a"></div>
+											<span>Menang</span>
+											<div class="ket-statist ket-b"></div>
+											<span>Seri</span>
+											<div class="ket-statist ket-c"></div>
+											<span>Kalah</span>
+										</div>
+										<div class="container detail-ket-statist">
+											<span id="lihatDetailStatistik">Lihat detail statistik ></span>
+											<div class="container lihatDetailStatistik" style="display:none;">
+												<table>
+													<tr>
+														<th>Total Main</th>
+														<td>
+															<?php echo $stats['play'];?> kali
+															<p><?=$stats['play_a']." Kandang dan ".$stats['play_b']." Tandang";?></p>
+														</td>
+														<th>Menang</th>
+														<td>
+															<?php echo $stats['win'];?> kali
+															<p><?=$stats['win_a']." Kandang dan ".$stats['win_b']." Tandang";?></p>
+														</td>
+													</tr>
+													<tr>
+														<th>Seri</th>
+														<td>
+															<?php echo $stats['draw'];?> kali
+															<p><?=$stats['draw_a']." Kandang dan ".$stats['draw_b']." Tandang";?></p>
+														</td>
+														<th>Kalah</th>
+														<td>
+															<?php echo $stats['lose'];?> kali
+															<p><?=$stats['lose_a']." Kandang dan ".$stats['lose_b']." Tandang";?></p>
+														</td>
+													</tr>
+									<?php
+										}
+									?>
 												<?php 
-												foreach($get_gkgt_stats as $gstats)
-												{
-													$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
-													$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
+													foreach($get_gkgt_stats as $gstats)
+													{
+														$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
+														$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
 												?>									
-												<th class="goalm" align="center" title="Goal Memasukan (%GM)" style="border-right: 1px solid #dcdcdc;">Memasukan
-													<table>
-														<thead align="center">
-														</br><span class="g-stats"><?=$goalm;?></span></br><strong>goal</strong>
-														</thead>
-													</table>
-												</th>	
-												<th class="goalk" align="center" title="Goal Kemasukan (%GK)">Kemasukan
-													<table>
-														<thead align="center">
-														</br><span class="g-stats"><?=$goalk;?></span></br><strong>goal</strong>
-														</thead>
-													</table>
-												</th>									
-											</tr>
-										</thead>
-										<tbody>
-											<tr>									
-												<td align="center">
-													<table>
-														<tr>
-															<td class="goalhm" align="center"><span class="g-stats"><?php echo $gstats['goalm_kandang'];?></span><strong>goal kandang</strong></td>
-															<td class="goalam" align="center"><span class="g-stats"><?php echo $gstats['goalm_tandang'];?></span><strong>goal tandang</strong></td>
-														</tr>
-													</table>
-												</td>	
-												<td align="center">
-													<table>
-														<tr>
-															<td class="goalhk" align="center"><span class="g-stats"><?php echo $gstats['goalk_kandang'];?></span><strong>goal kandang</strong></td>
-															<td class="goalak" align="center"><span class="g-stats"><?php echo $gstats['goalk_tandang'];?></span><strong>goal tandang</strong></td>
-														</tr>
-													</table>
-												</td>									
+													<tr>
+														<th>Memasukkan Goal</th>
+														<td>
+															<?=$goalm;?> kali
+															<p><?php echo $gstats['goalm_kandang'];?> Kandang dan <?php echo $gstats['goalm_tandang'];?> Tandang</p>
+														</td>
+														<th>Kemasukan Goal</th>
+														<td>
+															<?=$goalk;?> kali
+															<p><?php echo $gstats['goalk_kandang'];?> Goal Kandang dan <?php echo $gstats['goalk_tandang'];?> Goal Tandang</p>
+														</td>
+													</tr>
 												<?php
-												}
+													}
 												?>
-											</tr>
-										</tbody>
-									</table>
+												</table>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
+							
 							<?php
 								}
 							?>
 			</div>
-
-			<div class="container">
-				<h3 class="h3-oranye">Statistik</h3>
-				<div class="statistika">
-					<div class="statist w-100 statistik_a"></div>
-					<div class="statist w-33 statistik_b"></div>
-					<div class="statist w-33 statistik_c"></div>
-				</div>
-				<table class="tb-statistik">
-					<thead>
-						<tr>
-							<th>Main</th>
-							<th>14
-								<p>8 Kandang dan 6 Tandang</p>
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Menang</td>
-							<td>
-								<div class="statistika" style="width:43%;">
-									<div class="statist w-100 statistik_a">
-										<span>6</span>
-										<p>5 Kandang dan 1 Tandang</p>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Seri</td>
-							<td>
-								<div class="statistika" style="width:50%;">
-									<div class="statist w-100 statistik_b">
-										<span>7</span>
-										<p>3 Kandang dan 4 Tandang</p>
-									</div>
-								</div>
-							</td>
-						</tr>
-						<tr>
-							<td>Kalah</td>
-							<td>
-								<div class="statistika" style="width:7%;">
-									<div class="statist w-100 statistik_c">
-										<span>1</span>
-										<p>0 Kandang dan 1 Tandang</p>
-									</div>
-								</div>
-							</td>
-						</tr>
-					</tbody>
-						
-					
-				</table>
-			</div>
-
-			
 
 			<h3 class="container h3-oranye" style="margin-top: 24px;margin-bottom: -10px;width:445px;">Prestasi Klub</h3>
 				<div class="w-60 m-r-1 pd-t-20 formasi" style="width: 1062px;overflow: hidden;">
@@ -960,3 +889,12 @@
 			</div>
 		</div>
 	</div>
+
+
+<script>
+$(document).ready(function(){
+    $("#lihatDetailStatistik").click(function(){
+        $(".lihatDetailStatistik").slideToggle();
+    });
+});
+</script>
