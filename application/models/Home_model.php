@@ -941,7 +941,32 @@ class Home_model extends CI_Model
         $arr = ['xClass'=> 'reqsearch','xHtml'=> $html];
         $this->tools->__flashMessage($arr);
     }
+	function __scrapindonesia(){
+    	$data['data'] = "";
+    	$html = $this->load->view('home/ajax/scrapindonesia',$data,true);
+    	$arr = array('xClass'=> 'reqscrapindonesia','xHtml'=> $html);
+    	$this->tools->__flashMessage($arr);
+    }
+	function __scrapitalia(){
+    	$data['data'] = "";
+    	$html = $this->load->view('home/ajax/scrapitalia',$data,true);
+    	$arr = array('xClass'=> 'reqscrapitalia','xHtml'=> $html);
+    	$this->tools->__flashMessage($arr);
 
+    	
+    }
+	function __scrapspanyol(){
+    	$data['data'] = "";
+    	$html = $this->load->view('home/ajax/scrapspanyol',$data,true);
+    	$arr = array('xClass'=> 'reqscrapspanyol','xHtml'=> $html);
+    	$this->tools->__flashMessage($arr);
+    }
+	function __scrapinggris(){
+    	$data['data'] = "";
+    	$html = $this->load->view('home/ajax/scrapinggris',$data,true);
+    	$arr = array('xClass'=> 'reqscrapinggris','xHtml'=> $html);
+    	$this->tools->__flashMessage($arr);
+    }
 }
 
 /* End of file Home_model.php */
