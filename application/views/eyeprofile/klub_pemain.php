@@ -718,20 +718,24 @@
 													$stats['win']=$stats['win_a']+$stats['win_b'];
 													$stats['draw']=$stats['draw_a']+$stats['draw_b'];
 													$stats['lose']=$stats['lose_a']+$stats['lose_b'];
-													$p_win=($stats['win']/$stats['play'])*100;
-													$p_draw=($stats['draw']/$stats['play']*100);
-													$p_lose=($stats['lose']/$stats['play'])*100;
+													$p_win=number_format(($stats['win']/$stats['play'])*100,3);
+													$p_draw=number_format(($stats['draw']/$stats['play'])*100,3);
+													$p_lose=number_format(($stats['lose']/$stats['play'])*100,3);
+													$pv_win=number_format($p_win,1);
+													$pv_draw=number_format($p_draw,1);
+													$pv_lose=number_format($p_lose,1);
+													
 												?>
 									<div class="container">
-										<div class="statistika">
-											<div class="container statist statistik_a" style="width:<?=number_format($p_win);?>%;">
-												<span><?=number_format($p_win);?>%</span>
+										<div class="statistika" width="90%">
+											<div class="container statist statistik_a" style="width:<?=$p_win;?>%">
+												<span><?=$pv_win;?>%</span>
 											</div>
-											<div class="container statist statistik_b" style="width:<?=number_format($p_draw);?>%;">
-												<span><?=number_format($p_draw);?>%</span>
+											<div class="container statist statistik_b" style="width:<?=$p_draw;?>%">
+												<span><?=$pv_draw;?>%</span>
 											</div>
-											<div class="container statist statistik_c" style="width:<?=number_format($p_lose);?>%;">
-												<span><?=number_format($p_lose);?>%</span>
+											<div class="container statist statistik_c" style="width:<?=$p_lose;?>%;">
+												<span><?=$pv_lose;?>%</span>
 											</div>
 										</div>
 										<div class="container ketr-statist">
@@ -770,27 +774,40 @@
 															<p><?=$stats['lose_a']." Kandang dan ".$stats['lose_b']." Tandang";?></p>
 														</td>
 													</tr>
-									<?php
-										}
-									?>
-												<?php 
-													foreach($get_gkgt_stats as $gstats)
-													{
-														$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
-														$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
-												?>									
 													<tr>
-														<th>Memasukkan Goal</th>
-														<td>
-															<?=$goalm;?> kali
-															<p><?php echo $gstats['goalm_kandang'];?> Kandang dan <?php echo $gstats['goalm_tandang'];?> Tandang</p>
-														</td>
-														<th>Kemasukan Goal</th>
-														<td>
-															<?=$goalk;?> kali
-															<p><?php echo $gstats['goalk_kandang'];?> Goal Kandang dan <?php echo $gstats['goalk_tandang'];?> Goal Tandang</p>
+														<td colspan="4">
+															<table>
+															<?php
+																}
+															?>
+																		<?php 
+																			foreach($get_gkgt_stats as $gstats)
+																			{	
+																				$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
+																				$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
+																				$gt=$goalm+$goalk;
+																				$p_gm=number_format(($goalm/$gt)*100,3);
+																				$p_gk=number_format(($goalk/$gt)*100,3);
+																				$pv_gm=number_format($p_gm,1);
+																				$pv_gk=number_format($p_gk,1);
+																		?>									
+																			<tr width="100%">
+																				<th>Memasukkan Goal</th>
+																				<td>
+																					<?=$goalm;?> goal
+																					<p><?php echo $gstats['goalm_kandang'];?> Kandang dan <?php echo $gstats['goalm_tandang'];?> Tandang</p>
+																				</td>
+																				<th>Kemasukan Goal</th>
+																				<td>
+																					<?=$goalk;?> goal
+																					<p><?php echo $gstats['goalk_kandang'];?> Goal Kandang dan <?php echo $gstats['goalk_tandang'];?> Goal Tandang</p>
+																				</td>
+																			</tr>
+
+															</table>
 														</td>
 													</tr>
+									
 												<?php
 													}
 												?>

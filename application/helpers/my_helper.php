@@ -106,6 +106,7 @@ define('pREFEREE', EYEPROFILE . 'referee/');
 define('pSUPPORT', EYEPROFILE . 'supporter/');
 define('EYETUBE', base_url() . 'eyetube');
 define('EYENEWS', base_url() . 'eyenews');
+define('pEYENEWS', EYENEWS . 'eyenews/');
 define('EYEME', base_url() . 'eyeme');
 define('EYEEVENT', base_url() . 'eyevent');
 define('EYEMARKET', base_url() . 'eyemarket');
@@ -164,7 +165,7 @@ function formatDate($date,$str = ' '){
 */
 
 function set_meta($opt = ['uri','data']){
-
+    $richcard='';
     $meta  = '<!-- Begin of SEO Meta Tags -->'.PHP_EOL;
     $m_img ='';
     $pic   = '';
@@ -178,15 +179,79 @@ function set_meta($opt = ['uri','data']){
 
     switch($opt['uri']){
 
+        case 'news':
+        $title   = 'Berita Sepak Bola Indonesia | Eyenews | Eyesoccer';
+        $desc    = 'Berita Sepak Bola Indonesia Terbaru, Terhangat, Viral.. Lihat Selengkapnya >>';
+        $abc=strip_tags($d->description);
+		$string = htmlentities($abc, null, 'utf-8');
+		$content = str_replace("&amp;ndash;", "-", $string);
+		$contents =substr($content, 0, 200);
+        $s_richcard= '<script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://eyesoccer.id/eyenews/detail/'.$d->url.'"
+        },
+        "headline": "'.$d->title.'",
+        "image": [
+            "https://static.eyesoccer.id/v1/cache/images/'.$d->url_pic.'/small",
+            "https://static.eyesoccer.id/v1/cache/images/'.$d->url_pic.'/medium",
+            "https://static.eyesoccer.id/v1/cache/images/'.$d->url_pic.'"
+        ],
+        "datePublished": "'.$d->publish_on.'",
+        "dateModified": "'.$d->publish_on.'",
+        "author": {
+            "@type": "Person",
+            "name": "'.$d->fullname.'"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Eyesoccer Indonesia",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.eyesoccer.id/img/logo2.png"
+            }
+        },
+        "description":"'.$contents.'"
+        }
+    </script>';
+        if(is_object($d)){
+            $pic = $d->url_pic;
+            $url = $d->url;
+            $name = $d->title;
+            $richcard=$s_richcard;
+            $m_img = '<meta name="image" content="'.$pic.'"/>';
+            $t_title = '<title>'.$name.'</title>';
+            $m_title = '<meta name="title" content="'.$name.'"/>';
+            $m_desc  = '<meta name="description" content="'.$name.'" />';
+            $canonical= '<link rel="canonical" href="'.$url.'" />';
+            $og_img = '<meta property="og:image" content="'.$pic.'" />';
+            $og_desc  = '<meta property="og:description" content="'.$name.'" />';
+
+        }
+        else{
+            $url = pEYENEWS;
+            $name = $title;
+            $t_title = '<title>'.$title.'</title>';
+            $m_title = '<meta name="title" content="'.$title.'"/>';
+            $m_desc  = '<meta name="description" content="'.$desc.'" />';
+            $canonical = '<link rel="canonical" href="'.pEYENEWS.'" />';
+            $og_desc = '<meta property="og:description" content="'.$name.' Lihat profil selengkapnya.." />';
+        }
+        
+    break;
+
         case 'official':
-            $title   = 'Berita Sepak Bola Indonesia Terbaru | Jadwal Bola | Database Pemain Bola | Eyesoccer';
-            $desc    = 'Berikut jadwal live siaran langsung pertandingan sepak bola terbaru hari ini, jadwal bola malam ini hingga jadwal bola minggu ini dari jadwal sepak bola indonesia hingga jadwal bola di tv dunia';
+            $title   = 'Database Ofisial Sepak Bola Indonesia | Ofisial | Database Ofisial | Eyesoccer';
+            $desc    = 'Berikut Database Ofisial Sepak Bola Indonesia.. Lihat Selengkapnya >>';
 
             if(is_object($d)){
                 $pic = $d->url_logo;
                 $url = $d->share_url;
                 $name = $d->name;
-                $m_img = '<meta name="image" content="'.$d->url_logo.'"/>';
+                $m_img = '<meta name="image" content="'.$pic.'"/>';
                 $t_title = '<title>'.$name.' | '.$title.'</title>';
                 $m_title = '<meta name="title" content="'.$name.' | '.$title.'"/>';
                 $m_desc  = '<meta name="description" content="'.$name.'" />';
@@ -236,7 +301,7 @@ function set_meta($opt = ['uri','data']){
 
         break;
         case 'player':
-            $title  = 'Database Klub Sepak Bola | EyeProfile - Eyesoccer.ID';
+            $title  = 'Database Pemain Sepak Bola Indonesia | EyeProfile - Eyesoccer.ID';
             $desc   = 'Lihat profil dan statistik Pemain sepak bola Indonesia selengkapnya';
 
             if(is_object($d)){
@@ -277,6 +342,19 @@ function set_meta($opt = ['uri','data']){
             $og_desc = '<meta property="og:description" content="'.$name.' Lihat profil selengkapnya.." />';
 
          break;
+         case 'hasil-pertandingan-bola':
+
+            $url = base_url().'hasil-bola';
+            $title   = 'Hasil Pertandingan Bola Malam Ini | Hasil Pertandingan Bola Hari Ini - Eyesoccer';
+            $desc    = 'Berikut Hasil Pertandingan Bola terbaru,Hasil Pertandingan Bola minggu ini,Hasil Pertandingan Bola Hari Ini';
+            $name = $title;
+            $t_title = '<title>'.$title.'</title>';
+            $m_title = '<meta name="title" content="'.$title.'"/>';
+            $m_desc  = '<meta name="description" content="'.$desc.'">';
+            $canonical = '<link rel="canonical" href="'.$url.'" />';
+            $og_desc = '<meta property="og:description" content="'.$name.' Lihat profil selengkapnya.." />';
+
+         break;
 
         default:
             $url = base_url();
@@ -292,7 +370,7 @@ function set_meta($opt = ['uri','data']){
         break;
 
     }
-    
+        $meta .= $richcard.PHP_EOL;
         $meta .= $t_title.PHP_EOL;
         $meta .= $m_title.PHP_EOL;
         $meta .= $m_desc.PHP_EOL;
