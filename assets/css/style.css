@@ -5364,12 +5364,12 @@ select::after{
     -ms-transform-origin: bottom left;
     transform-origin: bottom left;
 }
-.statist.statistik_a{background-color: #8bc24c;}
-.statist.statistik_b{background-color: #fec009;}
-.statist.statistik_c{background-color: #f44236;}
-.statist.statistik_a:hover, .ket-statist.ket-a:hover{background-color: #8bc24cc4;}
-.statist.statistik_b:hover, .ket-statist.ket-b:hover{background-color: #fec009cc;}
-.statist.statistik_c:hover, .ket-statist.ket-c:hover{background-color: #f44236d9;}
+.statist.statistik_a{background-color: #468300;}
+.statist.statistik_b{background-color: #dda500;}
+.statist.statistik_c{background-color: #cd0d00;}
+.statist.statistik_a:hover, .ket-statist.ket-a:hover{background-color: #56a200;}
+.statist.statistik_b:hover, .ket-statist.ket-b:hover{background-color: #ecb000;}
+.statist.statistik_c:hover, .ket-statist.ket-c:hover{background-color: #e60f01;}
 .tb-statistik th, .tb-statistik td{
     padding: 0 10px;
 }
@@ -5418,13 +5418,13 @@ select::after{
     box-shadow: inset 0 0 1px #2d2d2d;
 }
 .ket-statist.ket-a{
-    background-color: #8bc24c;
+    background-color: #468300;
 }
 .ket-statist.ket-b{
-    background-color: #fec009;
+    background-color: #dda500;
 }
 .ket-statist.ket-c{
-    background-color: #f44236;
+    background-color: #cd0d00;
 }
 .ketr-statist{
     margin: 10px 0;
