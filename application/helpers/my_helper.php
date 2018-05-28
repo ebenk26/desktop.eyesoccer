@@ -285,6 +285,7 @@ function set_meta($opt = ['uri','data']){
                 $m_title = '<meta name="title" content="'.$name.' | '.$title.'"/>';
                 $m_desc  = '<meta name="description" content="'.$name.'" />';
                 $canonical = '<link rel="canonical" href="'.$url.'" />';
+                $og_url = '<link rel="canonical" href="'.$url.'" />';
                 $og_img = '<meta property="og:image" content="'.$pic.'" />';
                 $og_desc = '<meta property="og:description" content="'.$name.'" />';
 
