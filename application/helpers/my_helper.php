@@ -278,7 +278,7 @@ function set_meta($opt = ['uri','data']){
             $desc   = 'Lihat profil dan statistik club sepak bola Indonesia selengkapnya';
             if(is_object($d)){
                 $pic = $d->url_logo;
-                $url = str_replace("pemain","club","$d->share_url");
+                $url = str_replace("pemain","klub","$d->share_url");
                 $m_img = '<meta name="image" content="'.$pic.'"/>';
                 $name = $d->name;
                 $t_title = '<title>'.$name.' | '.$title.'</title>';
