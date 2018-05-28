@@ -9,7 +9,7 @@ class Eyeprofile extends CI_Controller {
 		   // $this->load->model('Eyemarket_model');
 			date_default_timezone_set('Asia/Jakarta');
 			$this->load->model('Master_model','mod');
-			$this->load->model('Eyeprofile_model','pmod');
+			$this->load->model('ajax/ProfileMod','pmod');
 			$this->load->model('Eyeprofile_model');
 			$this->load->model('Home_model');
 			$this->load->helper(array('form','url','text','date'));
@@ -94,8 +94,8 @@ class Eyeprofile extends CI_Controller {
 		$data['get_jadwal_hasil2'] = $this->Eyeprofile_model->get_jadwal_hasil2($nama_liga_event);
 		$data['transfer_pemain'] = $this->Eyeprofile_model->get_transfer_pemain($nama_liga);
 		$data['pencetak_gol'] = $this->Eyeprofile_model->get_pencetak_gol($nama_liga);		
-		$data['competition'] = $this->Eyeprofile_model->get_all_kompetisi();
-		$data['get_all_liga'] = $this->Eyeprofile_model->get_all_liga();		
+		$data['competition'] = $this->pmod->get_all_kompetisi();
+		$data['get_all_liga'] = $this->pmod->get_all_liga();		
 		$data['get_player_liga'] = $this->Eyeprofile_model->get_player_liga($nama_liga,'indonesia',$cat_liga);		
 		$data['get_player_liga_strange'] = $this->Eyeprofile_model->get_player_liga_strange($nama_liga,'indonesia',$cat_liga);		
 		
