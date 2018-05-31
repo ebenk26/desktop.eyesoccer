@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Eyenews_model extends CI_Model
 {
+	private function __xurl() { return $this->config->item('api_url'); }
+    private function __xkey() { return $this->config->item('credential'); }
 
 	public function get_headline()
 	{
@@ -603,7 +605,15 @@ public function get_trending_eyenews()
                                         ")->result_array();
             return $query; 
 	}
-	
+
+
+	public function __news_detail($slug){
+		$res = $this->excurl->remoteCall($this->__xurl().'news/'.$slug,$this->__xkey());
+		$res = json_decode($res);
+		return $res;
+	}
+
+
 	public function get_eyenews_ads1()
 	{
 		$query = $this->db->query(" SELECT
@@ -647,7 +657,7 @@ public function get_trending_eyenews()
                                         ")->result_array();
             return $query; 
 	}
-}
+} 
 
 /* End of file Eyenews_model.php */
 /* Location: ./application/models/Eyenews_model.php */

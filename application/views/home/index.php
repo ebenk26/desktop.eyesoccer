@@ -173,87 +173,73 @@
 	    	</div>
 		</div>
 		</div>
-	</div>
-</div>
-    
-	<div class="container mt-20 banner-home1 img-banner" style="background-color: unset;text-align: center;height: unset;background: url('<?php echo base_url()?>assets/img/banner/1065X255px.png');background-repeat: no-repeat;line-height: 0px;">
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<!-- EyesoccerDekstop 2#HomeBannerTengah970x250 -->
-	<ins class="adsbygoogle"
-		 style="display:inline-block;width:970px;height:250px"
-		 data-ad-client="ca-pub-7635854626605122"
-		 data-ad-slot="2297288991"></ins>
-	<script>
-	(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-	</div>
-</div>
-<!-- EYETUBE -->
-<div class="center-desktop">        
-    <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyetube.png" alt="">
-    <h2 class="title et"><a href="<?php echo base_url();?>eyetube">EyeTube</a></h2>
-    <hr class="x-et">
-    <div class="et-content">
-        <div class="et-content1 m-t-22">
-		<?php
-		foreach ($video_eyetube as $videonya)
-		{
-		?>
-			<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>">
-				<div class="et-v-content">
-					<img class="lazy" src="<?= MEVID.$videonya['thumb']; ?>/medium" alt="">
-					<!--<img class="lazy" src="<?=base_url()?>systems/eyetube_storage/<?= $videonya['thumb']; ?>" alt="">-->
-					<div class="btn-play">
-						<img class="lazy" src="<?php echo base_url()?>assets/home/img/btn-play.png" alt="">
-					</div>
-				</div>
-			</a>
-            <span class="et-st">
-			<?php
-				$date 		=  new DateTime($videonya['createon']);
-				$tanggal 	= date_format($date,"Y-m-d H:i:s");
-				echo relative_time($tanggal) . ' ago - '.$videonya['tube_view'].' views';						
-			?>					
-			</span>
-			<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>" style="text-decoration: unset;">
-				<h1 class="et-title"><?= $videonya['title']; ?></h1>
-			</a>
-            <p class="et-d" style="max-height:60px; overflow:hidden;">
-			<?php
-				$keterangan = strip_tags($videonya['description']);
-				echo word_limiter($keterangan,25);
-			?>					
-			</p>
-			<?php
-			break;
-			}
-			?>
-        </div>
-        <div class="et-content2" style="margin-top:  -21px;">				
-            <div class="v-et-content2">
-			<?php
-						$i = 0;
-						foreach ($video_eyetube as $videonya)
-						{
-							if ($i != 0)
-							{
-			?>			
-				<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>" style="text-decoration: unset;display:  block;height:  250px;overflow:  hidden; margin-bottom: 15px;">
-                <!-- judul eyetube
-				<div class="t-et-content2">
-                    <span class="et-st"><?php
-				$date 		=  new DateTime($videonya['createon']);
-				$tanggal 	= date_format($date,"Y-m-d H:i:s");
-				echo relative_time($tanggal) . ' ago - '.$videonya['tube_view'].' views';						
-			?></span>
-                    <p class="et-st-det"><?= $videonya['title']; ?></p>
-                </div> -->
-				<img class="v-et-2 v-et-100 lazy" width="100%" src="<?= MEVID.$videonya['thumb']; ?>/medium" alt="" style="margin-bottom: 10px;bottom: unset;">
-					<!-- <div class="container btn-play2"><img class="lazy" src="<?php echo base_url()?>assets/home/img/btn-play.png" alt="" style="z-index:1;width:100%;height:100%;"></div>	 -->
-				</a>
-			<?php
-			}
-			$i++;
+
+        <!-- EYETUBE -->
+        <div class="center-desktop">        
+            <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyetube.png" alt="">
+            <h2 class="title et"><a href="<?php echo base_url();?>eyetube">EyeTube</a></h2>
+            <hr class="x-et">
+            <div class="et-content">
+                <div class="et-content1 m-t-22">
+				<?php
+				foreach ($video_eyetube as $videonya)
+				{
+				?>
+					<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>">
+						<div class="et-v-content">
+							<img class="lazy" src="<?= MEVID.$videonya['thumb']; ?>/small" alt="">
+							<!--<img class="lazy" src="<?=base_url()?>systems/eyetube_storage/<?= $videonya['thumb']; ?>" alt="">-->
+							<div class="btn-play">
+								<img class="lazy" src="<?php echo base_url()?>assets/home/img/btn-play.png" alt="">
+							</div>
+						</div>
+					</a>
+                    <span class="et-st">
+					<?php
+						$date 		=  new DateTime($videonya['createon']);
+						$tanggal 	= date_format($date,"Y-m-d H:i:s");
+						echo relative_time($tanggal) . ' ago - '.$videonya['tube_view'].' views';						
+					?>					
+					</span>
+					<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>" style="text-decoration: unset;">
+						<h1 class="et-title"><?= $videonya['title']; ?></h1>
+					</a>
+                    <p class="et-d" style="max-height:60px; overflow:hidden;">
+					<?php
+						$keterangan = strip_tags($videonya['description']);
+						echo word_limiter($keterangan,25);
+					?>					
+					</p>
+					<?php
+					break;
+					}
+					?>
+                </div>
+                <div class="et-content2" style="margin-top:  -21px;">				
+                    <div class="v-et-content2">
+					<?php
+								$i = 0;
+								foreach ($video_eyetube as $videonya)
+								{
+									if ($i != 0)
+									{
+					?>			
+						<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>" style="text-decoration: unset;display:  block;height:  250px;overflow:  hidden; margin-bottom: 15px;">
+                        <!-- judul eyetube
+						<div class="t-et-content2">
+                            <span class="et-st"><?php
+						$date 		=  new DateTime($videonya['createon']);
+						$tanggal 	= date_format($date,"Y-m-d H:i:s");
+						echo relative_time($tanggal) . ' ago - '.$videonya['tube_view'].' views';						
+					?></span>
+                            <p class="et-st-det"><?= $videonya['title']; ?></p>
+                        </div> -->
+						<img class="v-et-2 v-et-100 lazy" width="100%" src="<?= MEVID.$videonya['thumb']; ?>/small" alt="" style="margin-bottom: 10px;bottom: unset;">
+							<!-- <div class="container btn-play2"><img class="lazy" src="<?php echo base_url()?>assets/home/img/btn-play.png" alt="" style="z-index:1;width:100%;height:100%;"></div>	 -->
+						</a>
+					<?php
+					}
+					$i++;
 
 			}
 			?>						
@@ -279,7 +265,6 @@
  </div>
  <!-- EYETUBE end -->
 
-
 <!-- EYENEWS -->
 <div class="center-desktop">
     <div class="et-content m-b-150">
@@ -289,14 +274,16 @@
             <hr class="x-en">
 			<a href="<?php echo base_url(); ?>eyenews/detail/<?php echo $eyenews_main->url?>">
 				<div class="t-en-content2" style="margin-top:-20px; z-index:1; top:283px; padding:10px; width:580px; background-color:#00000050;"> 
-					<span class="et-st">	  					<small>
+					<span class="et-st">	  					
+						<small>
 						<?php
 							$date 		=  new DateTime($eyenews_main->createon);
 							$tanggal 	= date_format($date,"Y-m-d H:i:s");
 
 							echo relative_time($tanggal) . ' ago';
 						?>
-					</small></span>
+						</small>
+					</span>
 					<p class="et-st-det"><?php echo $eyenews_main->title; ?></p>
 				</div>					
             <!--<img class="v-et-2 w-100" src="assets/img/video-small.png" alt="">-->
@@ -389,6 +376,7 @@
 						<?php
 						}
 						?>
+
                         </div>
                         <div id="tab_rekom" class="box item active">
 							<x>
@@ -398,6 +386,7 @@
 						<?php
 						foreach($eyenews_rekomendasi as $rekomendasi){
 						?>
+
                             <div class="rek-ber">
 								<div class="rek-ber-c">
 								<a href="<?=base_url().'eyenews/detail/'.$rekomendasi['url']; ?>">
@@ -423,6 +412,7 @@
 							<?php
 							}
 							?>
+
                         </div>
                         <div id="tab_usia" class="box item">
 							<x>
@@ -458,6 +448,7 @@
 							<?php
 							}
 							?>									
+
                         </div>
                     </div>
                 </div>
@@ -546,6 +537,7 @@
 				<?php
 				foreach($eyevent_main_3 as $row){
 				?>
+
                     <div class="ev-box-content">
                         <!--<img class="lazy" src="assets/img/video-small.png" alt="">-->
 						<a href="<?php echo base_url()."eyevent/detail/".$row['url']?>"><img class="lazy" src="https://static.eyesoccer.id/v1/cache/images/<?php print $row['pic']; ?>">								
@@ -655,379 +647,57 @@
 		<?php
 			}
 		?>
-        </select>
-		<div id="klasemen4liga" class="max-height-500" style="margin-top: 23px;max-height: 572px;">
-				<div id="liga_indonesia" style="top:-10px;">
-						<table class="border-box radius" cellspacing="0" cellpadding="0" style="margin:  unset;">
-							<thead>
-								<tr>
-									<th title="Posisi">#</th>
-									<th title="Klub">Klub</th>
-									<th title="Bermain">B</th>
-									<th title="Menang">M</th>
-									<th title="Seri">S</th>
-									<th title="Kalah">K</th>
-									<th title="Selisih Goal">SG</th>
-									<th title="Points">Pts</th>
-								</tr>
-							</thead>
-							<tbody>
-							<?php
-								$html = file_get_contents(LinkScrapingLigaIndonesia()); //get the html returned from the following url
-
-								$premiere_doc = new DOMDocument();
-
-								libxml_use_internal_errors(TRUE); //disable libxml errors
-
-								if(!empty($html)){ //if any html is actually returned
-
-									$premiere_doc->loadHTML($html);
-									libxml_clear_errors(); //remove errors for yucky html
-									
-									$pokemon_xpath = new DOMXPath($premiere_doc);
-
-									//get all the h2's with an id
-									$pokemon_row = $pokemon_xpath->query('//tr[@data-team_id]');
-									$pokemon_list = array();
-									$i = 1;
-									if($pokemon_row->length > 0){
-										foreach($pokemon_row as $row){
-											if($i == 1){
-												$trclass="<tr class='zona_acl'>";}
-											elseif($i == 2){
-												$trclass="<tr class='zona_afc'>";}
-											elseif($i == 3){
-												$trclass="<tr class='zona_afc_wl'>";}
-											elseif($i == 16){
-												$trclass="<tr class='zona_degradasi'>";}
-											elseif($i == 17){
-												$trclass="<tr class='zona_degradasi'>";}
-											elseif($i == 18){
-												$trclass="<tr class='zona_degradasi'>";}		
-											else{
-												$trclass="<tr class='zona_aman'>";}
-											
-											echo $trclass;
-											if($i <= 18){
-												$types = $pokemon_xpath->query('td', $row);
-												$n = 0;
-												foreach($types as $type){
-													if($type->nodeValue != ""){
-														if($n != 1){
-															if($n != 7){
-																if($n != 8){
-																	if($n != 11){
-																		if($n != 12){
-																			if($n != 13){
-																				$nodeValue = "<td>".$type->nodeValue.'</td>';
-																				echo $nodeValue;
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-													$n++;
-												}
-												$i ++;
-											}
-											echo "</tr>";
-										}
-									}
-								} 
-							?>
-							</tbody>
-						</table>
-						<div class="detailklasemen">
-							<div class="detailzona_kontinental1"> <span class="detailkontinental1"></span>
-							AFC Champion
-							</div>
-							<div class="detailzona_kontinental2"> <span class="detailkontinental2"></span>
-							AFC Cup
-							</div>
-							<div class="detailzona_degradasi"> <span class="detaildegradasi"></span>
-							Zona Degradasi
+   
+          </select>
+				<div id="klasemen4liga" class="max-height-500" style="margin-top: 23px;max-height: 572px;">
+						<div id="liga_indonesia" style="top:-10px;">
+							<div id="reqscrapindonesia" class="loadscrapindonesia" action>
+								<input type="hidden" name="fn" value="scrapindonesia" class="cinput">
+									<script>
+										$(document).ready(function(){
+											$(window).on('load',function(){
+												ajaxOnLoad('loadscrapindonesia');
+											});
+										});
+									</script>	
 							</div>
 						</div>
-				</div>
-				<div id="liga_inggris" style="display:none;">
-						<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
-							<thead>
-								<tr>
-									<th title="Posisi">#</th>
-									<th title="Klub">Klub</th>
-									<th title="Bermain">B</th>
-									<th title="Menang">M</th>
-									<th title="Seri">S</th>
-									<th title="Kalah">K</th>
-									<th title="Selisih Goal">SG</th>
-									<th title="Points">Pts</th>
-								</tr>
-							</thead>
-							<tbody>
-							<?php
-								$html = file_get_contents(LinkScrapingLigaInggris());
-								$premiere_doc = new DOMDocument();
-								libxml_use_internal_errors(TRUE); //disable libxml errors
-								if(!empty($html)){ //if any html is actually returned
-									$premiere_doc->loadHTML($html);
-									libxml_clear_errors(); //remove errors for yucky html
-									$pokemon_xpath = new DOMXPath($premiere_doc);
-									//get all the h2's with an id
-									$pokemon_row = $pokemon_xpath->query('//tr[@data-team_id]');
-									$pokemon_list = array();
-									$i = 1;
-									if($pokemon_row->length > 0){
-										foreach($pokemon_row as $row){
-											if($i == 1){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 2){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 3){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 4){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 5){
-												$trclass="<tr class='zona_uefa'>";}
-											elseif($i == 18){
-												$trclass="<tr class='zona_degradasi'>";}
-											elseif($i == 19){
-												$trclass="<tr class='zona_degradasi'>";}
-											elseif($i == 20){
-												$trclass="<tr class='zona_degradasi'>";}		
-											else{
-												$trclass="<tr class='zona_aman'>";}
-											
-											echo $trclass;
-											if($i <= 20){
-												$types = $pokemon_xpath->query('td', $row);
-												$n = 0;
-												foreach($types as $type){
-													if($type->nodeValue != ""){
-														if($n != 1){
-															if($n != 7){
-																if($n != 8){
-																	if($n != 11){
-																		if($n != 12){
-																			if($n != 13){
-																				$nodeValue = "<td>".$type->nodeValue.'</td>';
-																				echo $nodeValue;
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-													$n++;
-												}
-												$i ++;
-											}
-											echo "</tr>";
-										}
-									}
-								} 
-							?>
-							</tbody>
-						</table>
-						<div class="detailklasemen">
-							<div class="detailzona_kontinental1"> <span class="detailkontinental1"></span>
-							UEFA Champions
-							</div>
-							<div class="detailzona_kontinental2"> <span class="detailkontinental2"></span>
-							Europa League
-							</div>
-							<div class="detailzona_degradasi"> <span class="detaildegradasi"></span>
-							Zona Degradasi
+						<div id="liga_inggris" style="display:none;">
+							<div id="reqscrapinggris" class="loadscrapinggris" action>
+								<input type="hidden" name="fn" value="scrapinggris" class="cinput">
+									<script>
+										$(document).ready(function(){
+											$(window).on('load',function(){
+												ajaxOnLoad('loadscrapinggris');
+											});
+										});
+									</script>	
 							</div>
 						</div>
-				</div>
-				<div id="liga_italia" style="display:none;">
-						<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
-							<thead>
-								<tr>
-									<th title="Posisi">#</th>
-									<th title="Klub">Klub</th>
-									<th title="Bermain">B</th>
-									<th title="Menang">M</th>
-									<th title="Seri">S</th>
-									<th title="Kalah">K</th>
-									<th title="Selisih Goal">SG</th>
-									<th title="Points">Pts</th>
-								</tr>
-							</thead>
-							<tbody>
-							<?php
-								$html = file_get_contents(LinkScrapingLigaItalia());
-								$premiere_doc = new DOMDocument();
-								libxml_use_internal_errors(TRUE); //disable libxml errors
-								if(!empty($html)){ //if any html is actually returned
-									$premiere_doc->loadHTML($html);
-									libxml_clear_errors(); //remove errors for yucky html
-									$pokemon_xpath = new DOMXPath($premiere_doc);
-									//get all the h2's with an id
-									$pokemon_row = $pokemon_xpath->query('//tr[@data-team_id]');
-									$pokemon_list = array();
-									$i = 1;
-									if($pokemon_row->length > 0){
-										foreach($pokemon_row as $row){
-											if($i == 1){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 2){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 3){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 4){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 5){
-												$trclass="<tr class='zona_uefa'>";}
-											elseif($i == 6){
-												$trclass="<tr class='zona_uefa'>";}
-											elseif($i == 18){
-												$trclass="<tr class='zona_degradasi'>";}
-											elseif($i == 19){
-												$trclass="<tr class='zona_degradasi'>";}
-											elseif($i == 20){
-												$trclass="<tr class='zona_degradasi'>";}		
-											else{
-												$trclass="<tr class='zona_aman'>";}
-											
-											echo $trclass;
-											if($i <= 20){
-												$types = $pokemon_xpath->query('td', $row);
-												$n = 0;
-												foreach($types as $type){
-													if($type->nodeValue != ""){
-														if($n != 1){
-															if($n != 7){
-																if($n != 8){
-																	if($n != 11){
-																		if($n != 12){
-																			if($n != 13){
-																				$nodeValue = "<td>".$type->nodeValue.'</td>';
-																				echo $nodeValue;
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-													$n++;
-												}
-												$i ++;
-											}
-											echo "</tr>";
-										}
-									}
-								} 
-							?>
-							</tbody>
-						</table>
-						<div class="detailklasemen">
-							<div class="detailzona_kontinental1"> <span class="detailkontinental1"></span>
-							UEFA Champions
-							</div>
-							<div class="detailzona_kontinental2"> <span class="detailkontinental2"></span>
-							Europa League
-							</div>
-							<div class="detailzona_degradasi"> <span class="detaildegradasi"></span>
-							Zona Degradasi
+						
+						<div id="liga_italia" style="display:none;">
+							<div id="reqscrapitalia" class="loadscrapitalia" action>
+								<input type="hidden" name="fn" value="scrapitalia" class="cinput">
+									<script>
+										$(document).ready(function(){
+											$(window).on('load',function(){
+												ajaxOnLoad('loadscrapitalia');
+											});
+										});
+									</script>	
 							</div>
 						</div>
-				</div>
-				<div id="liga_spanyol" style="display:none;">
-						<table class="border-box radius"  cellspacing="0" cellpadding="0" style="margin:  unset;">
-							<thead>
-								<tr>
-									<th title="Posisi">#</th>
-									<th title="Klub">Klub</th>
-									<th title="Bermain">B</th>
-									<th title="Menang">M</th>
-									<th title="Seri">S</th>
-									<th title="Kalah">K</th>
-									<th title="Selisih Goal">SG</th>
-									<th title="Points">Pts</th>
-								</tr>
-							</thead>
-							<tbody>
-							<?php
-								$html = file_get_contents(LinkScrapingLigaSpanyol());
-								$premiere_doc = new DOMDocument();
-								libxml_use_internal_errors(TRUE); //disable libxml errors
-								if(!empty($html)){ //if any html is actually returned
-									$premiere_doc->loadHTML($html);
-									libxml_clear_errors(); //remove errors for yucky html
-									$pokemon_xpath = new DOMXPath($premiere_doc);
-									//get all the h2's with an id
-									$pokemon_row = $pokemon_xpath->query('//tr[@data-team_id]');
-									$pokemon_list = array();
-									$i = 1;
-									if($pokemon_row->length > 0){
-										foreach($pokemon_row as $row){
-											if($i == 1){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 2){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 3){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 4){
-												$trclass="<tr class='zona_ucl'>";}
-											elseif($i == 5){
-												$trclass="<tr class='zona_uefa'>";}
-											elseif($i == 6){
-												$trclass="<tr class='zona_uefa'>";}
-											elseif($i == 18){
-												$trclass="<tr class='zona_degradasi'>";}
-											elseif($i == 19){
-												$trclass="<tr class='zona_degradasi'>";}
-											elseif($i == 20){
-												$trclass="<tr class='zona_degradasi'>";}		
-											else{
-												$trclass="<tr class='zona_aman'>";}
-											
-											echo $trclass;
-											if($i <= 20){
-												$types = $pokemon_xpath->query('td', $row);
-												$n = 0;
-												foreach($types as $type){
-													if($type->nodeValue != ""){
-														if($n != 1){
-															if($n != 7){
-																if($n != 8){
-																	if($n != 11){
-																		if($n != 12){
-																			if($n != 13){
-																				$nodeValue = "<td>".$type->nodeValue.'</td>';
-																				echo $nodeValue;
-																			}
-																		}
-																	}
-																}
-															}
-														}
-													}
-													$n++;
-												}
-												$i ++;
-											}
-											echo "</tr>";
-										}
-									}
-								} 
-							?>
-							</tbody>
-						</table>
-						<div class="detailklasemen">
-							<div class="detailzona_kontinental1"> <span class="detailkontinental1"></span>
-							UEFA Champions
-							</div>
-							<div class="detailzona_kontinental2"> <span class="detailkontinental2"></span>
-							Europa League
-							</div>
-							<div class="detailzona_degradasi"> <span class="detaildegradasi"></span>
-							Zona Degradasi
+						<div id="liga_spanyol" style="display:none;">
+							<div id="reqscrapspanyol" class="loadscrapspanyol" action>
+								<input type="hidden" name="fn" value="scrapspanyol" class="cinput">
+									<script>
+										$(document).ready(function(){
+											$(window).on('load',function(){
+												ajaxOnLoad('loadscrapspanyol');
+											});
+										});
+									</script>	
+>>>>>>> b049a10ad3e8f258581ce883f1daf54498881dfb
 							</div>
 						</div>
 				</div>

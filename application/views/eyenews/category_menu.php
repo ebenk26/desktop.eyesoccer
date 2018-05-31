@@ -34,7 +34,7 @@
                             }
                             ?>
                                 <li>
-                                    <a href="<?php echo base_url()?>eyenews/kategori/<?php echo $cat_name->news_type?>"><?php echo $catname;?></a>
+                                    <a href="<?php echo base_url()?>eyenews/kategori/<?php echo str_replace(' ','-',$cat_name->news_type)?>"><?php echo $catname;?></a>
                                 </li>
                             <?php
                         }
@@ -66,7 +66,7 @@
                             foreach ($sub_news_type as $cat_name)
                             {
                                 ?>
-                                    <a href="<?php echo base_url()?>eyenews/kategori/<?php echo $select_cat.'/'.$cat_name->sub_category_name; ?>" title="<?php echo $cat_name->sub_category_name;?>">
+                                    <a href="<?php echo base_url()?>eyenews/kategori/<?php echo $select_cat.'/'.str_replace(' ','-',$cat_name->sub_category_name); ?>" title="<?php echo $cat_name->sub_category_name;?>">
                                         <?php echo $cat_name->sub_category_name;?>
                                     </a>
                                 <?php

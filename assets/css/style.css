@@ -5317,3 +5317,150 @@ select::after{
     top: 16px;
     right: 10px;
 }
+.statistika{
+    width: 100%;
+    position: relative;
+    height: 55px;
+    overflow: hidden;
+    min-width: 9%;
+}
+.statist{
+    height: 100%;
+    /* border: 3px solid white; */
+    /* -webkit-transform: skew(-15deg);
+    -ms-transform: skew(-15deg);
+    transform: skew(-15deg); */
+    box-shadow: 0 0 5px #4c4c4c;
+    -webkit-transition: width 1.2s ease 0.4s;
+    -o-transition: width 1.2s ease 0.4s;
+    transition: width 1.2s ease 0.4s;
+}
+.statist span{
+    color: #fff;
+    text-shadow: 0 0 2px black;
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    top: 15px;
+    margin: 5px;
+}
+.statist.home{
+    position: absolute;
+    left: -15px;
+}
+.w-33{
+    width: 33.33%;
+}
+.statist:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    height: 100%;
+}
+.statist:after{
+    left: -34px;
+    background-color: inherit;
+    -webkit-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
+    transform-origin: bottom left;
+}
+.statist.statistik_a{background-color: #468300;}
+.statist.statistik_b{background-color: #dda500;}
+.statist.statistik_c{background-color: #cd0d00;}
+.statist.statistik_a:hover, .ket-statist.ket-a:hover{background-color: #56a200;}
+.statist.statistik_b:hover, .ket-statist.ket-b:hover{background-color: #ecb000;}
+.statist.statistik_c:hover, .ket-statist.ket-c:hover{background-color: #e60f01;}
+.tb-statistik th, .tb-statistik td{
+    padding: 0 10px;
+}
+.tb-statistik tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+.tb-statistik tr:nth-of-type(1){
+    background-color: unset;
+}
+.det-statist{
+    background-color: #616161;
+    min-width: 9%;
+    color: #fff;
+    font-weight: 500;
+    height: 5px;
+    overflow: hidden;
+    -webkit-transition: width 1.2s ease 0.4s;
+    -o-transition: width 1.2s ease 0.4s;
+    transition: width 1.2s ease 0.4s;
+}
+.statiss:hover .det-statist, .det-statist:hover{
+    height: 55px;
+    min-width: max-content;
+    -webkit-transition: width 1.2s ease 0.4s;
+    -o-transition: width 1.2s ease 0.4s;
+    transition: width 1.2s ease 0.4s;
+}
+.det-statist p{
+    font-size: 10px;
+}
+.statistik-win-lose{
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 49%;
+}
+.statistik-win-lose thead{
+    background-color: #616161;
+    color: white;
+}
+.ket-statist{
+    display: inline;
+    padding: 0 20px;
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 1px #2d2d2d;
+}
+.ket-statist.ket-a{
+    background-color: #468300;
+}
+.ket-statist.ket-b{
+    background-color: #dda500;
+}
+.ket-statist.ket-c{
+    background-color: #cd0d00;
+}
+.ketr-statist{
+    margin: 10px 0;
+}
+.ketr-statist span{
+    padding: 0 20px 0 5px;
+    font-weight: 500;
+    font-size: 13px;
+}
+.detail-ket-statist span{
+    font-weight: 500;
+    font-size: 14px;
+    margin: 10px;
+    margin-top: -30px;
+    color: #f09a00;
+    float: right;
+}
+.detail-ket-statist span:hover, .detail-ket-statist span:focus{
+    color: #ffd65d;
+}
+.detail-ket-statist table{
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
+    font-weight: 500;
+    color: #484848;
+    margin-top: 10px;
+}
+.detail-ket-statist table th{
+    background-color: #f8f8f8;
+    border-left: 1px solid #dcdcdc;
+    width: 15%;
+}
+.detail-ket-statist table tr{
+    border-top: 1px solid #dcdcdc;
+}
+.detail-ket-statist table p{
+    margin: 2px 0;
+    font-size: 8px;
+}

@@ -59,7 +59,6 @@
                             <span>
                                 <ey>Reporter dan Jurnalis</ey>
                             </span>
-                            <span>Ari Dwi Prasetyo</span>
                             <span>Bayu Mahendra</span>
                             <span>Aditya Gilang</span>
                             <span>Ridhoni</span>
