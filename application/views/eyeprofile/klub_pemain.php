@@ -10,8 +10,8 @@
     margin: 0 auto;
     display: block;
 	}
-	.xd_stats{font-size:1.3em;font-weight:500;}
-	.xdd_stats{font-size:1.1em;font-weight:400;}
+	.xd_stats{font-size:1.5em;font-weight:bold;}
+	.xdd_stats{font-size:1.3em;font-weight:bold;}
 	.listmatch:hover{background-color:#fafafa}
 	.live_pert{position:inherit;background-color:#ffa7265c;padding:5px;margin: 19px;border-radius:15px;width:200px;}
 	.liga_name{background-color:#74747417;}
@@ -76,6 +76,21 @@
 	.score_tim_b{width:35px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;left:50px;top:35px;font-size:40px;color:#CCC;background-color:#000000bf;}
 	
 	span.g-stats{font-size: 1.2em; font-weight: 600;}
+	
+	.gm_stats{background-color:#00ff00cc;}
+	.gk_stats{background-color:#d74628c7;}
+	.gmk_stats{background-color:#00ff00cc;}
+	.gmt_stats{background-color:#75f875;}
+	.gkk_stats{background-color:#e06f57;}
+	.gkt_stats{background-color:#f08b76;}
+
+	.gm_stats:hover{background-color:#00ff009e;}
+	.gk_stats:hover{background-color:#d74628c7;}
+	.gmk_stats:hover{background-color:#00ff009e;}
+	.gmt_stats:hover{background-color:#00ff009e;}
+	.gkk_stats:hover{background-color:#d74628c7;}
+	.gkt_stats:hover{background-color:#d74628c7;}
+
 	/* .p-stats{background-color:#e2e2e2;}
 	.p-stats:hover{background-color:#e2e2e2;}
 	.w-stats{background-color:#daf8d2;}
@@ -94,11 +109,7 @@
 	.goalhk{background-color:#e35e5e;}
 	.goalak{background-color:#e63f3f;}
 	.goalam{background-color:#87fa70;} */
-
-
-
-
-
+	
 </style>
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 </div>
@@ -361,7 +372,7 @@
 										<td width="25">
 											<div class="score_style_a" align="center"><?=$row["score_a"]?></div>
 										</td>
-										<td> X </td>
+										
 										<td width="25">	
 											<div class="score_style_b" align="center"><?=$row["score_b"]?></div>
 										</td>
@@ -783,29 +794,70 @@
 															<?php
 																}
 															?>
-																		<?php 
-																			foreach($get_gkgt_stats as $gstats)
-																			{	
-																				$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
-																				$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
-																				$gt=$goalm+$goalk;
-																				$p_gm=number_format(($goalm/$gt)*100,3);
-																				$p_gk=number_format(($goalk/$gt)*100,3);
-																				$pv_gm=number_format($p_gm,1);
-																				$pv_gk=number_format($p_gk,1);
-																		?>									
-																			<tr width="100%">
-																				<th>Memasukkan Goal</th>
-																				<td>
-																					<a class="xd_stats"><?=$goalm;?> goal</a>
-																					<p><a class="xdd_stats"><?php echo $gstats['goalm_kandang'];?> Kandang dan <?php echo $gstats['goalm_tandang'];?> Tandang</a></p>
+															<?php 
+																foreach($get_gkgt_stats as $gstats)
+																{	
+																	$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
+																	$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
+																	
+																	$gt=$goalm+$goalk;
+																	//GOAL MEMASUKAN
+																	$p_gm=number_format(($goalm/$gt)*80,3);//3 belakang koma biar width akurat																			
+																	$pv_gm=number_format($p_gm,1);//1 belakang koma buat tampilan
+																	$p_gmk=number_format(($gstats['goalm_kandang']/$goalm)*100,3);//3 belakang koma biar width akurat
+																	$pv_gmk=$gstats['goalm_kandang'];//1 belakang koma buat tampilan
+																	$p_gmt=number_format(($gstats['goalm_tandang']/$goalm)*100,3);//3 belakang koma biar width akurat
+																	$pv_gmt=$gstats['goalm_tandang'];//1 belakang koma buat tampilan
+
+																	//GOAL KEMASUKAN
+																	$p_gk=number_format(($goalk/$gt)*80,3);//3 belakang koma biar width akurat																			
+																	$pv_gk=number_format($p_gk,1);//1 belakang koma buat tampilan
+																	$p_gkk=number_format(($gstats['goalk_kandang']/$goalk)*100,3);//3 belakang koma biar width akurat
+																	$pv_gkk=$gstats['goalk_kandang'];//1 belakang koma buat tampilan
+																	$p_gkt=number_format(($gstats['goalk_tandang']/$goalk)*100,3);//3 belakang koma biar width akurat
+																	$pv_gkt=$gstats['goalk_tandang'];//1 belakang koma buat tampilan
+
+															?>									
+																<tr width="100%">
+																	<td align="center" class="gm_stats">Memasukkan</td>
+																	<td align="left" class="gm_stats"  width="<?=$p_gm;?>%">
+																		<a class="xd_stats"><?=$goalm;?></a></br>Goal
+																	</td>
+																	<td align="center" class="gk_stats">Kemasukan</td>
+																	<td align="left" class="gk_stats" width="<?=$p_gk;?>%">
+																		<a class="xd_stats"><?=$goalk;?></a></br>Goal
+																	</td>
+																</tr>
+																<tr width="100%">
+																	<td colspan="2">
+																		<table >
+																			<tr>
+																				<td class="gmk_stats" width="<? echo $p_gmk;?>%" align="center">
+																				<a class="xdd_stats"><?php echo $pv_gmk;?></a></br>
+																				Goal Kandang 
 																				</td>
-																				<th>Kemasukan Goal</th>
-																				<td>
-																					<a class="xd_stats"><?=$goalk;?> goal</a>
-																					<p><a class="xdd_stats"><?php echo $gstats['goalk_kandang'];?> Goal Kandang dan <?php echo $gstats['goalk_tandang'];?> Goal Tandang</a></p>
+																				<td class="gmt_stats" width="<? echo $p_gmt;?>%" align="center">
+																				<a class="xdd_stats"><?php echo $pv_gmt;?></a></br>
+																				Goal Kandang
 																				</td>
 																			</tr>
+																		</table>
+																	</td>
+																	<td colspan="2">
+																		<table>
+																			<tr>
+																				<td class="gkk_stats" width="<? echo $p_gkk;?>%" align="center">
+																				<a class="xdd_stats"><?php echo $pv_gkk;?></a></br>
+																				Goal Tandang
+																				</td>
+																				<td class="gkt_stats" width="<? echo $p_gkk;?>%" align="center">
+																				<a class="xdd_stats"><?php echo $pv_gkt;?></a></br>
+																				Goal Tandang
+																				</td>
+																			</tr>
+																		</table>
+																	</td>
+																</tr>
 
 															</table>
 														</td>
