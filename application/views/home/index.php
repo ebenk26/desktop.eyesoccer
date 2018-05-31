@@ -447,8 +447,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
         <div class="et-content2">
             <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyemarket.png" alt="">
             <h2 class="title emar"><a href="<?php echo base_url();?>eyemarket">EyeMarket</a></h2>
@@ -698,6 +696,9 @@
         </div>
     </div>
 </div>
+ </div>
+</div>
+
 
 <script>
 	$(document).ready(function(){
