@@ -79,6 +79,11 @@ class Home extends CI_Controller
         $data['products'] = $this->Home_model->get_all_product();
         $data['kanal'] = "home";
         $data['imgEyeme'] = $this->emod->getImgUser();
+        $data['kompetisi'] = [
+                                ['competition' => 'Liga Indonesia 1', 'value' => 'liga_indonesia'],
+                                ['competition' => 'Liga Inggris', 'value' => 'liga_inggris'], 
+                                ['competition' => 'Liga Italia', 'value' => 'liga_italia'], 
+                                ['competition' => 'Liga Spanyol', 'value' => 'liga_spanyol']];
 
         $data["body"] = $this->load->view('home/index', $data, TRUE);
         $this->load->view('template/static', $data);

@@ -65,30 +65,23 @@
     <div class="baseurl" val="<?php echo base_url()?>"></div>
     <div role="listbox" class="j-box carousel-inner">
         <div class="over item active">
-		<?php foreach ($jadwal as $jadual){
-			?>	
+		<?php foreach ($jadwal as $jadual):?>	
 				<div class="j-content">
 					<span class="t"><?=date("d M Y",strtotime($jadual["jadwal_pertandingan"]))?></span><br>
 					<span class="r"><?=$jadual["club_a"]?></span><span class="s"><?=$jadual["score_a"]?></span><br>
 					<span class="r"><?=$jadual["club_b"]?></span><span class="s"><?=$jadual["score_b"]?></span><br>
 				</div>			
 
-			<?php
-			}
-			?>
+		<?php endforeach;?>
         </div>
         <div class="over item">
-            <?php foreach ($jadwal_2 as $jadual_2){
-			?>	
-				<div class="j-content">
-					<span class="t"><?=date("d M Y",strtotime($jadual_2["jadwal_pertandingan"]))?></span><br>
-					<span class="r"><?=$jadual_2["club_a"]?></span><span class="s"><?=$jadual_2["score_a"]?></span><br>
-					<span class="r"><?=$jadual_2["club_b"]?></span><span class="s"><?=$jadual_2["score_b"]?></span><br>
-				</div>			
-
-			<?php
-			}
-			?>
+        <?php foreach ($jadwal_2 as $jadual_2):?>	
+			<div class="j-content">
+				<span class="t"><?=date("d M Y",strtotime($jadual_2["jadwal_pertandingan"]))?></span><br>
+				<span class="r"><?=$jadual_2["club_a"]?></span><span class="s"><?=$jadual_2["score_a"]?></span><br>
+				<span class="r"><?=$jadual_2["club_b"]?></span><span class="s"><?=$jadual_2["score_b"]?></span><br>
+			</div>			
+		<?php endforeach;?>
         </div>
     </div>
      <div class="right navigate" href="#jadwal" role="button">
@@ -218,11 +211,11 @@
                 <div class="et-content2" style="margin-top:  -21px;">				
                     <div class="v-et-content2">
 					<?php
-								$i = 0;
-								foreach ($video_eyetube as $videonya)
-								{
-									if ($i != 0)
-									{
+						$i = 0;
+						foreach ($video_eyetube as $videonya)
+						{
+							if ($i != 0)
+							{
 					?>			
 						<a href="<?=base_url().'eyetube/detail/'.$videonya['url']; ?>" style="text-decoration: unset;display:  block;height:  250px;overflow:  hidden; margin-bottom: 15px;">
                         <!-- judul eyetube
@@ -454,6 +447,8 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
         <div class="et-content2">
             <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyemarket.png" alt="">
             <h2 class="title emar"><a href="<?php echo base_url();?>eyemarket">EyeMarket</a></h2>
@@ -697,7 +692,6 @@
 											});
 										});
 									</script>	
->>>>>>> b049a10ad3e8f258581ce883f1daf54498881dfb
 							</div>
 						</div>
 				</div>
