@@ -66,7 +66,7 @@
                             foreach ($sub_news_type as $cat_name)
                             {
                                 ?>
-                                    <a href="<?php echo base_url()?>eyenews/kategori/<?php echo $select_cat.'/'.str_replace(' ','-',$cat_name->sub_category_name); ?>" title="<?php echo $cat_name->sub_category_name;?>">
+                                    <a href="<?php echo base_url()?>eyenews/kategori/<?php echo str_replace(' ','-',$select_cat).'/'.str_replace(' ','-',$cat_name->sub_category_name); ?>" title="<?php echo $cat_name->sub_category_name;?>">
                                         <?php echo $cat_name->sub_category_name;?>
                                     </a>
                                 <?php

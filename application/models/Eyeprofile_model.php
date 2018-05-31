@@ -806,6 +806,116 @@ class Eyeprofile_model extends CI_Model
 		return $query;
 	}
 
+	public function get_big_win_k($cidclub)
+	{
+		$query = $this->db->query("SELECT
+									a.*,
+									c.club_id as club_id_a,
+									d.club_id as club_id_b,
+									a.tim_a as tim_a,
+									a.tim_b as tim_b,
+									c.competition as liga_a,
+									d.competition as liga_b,
+									c.url as url_a,
+									d.url as url_b,
+									c.logo as logo_a,
+									d.logo as logo_b,
+									c.name as club_a,
+									d.name as club_b
+									FROM tbl_jadwal_event a 
+									LEFT JOIN tbl_event b ON b.id_event=a.id_event 
+									INNER JOIN tbl_club c ON c.club_id=a.tim_a 
+									INNER JOIN tbl_club d ON d.club_id=a.tim_b 
+									WHERE (a.tim_a='".$cidclub."' AND score_a > score_b)
+									AND jadwal_pertandingan >='2018-01-01 00:00:00' AND jadwal_pertandingan <='2018-12-31 23:59:59'
+									ORDER BY score_a DESC,score_b ASC,jadwal_pertandingan
+									LIMIT 1")->result_array();
+		return $query;
+	}
+
+	public function get_big_win_t($cidclub)
+	{
+		$query = $this->db->query("SELECT
+									a.*,
+									c.club_id as club_id_a,
+									d.club_id as club_id_b,
+									a.tim_a as tim_a,
+									a.tim_b as tim_b,
+									c.competition as liga_a,
+									d.competition as liga_b,
+									c.url as url_a,
+									d.url as url_b,
+									c.logo as logo_a,
+									d.logo as logo_b,
+									c.name as club_a,
+									d.name as club_b
+									FROM tbl_jadwal_event a 
+									LEFT JOIN tbl_event b ON b.id_event=a.id_event 
+									INNER JOIN tbl_club c ON c.club_id=a.tim_a 
+									INNER JOIN tbl_club d ON d.club_id=a.tim_b 
+									WHERE (a.tim_b='".$cidclub."' AND score_a < score_b)
+									AND jadwal_pertandingan >='2018-01-01 00:00:00' AND jadwal_pertandingan <='2018-12-31 23:59:59'
+									ORDER BY score_b DESC,score_a ASC,jadwal_pertandingan
+									LIMIT 1")->result_array();
+		return $query;
+	}
+
+	public function get_big_lose_k($cidclub)
+	{
+		$query = $this->db->query("SELECT
+									a.*,
+									c.club_id as club_id_a,
+									d.club_id as club_id_b,
+									a.tim_a as tim_a,
+									a.tim_b as tim_b,
+									c.competition as liga_a,
+									d.competition as liga_b,
+									c.url as url_a,
+									d.url as url_b,
+									c.logo as logo_a,
+									d.logo as logo_b,
+									c.name as club_a,
+									d.name as club_b
+									FROM tbl_jadwal_event a 
+									LEFT JOIN tbl_event b ON b.id_event=a.id_event 
+									INNER JOIN tbl_club c ON c.club_id=a.tim_a 
+									INNER JOIN tbl_club d ON d.club_id=a.tim_b 
+									WHERE (a.tim_a='".$cidclub."' AND score_a < score_b)
+									AND jadwal_pertandingan >='2018-01-01 00:00:00' AND jadwal_pertandingan <='2018-12-31 23:59:59'
+									ORDER BY score_b DESC,score_a ASC,jadwal_pertandingan
+									LIMIT 1")->result_array();
+		return $query;
+	}
+
+	public function get_big_lose_t($cidclub)
+	{
+		$query = $this->db->query("SELECT
+									a.*,
+									c.club_id as club_id_a,
+									d.club_id as club_id_b,
+									a.tim_a as tim_a,
+									a.tim_b as tim_b,
+									c.competition as liga_a,
+									d.competition as liga_b,
+									c.url as url_a,
+									d.url as url_b,
+									c.logo as logo_a,
+									d.logo as logo_b,
+									c.name as club_a,
+									d.name as club_b
+									FROM tbl_jadwal_event a 
+									LEFT JOIN tbl_event b ON b.id_event=a.id_event 
+									INNER JOIN tbl_club c ON c.club_id=a.tim_a 
+									INNER JOIN tbl_club d ON d.club_id=a.tim_b 
+									WHERE (a.tim_b='".$cidclub."' AND score_a > score_b)
+									AND jadwal_pertandingan >='2018-01-01 00:00:00' AND jadwal_pertandingan <='2018-12-31 23:59:59'
+									ORDER BY score_a DESC,score_b ASC,jadwal_pertandingan
+									LIMIT 1")->result_array();
+		return $query;
+	}
+
+
+
 	public function get_jadw_klub($club_id)
 	{
 		$query = $this->db->query("SELECT 
