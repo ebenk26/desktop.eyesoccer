@@ -113,82 +113,13 @@ class Eyenews extends CI_Controller {
 			}
 		}
 		$data['kanal']	= "eyenews";
-		$data["meta"]["title"]="";
-		$data["meta"]["image"]=base_url()."/assets/img/tab_icon.png";
-		$data["meta"]["description"]="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
-		$abc=strip_tags($row['description']);
-		$string = htmlentities($abc, null, 'utf-8');
-		$content = str_replace("&amp;ndash;", "-", $string);
-		$contents =substr($content, 0, 200);
-		$data["meta"]["share"]='
-		<script type="application/ld+json">
-			{
-			"@context": "http://schema.org",
-			"@type": "NewsArticle",
-			"mainEntityOfPage": {
-				"@type": "WebPage",
-				"@id": "https://eyesoccer.id/eyenews/detail/'.$linksite.'"
-			},
-			"headline": "'.$row['title'].'",
-			"image": [
-				"https://static.eyesoccer.id/v1/cache/images/'.$row['pic'].'/small",
-				"https://static.eyesoccer.id/v1/cache/images/'.$row['pic'].'/medium",
-				"https://static.eyesoccer.id/v1/cache/images/'.$row['pic'].'"
-			],
-			"datePublished": "'.$row['publish_on'].'",
-			"dateModified": "'.$row['publish_on'].'",
-			"author": {
-				"@type": "Person",
-				"name": "'.$row['fullname'].'"
-			},
-			"publisher": {
-				"@type": "Organization",
-				"name": "Eyesoccer Indonesia",
-				"logo": {
-				"@type": "ImageObject",
-				"url": "https://www.eyesoccer.id/img/logo2.png"
-				}
-			},
-			"description":"'.$contents.'"
-			}
-		</script>
-		<!-- Begin of SEO Meta Tags -->
-		<title>'.$row['title'].' - EyeNews | EyeSoccer</title>
-		<meta name="title" content="'.$row['title'].' - EyeNews | EyeSoccer" />
-		<meta name="description" content="'.$contents.' |Berita Bola Terbaru| Viral | Terkini | Mancanegara " />
-		<meta name="googlebot-news" content="index,follow" />
-		<meta name="googlebot" content="index,follow" />
-		<meta name="robots" content="index,follow" />
-		<meta name="author" content="EyeSoccer.id" />
-		<meta name="language" content="id" />
-		<meta name="geo.country" content="id" name="geo.country" />
-		<meta http-equiv="content-language" content="In-Id" />
-		<meta name="geo.placename"content="Indonesia" />
-		<link rel="publisher" href="https://plus.google.com/u/1/105520415591265268244" />
-		<link rel="canonical" href="https://eyesoccer.id/eyenews/detail/'.$linksite.'" />
-		<!-- End of SEO Meta Tags-->
+		$data['resdet'] = $this->Eyenews_model->__news_detail($eyenews_id);
+		$resdet = $data['resdet'];
+		$resmeta = $resdet->data;
+		$data['meta']['share'] = set_meta(['uri'=> 'news','data'=> $resmeta]);
 
-		<!-- Begin of Facebook Open graph data-->
-		<meta property="fb:app_id" content="140611863350583" />
-		<meta property="og:site_name" content="EyeSoccer" />
-		<meta property="og:url" content="https://eyesoccer.id/eyenews/detail/'.$linksite.'" />
-		<meta property="og:type" content="Website" />
-		<meta property="og:title" content="'.$row['title'].' - EyeNews | EyeSoccer" />
-		<meta property="og:image" content="http://eyesoccer.id/systems/eyenews_storage/'.$row['pic'].'" />
-		<meta property="og:description" content="'.$contents.'" />
-		<meta property="og:locale" content="id_ID" />
-		<!--End of Facebook open graph data-->
-		   
-		<!--begin of twitter card data-->
-		<meta name="twitter:card" content="summary" />    
-		<meta name="twitter:site" content="@eyesoccer_id" />
-		<meta name="twitter:creator" content="@eyesoccer_id" />
-		<meta name="twitter:domain" content="EyeSoccer"/>
-		<meta name="twitter:title" content="'.$row['title'].'" />
-		<meta name="twitter:description" content="'.$contents.'" />
-		<meta name="twitter:image" content="https://www.eyesoccer.id/systems/eyenews_storage/'.$row['pic'].'" />
-		<!--end of twitter card data-->
-		';
+		
+		
 		/* $cmd_ads=$this->db->query("select * from tbl_ads")->result_array();
 		$i=0;
 		foreach($cmd_ads as $ads){

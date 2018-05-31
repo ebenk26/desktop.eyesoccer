@@ -120,6 +120,10 @@ class Eyeprofile extends CI_Controller {
 		$data['get_hasil_klub'] = $this->Eyeprofile_model->get_hasil_klub($data['get_klub_detail_row_array']['club_id']);
 		$cidclub=$data['get_klub_detail_row_array']['club_id'];
 		$data['get_result_klub'] = $this->Eyeprofile_model->get_result_klub($cidclub);
+		$data['get_big_win_k'] = $this->Eyeprofile_model->get_big_win_k($cidclub);
+		$data['get_big_win_t'] = $this->Eyeprofile_model->get_big_win_t($cidclub);
+		$data['get_big_lose_k'] = $this->Eyeprofile_model->get_big_lose_k($cidclub);
+		$data['get_big_lose_t'] = $this->Eyeprofile_model->get_big_lose_t($cidclub);
 		if($data['get_result_klub']==NULL){
 			$club_id="";
 		}else{

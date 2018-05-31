@@ -10,6 +10,8 @@
     margin: 0 auto;
     display: block;
 	}
+	.xd_stats{font-size:1.5em;font-weight:bold;}
+	.xdd_stats{font-size:1.3em;font-weight:bold;}
 	.listmatch:hover{background-color:#fafafa}
 	.live_pert{position:inherit;background-color:#ffa7265c;padding:5px;margin: 19px;border-radius:15px;width:200px;}
 	.liga_name{background-color:#74747417;}
@@ -25,8 +27,9 @@
 		text-align: left !important;
 		padding-top: 40px;
 	}
+	.lihat_stats_club{background-color:#ffe7c4;padding:5px;margin-bottom:35px;border-radius:10px;color:#FFF;}
 	.class-W{
-		background-color:#8bc24c;
+		background-color:#468300;
 		border-radius:15px;
 		font-weight:bold;
 		padding:5px 0px 5px 0px;
@@ -34,7 +37,7 @@
 		margin:-6px -6px 9px -6px;
 	}
 	.class-L{
-		background-color:#f44236;
+		background-color:#cd0d00;
 		border-radius:15px;
 		font-weight:bold;
 		padding:5px 0px 5px 0px;
@@ -42,7 +45,7 @@
 		margin:-6px -6px 9px -6px;
 	}
 	.class-D{
-		background-color:#fec009;
+		background-color:#dda500;
 		border-radius:15px;
 		font-weight:bold;
 		padding:5px 0px 5px 0px;
@@ -58,9 +61,9 @@
 	.class-D:hover{
 		background-color:#fec009cc;
 	}
-	.div-W{width:20px;background-color:#1dd163;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px;}
-	.div-D{width:20px;background-color:#d5b41b;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
-	.div-L{width:20px;background-color:#d81c1c;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
+	.div-W{width:20px;background-color:#468300;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px;}
+	.div-D{width:20px;background-color:#dda500;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
+	.div-L{width:20px;background-color:#cd0d00;padding:3px 0px 3px 0px;border-radius:50px;font-weight:bold;font-size:12px}
 	.div-W:hover{background-color:#00a942;}
 	.div-D:hover{background-color:#af9000;}
 	.div-L:hover{background-color:#bf0000;}
@@ -73,6 +76,21 @@
 	.score_tim_b{width:35px;border-radius:10px;border:2px solid;border-color:#ffedd2;position:absolute;left:50px;top:35px;font-size:40px;color:#CCC;background-color:#000000bf;}
 	
 	span.g-stats{font-size: 1.2em; font-weight: 600;}
+	
+	.gm_stats{background-color:#00ff00cc;}
+	.gk_stats{background-color:#d74628c7;}
+	.gmk_stats{background-color:#00ff00cc;}
+	.gmt_stats{background-color:#75f875;}
+	.gkk_stats{background-color:#e06f57;}
+	.gkt_stats{background-color:#f08b76;}
+
+	.gm_stats:hover{background-color:#00ff009e;}
+	.gk_stats:hover{background-color:#d74628c7;}
+	.gmk_stats:hover{background-color:#00ff009e;}
+	.gmt_stats:hover{background-color:#00ff009e;}
+	.gkk_stats:hover{background-color:#d74628c7;}
+	.gkt_stats:hover{background-color:#d74628c7;}
+
 	/* .p-stats{background-color:#e2e2e2;}
 	.p-stats:hover{background-color:#e2e2e2;}
 	.w-stats{background-color:#daf8d2;}
@@ -91,11 +109,7 @@
 	.goalhk{background-color:#e35e5e;}
 	.goalak{background-color:#e63f3f;}
 	.goalam{background-color:#87fa70;} */
-
-
-
-
-
+	
 </style>
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
 </div>
@@ -358,7 +372,7 @@
 										<td width="25">
 											<div class="score_style_a" align="center"><?=$row["score_a"]?></div>
 										</td>
-										<td> X </td>
+										
 										<td width="25">	
 											<div class="score_style_b" align="center"><?=$row["score_b"]?></div>
 										</td>
@@ -541,7 +555,7 @@
 						}else{
 					?>
 					<div class="w-40 pd-t-20" style="padding-top: 7px;"></style>
-						<h3 style="margin: 17px 0px -10px 25px;">Pertandingan Terakhir <?=$r->name?></h3>
+						<h3 style="margin: 17px 0px -10px 25px;">Jadwal Selanjutnya <?=$r->name?></h3>
 						<div class="container box-pertandingan" style="margin:23px 0px 0px 25px;width:440px; height:500px;">
 							<table style="margin-bottom: -4px !important;margin-right: 30px !important;">
 								<tbody>
@@ -718,20 +732,24 @@
 													$stats['win']=$stats['win_a']+$stats['win_b'];
 													$stats['draw']=$stats['draw_a']+$stats['draw_b'];
 													$stats['lose']=$stats['lose_a']+$stats['lose_b'];
-													$p_win=($stats['win']/$stats['play'])*100;
-													$p_draw=($stats['draw']/$stats['play']*100);
-													$p_lose=($stats['lose']/$stats['play'])*100;
+													$p_win=number_format(($stats['win']/$stats['play'])*100,3);
+													$p_draw=number_format(($stats['draw']/$stats['play'])*100,3);
+													$p_lose=number_format(($stats['lose']/$stats['play'])*100,3);
+													$pv_win=number_format($p_win,1);
+													$pv_draw=number_format($p_draw,1);
+													$pv_lose=number_format($p_lose,1);
+													
 												?>
 									<div class="container">
-										<div class="statistika">
-											<div class="container statist statistik_a" style="width:<?=number_format($p_win);?>%;">
-												<span><?=number_format($p_win);?>%</span>
+										<div class="statistika" width="90%">
+											<div class="container statist statistik_a" style="width:<?=$p_win;?>%">
+												<span><?=$pv_win;?>%</span>
 											</div>
-											<div class="container statist statistik_b" style="width:<?=number_format($p_draw);?>%;">
-												<span><?=number_format($p_draw);?>%</span>
+											<div class="container statist statistik_b" style="width:<?=$p_draw;?>%">
+												<span><?=$pv_draw;?>%</span>
 											</div>
-											<div class="container statist statistik_c" style="width:<?=number_format($p_lose);?>%;">
-												<span><?=number_format($p_lose);?>%</span>
+											<div class="container statist statistik_c" style="width:<?=$p_lose;?>%;">
+												<span><?=$pv_lose;?>%</span>
 											</div>
 										</div>
 										<div class="container ketr-statist">
@@ -743,54 +761,108 @@
 											<span>Kalah</span>
 										</div>
 										<div class="container detail-ket-statist">
-											<span id="lihatDetailStatistik">Lihat detail statistik ></span>
+											<span id="lihatDetailStatistik" class="lihat_stats_club">Lihat detail statistik ></span>
 											<div class="container lihatDetailStatistik" style="display:none;">
 												<table>
 													<tr>
 														<th>Total Main</th>
 														<td>
-															<?php echo $stats['play'];?> kali
-															<p><?=$stats['play_a']." Kandang dan ".$stats['play_b']." Tandang";?></p>
+															<a class="xd_stats"><?php echo $stats['play'];?> x</a>
+															<p><a class="xdd_stats"><?=$stats['play_a']." Kandang dan ".$stats['play_b']." Tandang";?></a></p>
 														</td>
 														<th>Menang</th>
 														<td>
-															<?php echo $stats['win'];?> kali
-															<p><?=$stats['win_a']." Kandang dan ".$stats['win_b']." Tandang";?></p>
+															<a class="xd_stats"><?php echo $stats['win'];?> x</a>
+															<p><a class="xdd_stats"><?=$stats['win_a']." Kandang dan ".$stats['win_b']." Tandang";?></a></p>
 														</td>
 													</tr>
 													<tr>
 														<th>Seri</th>
 														<td>
-															<?php echo $stats['draw'];?> kali
-															<p><?=$stats['draw_a']." Kandang dan ".$stats['draw_b']." Tandang";?></p>
+															<a class="xd_stats"><?php echo $stats['draw'];?> x</a>
+															<p><a class="xdd_stats"><?=$stats['draw_a']." Kandang dan ".$stats['draw_b']." Tandang";?></a></p>
 														</td>
 														<th>Kalah</th>
 														<td>
-															<?php echo $stats['lose'];?> kali
-															<p><?=$stats['lose_a']." Kandang dan ".$stats['lose_b']." Tandang";?></p>
+															<a class="xd_stats"><?php echo $stats['lose'];?> x</a>
+															<p><a class="xdd_stats"><?=$stats['lose_a']." Kandang dan ".$stats['lose_b']." Tandang";?></a></p>
 														</td>
 													</tr>
-									<?php
-										}
-									?>
-												<?php 
-													foreach($get_gkgt_stats as $gstats)
-													{
-														$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
-														$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
-												?>									
 													<tr>
-														<th>Memasukkan Goal</th>
-														<td>
-															<?=$goalm;?> kali
-															<p><?php echo $gstats['goalm_kandang'];?> Kandang dan <?php echo $gstats['goalm_tandang'];?> Tandang</p>
-														</td>
-														<th>Kemasukan Goal</th>
-														<td>
-															<?=$goalk;?> kali
-															<p><?php echo $gstats['goalk_kandang'];?> Goal Kandang dan <?php echo $gstats['goalk_tandang'];?> Goal Tandang</p>
+														<td colspan="4">
+															<table>
+															<?php
+																}
+															?>
+															<?php 
+																foreach($get_gkgt_stats as $gstats)
+																{	
+																	$goalm=$gstats['goalm_kandang']+$gstats['goalm_tandang'];
+																	$goalk=$gstats['goalk_kandang']+$gstats['goalk_tandang'];
+																	
+																	$gt=$goalm+$goalk;
+																	//GOAL MEMASUKAN
+																	$p_gm=number_format(($goalm/$gt)*80,3);//3 belakang koma biar width akurat																			
+																	$pv_gm=number_format($p_gm,1);//1 belakang koma buat tampilan
+																	$p_gmk=number_format(($gstats['goalm_kandang']/$goalm)*100,3);//3 belakang koma biar width akurat
+																	$pv_gmk=$gstats['goalm_kandang'];//1 belakang koma buat tampilan
+																	$p_gmt=number_format(($gstats['goalm_tandang']/$goalm)*100,3);//3 belakang koma biar width akurat
+																	$pv_gmt=$gstats['goalm_tandang'];//1 belakang koma buat tampilan
+
+																	//GOAL KEMASUKAN
+																	$p_gk=number_format(($goalk/$gt)*80,3);//3 belakang koma biar width akurat																			
+																	$pv_gk=number_format($p_gk,1);//1 belakang koma buat tampilan
+																	$p_gkk=number_format(($gstats['goalk_kandang']/$goalk)*100,3);//3 belakang koma biar width akurat
+																	$pv_gkk=$gstats['goalk_kandang'];//1 belakang koma buat tampilan
+																	$p_gkt=number_format(($gstats['goalk_tandang']/$goalk)*100,3);//3 belakang koma biar width akurat
+																	$pv_gkt=$gstats['goalk_tandang'];//1 belakang koma buat tampilan
+
+															?>									
+																<tr width="100%">
+																	<td align="center" class="gm_stats">Memasukkan</td>
+																	<td align="left" class="gm_stats"  width="<?=$p_gm;?>%">
+																		<a class="xd_stats"><?=$goalm;?></a></br>Goal
+																	</td>
+																	<td align="center" class="gk_stats">Kemasukan</td>
+																	<td align="left" class="gk_stats" width="<?=$p_gk;?>%">
+																		<a class="xd_stats"><?=$goalk;?></a></br>Goal
+																	</td>
+																</tr>
+																<tr width="100%">
+																	<td colspan="2">
+																		<table >
+																			<tr>
+																				<td class="gmk_stats" width="<? echo $p_gmk;?>%" align="center">
+																				<a class="xdd_stats"><?php echo $pv_gmk;?></a></br>
+																				Goal Kandang 
+																				</td>
+																				<td class="gmt_stats" width="<? echo $p_gmt;?>%" align="center">
+																				<a class="xdd_stats"><?php echo $pv_gmt;?></a></br>
+																				Goal Kandang
+																				</td>
+																			</tr>
+																		</table>
+																	</td>
+																	<td colspan="2">
+																		<table>
+																			<tr>
+																				<td class="gkk_stats" width="<? echo $p_gkk;?>%" align="center">
+																				<a class="xdd_stats"><?php echo $pv_gkk;?></a></br>
+																				Goal Tandang
+																				</td>
+																				<td class="gkt_stats" width="<? echo $p_gkk;?>%" align="center">
+																				<a class="xdd_stats"><?php echo $pv_gkt;?></a></br>
+																				Goal Tandang
+																				</td>
+																			</tr>
+																		</table>
+																	</td>
+																</tr>
+
+															</table>
 														</td>
 													</tr>
+									
 												<?php
 													}
 												?>
