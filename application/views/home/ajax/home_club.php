@@ -13,7 +13,7 @@
 				<a href="<?=base_url().'eyeprofile/klub_detail/'.$club[$j]->slug; ?>">
 				<div class="box-content">
 
-					<img width="130" height="130" class="lazy" src="<?=$club[$j]->url_logo?>">
+					<img width="130" height="130" class="lazy" src="<?=$this->library->lastext($club[$j]->url_logo,'.') ? $club[$j]->url_logo : 'https://static.eyesoccer.id/v1/cache/images/8971LOGO UNTUK APLIKASI.jpg';// $club[$j]->url_logo?>">
 					<div class="detail">
 						<h2><?= $club[$j]->name; ?></h2>
 						<h3 style="line-height: 1.3em "><?= $club[$j]->nickname; ?></h3>

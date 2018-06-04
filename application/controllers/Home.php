@@ -10,6 +10,7 @@ class Home extends CI_Controller
 		// direct_m();
         // $this->load->model('Eyemarket_model');
         date_default_timezone_set('Asia/Jakarta');
+        $this->load->model('ajax/HomeMod','hmod');
         $this->load->model('Home_model');
         $this->load->model('Master_model', 'mod');
         $this->load->model('Eyeme_model', 'emod');
@@ -29,11 +30,12 @@ class Home extends CI_Controller
                 $fn();
             } else {
                 $fn = "__".$fn;
-                $this->Home_model->$fn();
+                $this->hmod->$fn();
             }
 
         }
         else{
+      
         $data["meta"]['share'] = set_meta(['uri'=> 'eyenews']);
         $data['jadwal'] = $this->Home_model->get_all_jadwal();
         $data['jadwal_2'] = $this->Home_model->get_all_jadwal_2();
@@ -75,9 +77,13 @@ class Home extends CI_Controller
         $data['eyemarket_main'] = $this->Home_model->get_eyemarket_main();
         $data['klasemen'] = $this->Home_model->get_klasemen();
         $data['products'] = $this->Home_model->get_all_product();
-        $data['kompetisi'] = array(array('competition' => 'Liga Indonesia 1', 'value' => 'liga_indonesia'),array('competition' => 'Liga Inggris', 'value' => 'liga_inggris'), array('competition' => 'Liga Italia', 'value' => 'liga_italia'), array('competition' => 'Liga Spanyol', 'value' => 'liga_spanyol'));
         $data['kanal'] = "home";
         $data['imgEyeme'] = $this->emod->getImgUser();
+        $data['kompetisi'] = [
+                                ['competition' => 'Liga Indonesia 1', 'value' => 'liga_indonesia'],
+                                ['competition' => 'Liga Inggris', 'value' => 'liga_inggris'], 
+                                ['competition' => 'Liga Italia', 'value' => 'liga_italia'], 
+                                ['competition' => 'Liga Spanyol', 'value' => 'liga_spanyol']];
 
         $data["body"] = $this->load->view('home/index', $data, TRUE);
         $this->load->view('template/static', $data);
@@ -88,31 +94,7 @@ class Home extends CI_Controller
 
     }
 
-    /* public function tentang_kami()
-    {
-        $data["meta"]["title"]="";
-        $data["meta"]["image"]=base_url()."/assets/img/tab_icon.png";
-        $data["meta"]["description"]="Website dan Social Media khusus sepakbola terkeren dan terlengkap dengan data base seluruh stakeholders sepakbola Indonesia";
-
-        $cmd_ads=$this->db->query("select * from tbl_ads")->result_array();
-        $i=0;
-        foreach($cmd_ads as $ads){
-        $e=0;
-        foreach($ads as $key => $val)
-        {
-        $array[$i][$e] =  $val;
-        $e++;
-        }
-        $i++;
-        }
-        $data["array"]=$array;
-        $data["page"]="home";
-        $data["popup"]=$array[14][3];
-        //$data["body"]=$this->load->view('home/index', '', true);
-        $data["body"]=$this->load->view('home/tentang', $data, true);
-        //$this->load->view('template-front-end',$data);
-        $this->load->view('template-baru',$data);
-    } */
+   
     public function member_area()
     {
         if (isset($_SESSION["id_member"])) {
@@ -242,29 +224,7 @@ class Home extends CI_Controller
 
     }
 
-    /**public function homeBaru()
-     * {
-     * $data['jadwal']            = $this->Home_model->get_all_jadwal();
-     * $data['trend_eyetube']        = $this->Home_model->get_trending_eyetube();
-     * $data['trend_eyenews']        = $this->Home_model->get_trending_eyenews();
-     * $data['profile_club']        = $this->Home_model->get_profile_club();
-     * $data['profile_player']        = $this->Home_model->get_player_random();
-     * $data['video_eyetube']        = $this->Home_model->get_eyetube_satu();
-     * $data['eyetube_science']    = $this->Home_model->get_eyetube_science();
-     * $data['eyetube_stars']        = $this->Home_model->get_eyetube_stars();
-     * $data['eyetube_kamu']        = $this->Home_model->get_eyetube_kamu();
-     * $data['eyetube_kamu']        = $this->Home_model->get_eyetube_kamu();
-     * $data['eyenews_main']        = $this->Home_model->get_eyenews_main();
-     *
-     * $news_type                    = $data['eyenews_main']->news_type;
-     * $data['eyenews_similar']    = $this->Home_model->get_eyenews_similar($news_type);
-     * $data['eyenews_muda']        = $this->Home_model->get_eyenews_muda();
-     * $data['eyevent_today']        = $this->Home_model->get_jadwal_today();
-     * $data['eyevent_yesterday']    = $this->Home_model->get_jadwal_yesterday();
-     * $data['eyevent_tomorrow']    = $this->Home_model->get_jadwal_tomorrow();
-     *
-     * $this->load->view('home1',$data);
-     * }**/
+ 
 
     public function login()
     {

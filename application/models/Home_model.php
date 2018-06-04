@@ -913,60 +913,9 @@ class Home_model extends CI_Model
                                         ")->result_array();
             return $query; 
     }
-    function __profile_club(){
     
-    	$query = array('page'=> '1','limit' => '12','competition' => 'Liga Usia Muda','league'=> 'Liga Santri Nusantara');
-    	$data['clubs'] = $this->excurl->remoteCall($this->__xurl().'profile-club', $this->__xkey(), $query);
-    	$html = $this->load->view('home/ajax/home_club',$data,true);
-        $arr = array('xClass' => 'reslistclub' ,'xHtml'=> $html);
-        $this->tools->__flashMessage($arr);
-    }
-    function __list_player(){
-    	$page = rand(0,5);
-    	$query = array('page'=> $page,'limit' => '10','competition' => 'Liga Usia Muda','league'=> 'Liga Santri Nusantara');
-    	$data['player'] = $this->excurl->remoteCall($this->__xurl().'profile',$this->__xkey(),$query);
-    	$html = $this->load->view('home/ajax/list_player',$data,true);
-    	$arr = array('xClass'=> 'resplayerlist','xHtml'=> $html);
-    	$this->tools->__flashMessage($arr);
 
-    	
-    }
-   function __search(){
-        $data['query'] = ['search'=> $this->input->post('query')];
-        $data['news'] = $this->excurl->remoteCall($this->__xurl() . 'news', $this->__xkey(), $data['query']);
-        $data['tube'] = $this->excurl->remoteCall($this->__xurl() . 'video', $this->__xkey(), $data['query']);
-        $data['player'] = $this->excurl->remoteCall($this->__xurl() . 'profile', $this->__xkey(), $data['query']);
-        $data['club'] = $this->excurl->remoteCall($this->__xurl() . 'profile-club', $this->__xkey(),$data['query']);
-        $html = $this->load->view('home/ajax/search',$data,true);
-        $arr = ['xClass'=> 'reqsearch','xHtml'=> $html];
-        $this->tools->__flashMessage($arr);
-    }
-	function __scrapindonesia(){
-    	$data['data'] = "";
-    	$html = $this->load->view('home/ajax/scrapindonesia',$data,true);
-    	$arr = array('xClass'=> 'reqscrapindonesia','xHtml'=> $html);
-    	$this->tools->__flashMessage($arr);
-    }
-	function __scrapitalia(){
-    	$data['data'] = "";
-    	$html = $this->load->view('home/ajax/scrapitalia',$data,true);
-    	$arr = array('xClass'=> 'reqscrapitalia','xHtml'=> $html);
-    	$this->tools->__flashMessage($arr);
-
-    	
-    }
-	function __scrapspanyol(){
-    	$data['data'] = "";
-    	$html = $this->load->view('home/ajax/scrapspanyol',$data,true);
-    	$arr = array('xClass'=> 'reqscrapspanyol','xHtml'=> $html);
-    	$this->tools->__flashMessage($arr);
-    }
-	function __scrapinggris(){
-    	$data['data'] = "";
-    	$html = $this->load->view('home/ajax/scrapinggris',$data,true);
-    	$arr = array('xClass'=> 'reqscrapinggris','xHtml'=> $html);
-    	$this->tools->__flashMessage($arr);
-    }
+	
 }
 
 /* End of file Home_model.php */

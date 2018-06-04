@@ -9,7 +9,7 @@ class Eyeprofile extends CI_Controller {
 		   // $this->load->model('Eyemarket_model');
 			date_default_timezone_set('Asia/Jakarta');
 			$this->load->model('Master_model','mod');
-			$this->load->model('Eyeprofile_model','pmod');
+			$this->load->model('ajax/ProfileMod','pmod');
 			$this->load->model('Eyeprofile_model');
 			$this->load->model('Home_model');
 			$this->load->helper(array('form','url','text','date'));
@@ -32,7 +32,7 @@ class Eyeprofile extends CI_Controller {
 		$data['klasemen'] = $this->Eyeprofile_model->get_klasemen();
 		$data['transfer_pemain'] = $this->Eyeprofile_model->get_transfer_pemain();
 		$data['pencetak_gol'] = $this->Eyeprofile_model->get_pencetak_gol();
-		$data['kompetisi'] = $this->Eyeprofile_model->get_kompetisi();
+		$data['kompetisi'] = $this->pmod->get_kompetisi();
 
 		$data['kanal'] 				= "home";
 		$data["body"]=$this->load->view('eyeprofile/index', $data,true);
@@ -94,8 +94,8 @@ class Eyeprofile extends CI_Controller {
 		$data['get_jadwal_hasil2'] = $this->Eyeprofile_model->get_jadwal_hasil2($nama_liga_event);
 		$data['transfer_pemain'] = $this->Eyeprofile_model->get_transfer_pemain($nama_liga);
 		$data['pencetak_gol'] = $this->Eyeprofile_model->get_pencetak_gol($nama_liga);		
-		$data['competition'] = $this->Eyeprofile_model->get_all_kompetisi();
-		$data['get_all_liga'] = $this->Eyeprofile_model->get_all_liga();		
+		$data['competition'] = $this->pmod->get_all_kompetisi();
+		$data['get_all_liga'] = $this->pmod->get_all_liga();		
 		$data['get_player_liga'] = $this->Eyeprofile_model->get_player_liga($nama_liga,'indonesia',$cat_liga);		
 		$data['get_player_liga_strange'] = $this->Eyeprofile_model->get_player_liga_strange($nama_liga,'indonesia',$cat_liga);		
 		
@@ -163,8 +163,8 @@ class Eyeprofile extends CI_Controller {
 	public function pemain()
 	{
 		$data["meta"]["share"]= set_meta(['uri'=> 'player']);
-		$data['competition'] = $this->Eyeprofile_model->get_all_kompetisi();
-		$data['get_all_liga'] = $this->Eyeprofile_model->get_all_liga();
+		$data['competition'] = $this->pmod->get_all_kompetisi();
+		$data['get_all_liga'] = $this->pmod->get_all_liga();
 		$data['kanal'] = "home";
 		$data["body"]=$this->load->view('eyeprofile/pemain',$data, true);
 		$this->load->view('template/static',$data);		
@@ -201,8 +201,8 @@ class Eyeprofile extends CI_Controller {
 	public function official()
 	{
 		$data['meta']['share'] = set_meta(['uri'=> 'official']);
-		$data['get_all_liga'] = $this->Eyeprofile_model->get_all_liga();
-		$data['competition'] = $this->Eyeprofile_model->get_all_kompetisi();		
+		$data['get_all_liga'] = $this->pmod->get_all_liga();
+		$data['competition'] = $this->pmod->get_all_kompetisi();		
 		$data['kanal'] = "home";
 		$data["body"]=$this->load->view('eyeprofile/official', $data, true);
 		$this->load->view('template/static',$data);		
@@ -244,7 +244,7 @@ class Eyeprofile extends CI_Controller {
 			$data["title_liga"] = $nama_liga;
 		}
 		
-		$data['get_all_kompetisi'] = $this->Eyeprofile_model->get_all_kompetisi();
+		$data['get_all_kompetisi'] = $this->pmod->get_all_kompetisi();
 		$data['pemain_klub'] = $this->Eyeprofile_model->get_pemain_klub();
 
 		$data['club_main'] = $this->Eyeprofile_model->get_club_liga($nama_liga,$jml_klub);
