@@ -5,7 +5,7 @@
     $player = (!empty($playerstatus->data) ? $playerstatus->data[0] : "");
 ?>
 
-<div class="row mg-all20 pad-all">
+<div class="row mg-t20 mg-b20 mg-l mg-r pad-all">
     <div class="col-12">
         <div class="wlc" id="welcome" style="display:block;">
             <div>

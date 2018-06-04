@@ -368,11 +368,11 @@
                         </div>
 						<?php } ?>						
                     </div>
-                    <div class="container banner-eyenews1 img-banner mt-20" style="background-color: unset;height: unset;background: url(https://www.eyesoccer.id/assets/img/banner/1065X255px.png);background-repeat: no-repeat;background-size: cover;">
+                    <div class="container banner-eyenews1 img-banner mt-20" style="background-color: unset;height: unset;background: url(https://www.eyesoccer.id/assets/img/banner/1065X255px.png);background-repeat: no-repeat;background-size: cover;height: 250px;position: relative;text-align: center;">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- EyesoccerDekstop 16#EyenewsDetailSquare336x280 -->
                     <ins class="adsbygoogle"
-                        style="display:inline-block;width:336px;height:280px"
+                        style="display:inline-block;width:336px;height:280px;position:  absolute;top:  0px;left: -11px;"
                         data-ad-client="ca-pub-7635854626605122"
                         data-ad-slot="3103367534"></ins>
                     <script>
