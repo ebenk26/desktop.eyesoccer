@@ -144,7 +144,7 @@
                             </tr>
                             <tr>
                                 <td>Tanggal Berdiri</td>
-                                <td>: <?=$r->establish_date?></td>
+                                <td>: <?=formatDate($r->establish_date)?></td>
                             </tr>
                             <tr>
                                 <td>Alamat</td>
@@ -248,7 +248,7 @@
 							</tr>
 							<tr>
 								<td>Tgl Lahir</td>
-								<td><?=$p->birth_date?></td>
+								<td><?=formatDate($p->birth_date)?></td>
 							</tr>
 							<tr>
 								<td>Main</td>
@@ -284,7 +284,7 @@
 							</tr>
 							<tr>
 								<td>Tgl Lahir</td>
-								<td><?=$o->birth_date?></td>
+								<td><?=formatDate($o->birth_date)?></td>
 							</tr>
 							<tr>
 								<td>Lisensi</td>
