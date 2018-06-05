@@ -147,7 +147,7 @@
                                 <td>: <?=formatDate($r->establish_date)?></td>
                             </tr>
                             <tr>
-                                <td>Alamat</td>
+                                <td>Alamat Sekretariat</td>
                                 <td>: <?=strip_tags($r->address)?></td>
                             </tr>
                             <tr>
@@ -190,7 +190,7 @@
                         <tbody>
                             <tr>
                                 <td style="width: 120px;">Jumlah Pemain</td>
-                                <td>: <?=$r->number_of_player?> Pemain</td>
+                                <td>: <?=$r->number_of_player?> <? echo ($r->competition == 'Liga Usia Muda' ? ' Siswa' : ' Pemain')?></td>
                             </tr>
                             <tr>
                                 <td>Email</td>
@@ -201,7 +201,7 @@
                                 <td>: <?=$r->stadium?></td>
                             </tr>
                             <tr>
-                                <td>Panggilan Klub</td>
+                                <td>Julukan</td>
                                 <td>: <?=$r->nickname?></td>
                             </tr>
                         </tbody>
@@ -251,8 +251,8 @@
 								<td><?=formatDate($p->birth_date)?></td>
 							</tr>
 							<tr>
-								<td>Main</td>
-								<td align="left">?</td>
+								<td>Usia</td>
+								<td align="left"><?=date_diff(date_create($p->birth_date), date_create('today'))->y.' tahun'?></td>
 							</tr>
 						</tbody>
 					</table>
