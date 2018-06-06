@@ -32,7 +32,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Nama Panggilan</td>
+                    <td>Julukan</td>
                     <td>
                         <input type="text">
                     </td>

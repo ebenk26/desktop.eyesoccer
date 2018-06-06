@@ -20,7 +20,7 @@
                             </tr>
                             <tr>
                                 <td>Tanggal lahir</td>
-                                <td>: <?php echo (!empty($res->birth_date) ? $res->birth_date: '-')?></td>
+                                <td>: <?php echo (!empty($res->birth_date) ? date("d-m-Y", strtotime($res->birth_date)) : '-')?></td>
                             </tr>
                             <tr>
                                 <td>Kewarganegaraan</td>
@@ -119,7 +119,7 @@
                             <th class="t-b-b">Bulan </th>
                             <th class="t-b-b">Tahun</th>
                             <th class="t-b-b">Klub</th>
-                            <th class="t-b-b">Kompetisi</th>
+                            <th class="t-b-b">Turnamen / Kompetisi</th>
                             <th class="t-b-b">Main</th>
                             <th class="t-b-b">No Punggung</th>
                             <th class="t-b-b">Pelatih</th>
@@ -160,7 +160,7 @@
                             <th class="t-b-b">Bulan </th>
                             <th class="t-b-b">Tahun</th>
                             <th class="t-b-b">Klub</th>
-                            <th class="t-b-b">Kompetisi</th>
+                            <th class="t-b-b">Turnamen / Kompetisi</th>
                             <th class="t-b-b">Main</th>
                             <th class="t-b-b">No Punggung</th>
                             <th class="t-b-b">Pelatih</th>
