@@ -1,5 +1,5 @@
 <!--COMPLETED ACTIONS DONUTS CHART-->
-<h3 class="mg-b20">NOTIFICATIONS</h3>
+<!-- <h3 class="mg-b20">NOTIFICATIONS</h3> -->
 
 <!-- First Action -->
 <!--<div class="desc">
