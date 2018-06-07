@@ -68,10 +68,6 @@ echo $totalPage ?>
             if ($i > $totalPage) {
                 break;
             }
-            if($i == 0 ){
-                $j + 5;
-                $j++;
-            }
             ?>
             <li <?php echo($page == $i ? 'class="active"' : '') ?>><?php echo anchor(pCLUB . $uri . '/page/' . $i, $i) ?></li> <?php
         endfor;
