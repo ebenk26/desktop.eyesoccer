@@ -42,7 +42,9 @@ $limit = $res->query->limit;
 $totalPage = ceil($totalRows / $limit); //total page
 $competition = $res->query->competition;
 $league = ($res->query->league == 'SSB / Akademi Sepakbola' ? 'SSB' : $res->query->league);
-$uri = ($competition == null ? 'Liga Indonesia 1' : ($league != null || $league != '' ? $competition . '/' . $league : $competition));; ?>
+$uri = ($competition == null ? 'Liga Indonesia 1' : ($league != null || $league != '' ? $competition . '/' . $league : $competition));;
+echo $page.PHP_EOL;
+echo $totalPage ?>
 
 
 <div class="pull-right">
@@ -51,28 +53,31 @@ $uri = ($competition == null ? 'Liga Indonesia 1' : ($league != null || $league 
         <?php echo($page > 1 ? '<li>' . anchor(pCLUB . $uri . '/page/' . ($page - 1), 'Sebelumnya', 'display="block"') . '</li>' : '') ?>
 
         <?php
-        if ($page > 4) {
+        if ($page > 5) {
             ?>
             <li><?php echo anchor(pCLUB . $uri . '/page/1', '1') ?></li>
             <li>...</li>
             <?php
-        }
+        }   
+        $loop = ($page == 1 ? 10 : 5);
 
-        for ($i = ($page - 2); $i < ($page + 2); $i++):
-
+        for ($i = ($page - $loop); $i < ($page + $loop); $i++):
             if ($i < 1) {
                 continue;
             }
             if ($i > $totalPage) {
                 break;
             }
-
+            if($i == 0 ){
+                $j + 5;
+                $j++;
+            }
             ?>
             <li <?php echo($page == $i ? 'class="active"' : '') ?>><?php echo anchor(pCLUB . $uri . '/page/' . $i, $i) ?></li> <?php
         endfor;
         ?>
 
-        <?php if ($totalPage > $page AND $page > 3) { ?>
+        <?php if ($totalPage > $page AND $page > 1) { ?>
             <li>...</li>
             <li><?php echo anchor(pCLUB . $uri . '/page/' . $totalPage, $totalPage) ?></li>
         <?php } ?>
