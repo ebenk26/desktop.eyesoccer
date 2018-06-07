@@ -411,7 +411,8 @@ function set_meta($opt = ['uri','data']){
     return $meta;
     
 }
-function imgCache($url, $size = "medium")
+
+function imgCache($url, $size = "")
 {
     return 'http://static.eyesoccer.id/v1/cache/images/' . $url . '/' . $size;
 }
