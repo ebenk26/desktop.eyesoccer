@@ -133,7 +133,7 @@
                     <img src="<?php echo $r->url_logo ?>" alt="">                        
                 </div>
             </div>
-            <div class="right">
+            <div class="right" style="margin-top: -5px;">
                 <div class="t-30">
                     <h3>INFO</h3>
                     <table>
@@ -143,16 +143,16 @@
                                 <td>: <?=$r->name?></td>
                             </tr>
                             <tr>
+                                <td>Julukan</td>
+                                <td>: <?=$r->nickname?></td>
+                            </tr>
+                            <tr>
                                 <td>Tanggal Berdiri</td>
-                                <td>: <?=formatDate($r->establish_date)?></td>
+                                <td>: <?=checkDate00(formatDate($r->establish_date))?></td>
                             </tr>
                             <tr>
                                 <td>Alamat Sekretariat</td>
                                 <td>: <?=strip_tags($r->address)?></td>
-                            </tr>
-                            <tr>
-                                <td>Situs</td>
-                                <td>: <?=$r->website?></td>
                             </tr>
 							
                         </tbody>
@@ -199,10 +199,6 @@
                             <tr>
                                 <td>Stadium</td>
                                 <td>: <?=$r->stadium?></td>
-                            </tr>
-                            <tr>
-                                <td>Julukan</td>
-                                <td>: <?=$r->nickname?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -284,11 +280,11 @@
 							</tr>
 							<tr>
 								<td>Tgl Lahir</td>
-								<td><?=formatDate($o->birth_date)?></td>
+								<td><?=checkDate00(formatDate($o->birth_date))?></td>
 							</tr>
 							<tr>
 								<td>Lisensi</td>
-								<td><?=$o->license?></td>
+								<td><?=(!empty($o->license) ? $o->license : '-')?></td>
 							</tr>
 						</tbody>
 					</table>
