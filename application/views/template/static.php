@@ -523,7 +523,7 @@
 			}
 		?>
     <script>
-    jQuery('#popopo').modal('show').on('hide.bs.modal');
+    // jQuery('#popopo').modal('show').on('hide.bs.modal');
 	function sesPop(){
 		<?php
 			$this->session->popupbanner = true;
