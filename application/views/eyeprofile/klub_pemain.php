@@ -205,23 +205,37 @@
                 </div>
             </div>
         </div>
-        <div class="menu-2">
+		<?php if($r->league == 'SSB / Akademi Sepakbola')
+		{
+		?>
+        <div class="menu-2" style="border: unset;">
+			<div class="container" style="position:  relative;"><span style="position:  absolute;top: 10px;" class="btn-reg mr-7"><a href="<?php echo ($this->session->member ? base_url().'member/regis_player' : base_url().'member/?from=member/regis_player/'.$r->slug)?>">Daftar Sebagai Pemain <?=$r->name?></a></span></div>
+        </div>
+		<?php
+		}
+		?>
+    </div>
+    <div class="desktop">
+		<div class="center-desktop m-l-158" style="padding-top: 80px;">
+			<?php 
+			if(!empty($r->description))
+			{
+			?>
+				<h3 class="sjrh">Sejarah</h3>
+				<p>
+					<?=$r->description?>
+				</p>
+				<?php 
+			}
+			?>
+			<div class="menu-2" style="width:100%;">
             <ul>
                 <li class="klubtab active" onclick="openTab(event,'tabs-pemain')">Pemain</li>
                 <li class="klubtab" onclick="openTab(event,'tabs-ofisial')">Ofisial</li>
                 <li class="klubtab" onclick="openTab(event,'tabs-supporter')">Supporter</li>
             </ul>
-			<div class="container" style="position:  relative;"><span style="position:  absolute;top: 10px;" class="btn-reg mr-7"><a href="http://localhost/desktop.eyesoccer/member/regis_klub">Daftar Sebagai Pemain <?=$r->name?></a></span></div>
         </div>
-    </div>
-    <div class="desktop">	
-		<div class="center-desktop m-l-158">
-			<h3 class="sjrh">Sejarah</h3>
-			<p>
-				<?=$r->description?>
-			</p>
 		</div>
-
 			<div class="center-desktop m-0 maintab" id="tabs-pemain">
 			
 			<?php
@@ -260,7 +274,7 @@
 				</div>
 		</div>
 		
-		<div class="center-desktop m-0 pd-t-100 maintab" style="display:none;" id="tabs-ofisial">
+		<div class="center-desktop m-0 pd-t-100 maintab" style="display:none;padding-top: unset;" id="tabs-ofisial">
 			<?php
 			$no = 1;
 			foreach($official as $o):?>
