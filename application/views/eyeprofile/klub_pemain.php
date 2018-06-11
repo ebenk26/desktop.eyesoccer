@@ -211,6 +211,7 @@
                 <li class="klubtab" onclick="openTab(event,'tabs-ofisial')">Ofisial</li>
                 <li class="klubtab" onclick="openTab(event,'tabs-supporter')">Supporter</li>
             </ul>
+			<div class="container" style="position:  relative;"><span style="position:  absolute;top: 10px;" class="btn-reg mr-7"><a href="http://localhost/desktop.eyesoccer/member/regis_klub">Daftar Sebagai Pemain <?=$r->name?></a></span></div>
         </div>
     </div>
     <div class="desktop">	

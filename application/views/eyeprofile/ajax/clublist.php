@@ -6,6 +6,9 @@ $res = json_decode($res);
 
 echo "<div class='ep2box fl-l pd-t-20'>";
 
+echo "<div class='container'>
+<input type='text' placeholder='Cari ...' class='fl-r slc-musim' style='margin-right: 22px;'>
+</div>";
 foreach ($res->data as $r):
     $url = preg_match("/[^\/]+$/", $r->url_logo, $matches);
     echo '<a href="' . CLUBDETAIL . $r->slug . '" style="text-decoration:unset;color:#424242;">' . '<div class="box-content ep2 fl-l">';
