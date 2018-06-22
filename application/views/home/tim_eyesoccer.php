@@ -50,7 +50,7 @@
                     <h2>Editors and Content Intelligence</h2>
                     <div class="dline m-0 m-t-10 mb-30"></div>
                     <div class="container m-0">
-                        <div class="container w213 tim">
+                        <div class="container w213 tim" style="width: 33%;">
                             <span>
                                 <ey>Head of EyeNews Division</ey>
                             </span>
@@ -61,8 +61,6 @@
                             </span>
                             <span>Bayu Mahendra</span>
                             <span>Aditya Gilang</span>
-                            <span>Ridhoni</span>
-                            <span>Busthomi</span>
                             <br>
                             <span>
                                 <ey>Info Grafis</ey>
@@ -71,18 +69,17 @@
                             <br>
                             <br>
                         </div>
-                        <div class="container w213 tim">
+                        <div class="container w213 tim" style="width: 33%;">
                             <span>
                                 <ey>EyeTube Division</ey>
                             </span>
-                            <span>Fadia Sekar</span>
                             <span>Ade Firmansyah</span>
                             <span>I Gede Agus Sukra Tanaya</span>
                             <br>
                             <span><ey>Motion Graphic Artist</ey></span>
                             <span>Pratama Ilmiawan</span> <br/>
                         </div>
-                        <div class="container w213 tim">
+                        <div class="container w213 tim" style="width: 33%;">
                             <span>
                                 <ey>Head of EyeProfile Division</ey>
                             </span>
@@ -95,18 +92,18 @@
                             <span>Aris Diyantoro</span>
                             <span>Budi Harjo</span>
                         </div>
-                        <div class="container w213 tim">
+                        <!-- <div class="container w213 tim">
                             <span>
                                 <ey>EyeMarket Division</ey>
                             </span>
                             <span>Soraya Noor</span>
-                        </div>
-                        <div class="container w213 tim">
+                        </div> -->
+                        <!-- <div class="container w213 tim">
                             <span>
                                 <ey>EyeEvent Division</ey>
                             </span>
                             <span>Maylani Sofyand</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -126,31 +123,37 @@
                 <div class="dll-isi mt-45">
                     <h2>General Affairs Department</h2>
                     <div class="dline m-0 m-t-10 mb-30"></div>
-                    <div class="container w265 tim">
+                    <!-- <div class="container w265 tim">
                         <span></span>
-                    </div>
-                    <div class="container w265 tim">
+                    </div> -->
+                    <div class="container w355 tim">
+                            <span>
+                                <ey>EyeMarket Division</ey>
+                            </span>
+                            <span>Soraya Noor</span>
+                        </div>
+                    <div class="container w355 tim">
                         <span>
                             <ey>Internal Relation</ey>
                         </span>
-                        <span>Siska Oktavia Lestari</span>
+                        <span>Soraya Noor</span>
                         <span>Abdul Aziz</span>
                         <span>Andi</span>
                         <span>Deni</span>
                         <br>
                         <br>
                     </div>
-                    <div class="container w265 tim">
+                    <div class="container w355 tim">
                         <span>
                             <ey>Graphic Design</ey>
                         </span>
-                        <span>Emil Siregar</span>
+                        <span>Fauzan S Salim</span>
                         <br>
                         <br>
                     </div>
-                    <div class="container w265 tim">
+                    <!-- <div class="container w265 tim">
                         <span></span>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="container m-0">
@@ -161,16 +164,14 @@
                         <span>
                             <ey>Sales and Marketing</ey>
                         </span>
-                        <span>Philips Gregory</span>
                         <span>Owien Rodwin</span>
-                        <span>Fria Puspitasari</span>
-                        <br>
+                        <!-- <br>
                         <span>
                             <ey>Social Media Specialist</ey>
                         </span>
                         <span>Nugraha Putra</span>
                         <span>DB Krishna</span>
-                        <br>
+                        <br> -->
                     </div>
                     <div class="container w355 tim">
                         <span>
@@ -208,10 +209,8 @@
                         <span>
                             <ey>Back End Developer</ey>
                         </span>
-                        <span>Muhammad Robi</span>
                         <span>Kharizuno Hizbullah</span>
                         <span>Sofyan Waldy</span>
-                        <span>Mhd.Arif Hidayat</span>
                         <br>
                         <br>
                     </div>
@@ -220,7 +219,6 @@
                             <ey>Front End Developer</ey>
                         </span>
                         <span>Fajar Ulin Nuha</span>
-                        <span>Faradila Nurzahra Danopa</span>
                         <br>
                         <br>
                     </div>
@@ -234,7 +232,7 @@
                     </div>
                     <div class="container w213 tim">
                         <span>
-                            <ey>SEO Specialist</ey>
+                            <ey>SEO & Social Media Specialist</ey>
                         </span>
                         <span>Ardiatma</span>
                         <br>
