@@ -511,11 +511,11 @@
 			if(!$this->session->popupbanner){
 		?>
         <div class="modal" id="popopo" role="dialog">
-        <div class="modal-dialog" style="left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 900px;width: 80%;">
-            <div class="box-popup" style="padding: unset;overflow: hidden;box-shadow: 0 0 25px -5px #7d7d7dfc;">
-                <button style="padding: unset;border:  none;font-size:  1.5em;opacity:  .3;position: absolute;float:  right;top: -5px;right:  7px;" type="button" class="close" data-dismiss="modal" onclick="sesPop()">&times; </button>
+        <div class="modal-dialog" style="text-align: center;left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 900px;width: 80%;">
+            <div class="box-popup" style="padding: unset;overflow: hidden;box-shadow: unset; background-color: unset;">
+                <button style="padding: unset;border:  none;font-size:  1.5em;opacity: .8;position: absolute;color:  white;top: -5px;" type="button" class="close" data-dismiss="modal" onclick="sesPop()">&times; </button>
                 <!-- <h3 style="font-size: 1.5em;margin:  0px;padding:  0px;text-align:  center;font-weight: 300;color:  #333;font-family: sans-serif;">Ayo Sukseskan!</h3> -->
-                <img class="noLazyLoad" style="width:  100%;box-sizing:  border-box;padding: unset;margin: -6px 0;" src="https://static.eyesoccer.id/v1/cache/images/rev-banner-pop-up-desktop.jpg" alt="">
+                <img class="noLazyLoad" style="box-shadow: 0 0 25px -5px #7d7d7dfc;height:  80vh;box-sizing:  border-box;padding: unset;margin: -6px 0;border-radius: 5px;overflow: hidden;" src="http://hifajar.com/47C19146-805A-4A46-B895-6076C84F017D.jpeg" alt="">
             </div>
         </div>
     </div>
@@ -523,7 +523,7 @@
 			}
 		?>
     <script>
-    // jQuery('#popopo').modal('show').on('hide.bs.modal');
+    jQuery('#popopo').modal('show').on('hide.bs.modal');
 	function sesPop(){
 		<?php
 			$this->session->popupbanner = true;
