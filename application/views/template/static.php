@@ -508,7 +508,8 @@
 			}
 		?>
 		<?php
-			if(!$this->session->popupbanner){
+			$last_uri = array("klub", "eyetube", "eyenews", "eyevent", "eyeme", "eyemarket");
+			if(!$this->session->popupbanner || in_array(end($this->uri->segments), $last_uri) || in_array("klub", $this->uri->segments)){
 		?>
         <div class="modal" id="popopo" role="dialog">
         <div class="modal-dialog" style="text-align: center;left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 900px;width: 80%;">
