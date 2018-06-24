@@ -508,19 +508,22 @@
 			}
 		?>
 		<?php
-			$last_uri = array("klub", "eyetube", "eyenews", "eyevent", "eyeme", "eyemarket");
-			if(!$this->session->popupbanner || in_array(end($this->uri->segments), $last_uri) || in_array("klub", $this->uri->segments)){
+			$arr_date = array("2018-06-24", "2018-06-25");
+			if(in_array(date('Y-m-d'), $arr_date)){
+				$last_uri = array("klub", "eyetube", "eyenews", "eyevent", "eyeme", "eyemarket");
+				if(!$this->session->popupbanner || in_array(end($this->uri->segments), $last_uri) || in_array("klub", $this->uri->segments)){
 		?>
-        <div class="modal" id="popopo" role="dialog">
-        <div class="modal-dialog" style="text-align: center;left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 900px;width: 80%;">
-            <div class="box-popup" style="padding: unset;overflow: hidden;box-shadow: unset; background-color: unset;">
-                <button style="padding: unset;border:  none;font-size:  1.5em;opacity: .8;position: absolute;color:  white;top: -5px;" type="button" class="close" data-dismiss="modal" onclick="sesPop()">&times; </button>
-                <!-- <h3 style="font-size: 1.5em;margin:  0px;padding:  0px;text-align:  center;font-weight: 300;color:  #333;font-family: sans-serif;">Ayo Sukseskan!</h3> -->
-                <img class="noLazyLoad" style="box-shadow: 0 0 25px -5px #7d7d7dfc;height:  80vh;box-sizing:  border-box;padding: unset;margin: -6px 0;border-radius: 5px;overflow: hidden;" src="http://static.eyesoccer.id/v1/cache/images/23_nobar.jpg" alt="">
-            </div>
-        </div>
-    </div>
+					<div class="modal" id="popopo" role="dialog">
+						<div class="modal-dialog" style="text-align: center;left: 50%;top: 50%;transform: translate(-50%, -50%);margin: unset;max-width: 900px;width: 80%;">
+							<div class="box-popup" style="padding: unset;overflow: hidden;box-shadow: unset; background-color: unset;">
+								<button style="padding: unset;border:  none;font-size:  1.5em;opacity: .8;position: absolute;color:  white;top: -5px;" type="button" class="close" data-dismiss="modal" onclick="sesPop()">&times; </button>
+								<!-- <h3 style="font-size: 1.5em;margin:  0px;padding:  0px;text-align:  center;font-weight: 300;color:  #333;font-family: sans-serif;">Ayo Sukseskan!</h3> -->
+								<img class="noLazyLoad" style="box-shadow: 0 0 25px -5px #7d7d7dfc;height:  80vh;box-sizing:  border-box;padding: unset;margin: -6px 0;border-radius: 5px;overflow: hidden;" src="http://static.eyesoccer.id/v1/cache/images/<?php echo date('d');?>_nobar.jpg" alt="">
+							</div>
+						</div>
+					</div>
 		<?php
+				}
 			}
 		?>
     <script>
