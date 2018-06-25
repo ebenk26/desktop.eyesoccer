@@ -62,11 +62,6 @@
                             <span>Bayu Mahendra</span>
                             <span>Aditya Gilang</span>
                             <br>
-                            <span>
-                                <ey>Info Grafis</ey>
-                            </span>
-                            <span>Charles Lubis</span>
-                            <br>
                             <br>
                         </div>
                         <div class="container w213 tim" style="width: 33%;">
@@ -147,7 +142,7 @@
                         <span>
                             <ey>Graphic Design</ey>
                         </span>
-                        <span>Fauzan S Salim</span>
+                        <span>Fauzan Affan</span>
                         <br>
                         <br>
                     </div>
