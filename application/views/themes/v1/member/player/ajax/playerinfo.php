@@ -33,7 +33,7 @@
         <div class="full-width">
             <label class="btn-blue disp-block mg-b10 mg-b15">
                 Upload Photo
-                <input type="file" name="photo" id="filepic" style="display: none;" accept="image/*">
+                <input type="file" name="photo" id="filepic" style="display: none;">
             </label>
         </div>
     </div>
@@ -64,10 +64,17 @@
                     <span class="err msgnickname"></span>
                 </td>
             </tr>
+			<tr>
+                <td>Alamat <span class="cl-red">*</span></td>
+                <td>
+                    <input type="text" name="address" value="<?php echo ($player) ? $player->address : ''; ?>">
+                    <span class="err msgaddress"></span>
+                </td>
+            </tr>
             <tr>
                 <td>Deskripsi <span class="cl-red">*</span></td>
                 <td>
-                    <textarea name="description" rows="5"><?php echo ($player) ? $player->description : ''; ?></textarea>
+                    <textarea name="description" rows="5"><?php echo ($player) ? strip_tags($player->description) : ''; ?></textarea>
                     <span class="err msgdescription"></span>
                 </td>
             </tr>
@@ -127,16 +134,16 @@
             }
             ?>
             <tr>
-                <td>Height <span class="cl-red">*</span></td>
+                <td>Tinggi <span class="cl-red">*</span></td>
                 <td>
-                    <input type="number" min="1" name="height" value="<?php echo ($player) ? $player->height : ''; ?>">
+                    <input type="number" min="1" name="height" value="<?php echo ($player) ? $player->height : ''; ?>" placeholder="cm">
                     <span class="err msgheight"></span>
                 </td>
             </tr>
             <tr>
-                <td>Weight <span class="cl-red">*</span></td>
+                <td>Berat <span class="cl-red">*</span></td>
                 <td>
-                    <input type="number" min="1" name="weight" value="<?php echo ($player) ? $player->weight : ''; ?>">
+                    <input type="number" min="1" name="weight" value="<?php echo ($player) ? $player->weight : ''; ?>" placeholder="kg">
                     <span class="err msgweight"></span>
                 </td>
             </tr>
