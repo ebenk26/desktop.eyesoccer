@@ -191,7 +191,7 @@
                         <a class="m-reg" href=""><i class="material-icons">input</i>Login</a>
                     </div>
                     <span>kanal</span>
-                    <a href="<?=base_url()?>eyeprofile/klub/Liga%20Usia%20Muda/SSB"><img src="<?=base_url()?>assets/img/ic_eyeprofile.png" alt="">Eye Profile</a>
+                    <a href="<?=base_url()?>eyeprofile/klub/Liga-Usia-Muda/SSB"><img src="<?=base_url()?>assets/img/ic_eyeprofile.png" alt="">Eye Profile</a>
                     <a href="<?=base_url()?>eyetube"><img src="<?=base_url()?>assets/img/ic_eyetube.png" alt="">Eye Tube</a>
                     <a href="<?=base_url()?>eyenews"><img src="<?=base_url()?>assets/img/ic_eyenews.png" alt="">Eye News</a>
                     <a href="<?=base_url()?>eyemarket"><img src="<?=base_url()?>assets/img/ic_eyemarket.png" alt="">Eye Market</a>
@@ -298,7 +298,7 @@
                 <div class="center-desktop m-0">
                     <span class="x-m">
                         <ul>
-                            <li><a href="<?=base_url()?>eyeprofile/klub/Liga%20Usia%20Muda/SSB">EyeProfile</a></li>
+                            <li><a href="<?=base_url()?>eyeprofile/klub/Liga-Usia-Muda/SSB">EyeProfile</a></li>
                             <li><a href="<?=base_url()?>eyetube">EyeTube</a></li>
                             <li><a href="<?=base_url()?>eyenews">EyeNews</a></li>
                             <li><a href="<?=base_url()?>eyeme">EyeMe</a></li>

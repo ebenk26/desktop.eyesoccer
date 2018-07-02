@@ -118,10 +118,10 @@
 <!-- EYEPROFILE -->
 <div class="carous center-desktop" style="margin-top: -30px;">
     <img class="img-title lazy" src="<?php echo base_url()?>assets/home/img/ic_eyeprofile.png" alt="">
-    <h2 class="title ep"><a href="<?php echo base_url();?>eyeprofile/klub/Liga%20Usia%20Muda/SSB">EyeProfile</a></h2>
+    <h2 class="title ep"><a href="<?php echo base_url();?>eyeprofile/klub/Liga-Usia-Muda/SSB">EyeProfile</a></h2>
     <hr class="x-ep">
     <span>
-        <a href="<?php echo base_url()?>eyeprofile/klub/Liga%20Usia%20Muda/SSB"><span class="kl">Klub Lainnya</span>
+        <a href="<?php echo base_url()?>eyeprofile/klub/Liga-Usia-Muda/SSB"><span class="kl">Klub Lainnya</span>
         <i class="material-icons r-kl">keyboard_arrow_right</i>                       </a>         
     </span>            
   
