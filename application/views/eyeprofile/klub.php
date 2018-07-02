@@ -1,5 +1,5 @@
 <?php 
-$comp = ($this->uri->segment(3) == '' ? 'Liga Indonesia 1' : urldecode($this->uri->segment(3)));
+$comp = ($this->uri->segment(3) == '' ? 'Liga Indonesia 1' : urldecode(str_replace('-','%20',$this->uri->segment(3))));
 $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this->uri->segment(6) : $this->uri->segment(5)) : 1 );
 ?>
 
@@ -106,11 +106,11 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 	                <li><?php echo anchor(pREFEREE,'Perangkat Pertandingan')?></li>
 	                <li><?php echo anchor(pSUPPORT,'supporter')?></li>
 	            </ul>
-                <select id="chained_kompetisi" name="" selected="true" class="slc-musim fl-r" onchange="if(this.options[this.selectedIndex].value != 'Liga Usia Muda'){window.location = this.options[this.selectedIndex].value};" style="margin: -12px 0 2px 0;">
+                <select id="chained_kompetisi" name="" selected="true" class="slc-musim fl-r" onchange="if(this.options[this.selectedIndex].value != 'Liga-Usia-Muda'){window.location = this.options[this.selectedIndex].value};" style="margin: -12px 0 2px 0;">
 					<option value="">--Pilih Liga--</option>
 				<?php foreach($competition as $r):?>
 				
-				<option <?php echo ($r->competition == urldecode($this->uri->segment(3)) || substr($r->competition,0,4) == urldecode($this->uri->segment(3)) ? 'selected' : '')?> value="<?php echo ($r->competition =='Liga Usia Muda' ? 'Liga Usia Muda' : pCLUB.$r->competition)?>"><?php echo $r->competition;?></option>
+				<option <?php echo ($r->competition == urldecode(str_replace('-','%20',$this->uri->segment(3))) || substr($r->competition,0,4) == urldecode(str_replace('-','%20',$this->uri->segment(3))) ? 'selected' : '')?> value="<?php echo ($r->competition =='Liga Usia Muda' ? 'Liga-Usia-Muda' : pCLUB.str_replace(' ','-',$r->competition))?>"><?php echo $r->competition;?></option>
 				<?php endforeach; ?>
 		
                 </select>
@@ -120,7 +120,7 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 
 				<?php foreach($get_all_liga as $row):
 					$league = ($row->league == 'SSB / Akademi Sepakbola' ?  'SSB' :$row->league);?>
-					<option <?php echo ($league == urldecode($this->uri->segment(4)) ? 'selected' :'')?> value="<?php echo pCLUB.'Liga Usia Muda/'.$league?>"><?php echo $row->league?></option> 
+					<option <?php echo ($league == urldecode(str_replace('-','%20',$this->uri->segment(4))) ? 'selected' :'')?> value="<?php echo pCLUB.'Liga-Usia-Muda/'.$league?>"><?php echo $row->league?></option> 
 
 				<?php endforeach;?>
                 </select>

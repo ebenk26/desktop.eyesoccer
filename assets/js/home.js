@@ -131,7 +131,7 @@ $(document).ready(function(){
 });
 $('#chained_kompetisi').on('change', function(){
     var value    = $(this).val();
-    if(value=='Liga Usia Muda'){
+    if(value=='Liga-Usia-Muda'){
         $("#chained_liga").show();
     }
 });
@@ -141,7 +141,7 @@ function __(x){
 
 let uri = window.location.href;
 let split = uri.split('/');
-let liga = 'Liga Usia Muda';
+let liga = 'Liga-Usia-Muda';
 let uri_segment = __('uri_segment');
 
 if(uri_segment !== undefined && uri_segment !== null){

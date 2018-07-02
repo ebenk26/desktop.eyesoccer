@@ -46,8 +46,9 @@ $totalPage = ceil($totalRows / $limit); //total page
 $competition = $res->query->competition;
 $league = ($res->query->league == 'SSB / Akademi Sepakbola' ? 'SSB' : $res->query->league);
 $uri = ($competition == null ? 'Liga Indonesia 1' : ($league != null || $league != '' ? $competition . '/' . $league : $competition));;
-echo $page.PHP_EOL;
-echo $totalPage ?>
+$uri = str_replace(' ','-',$uri);
+// echo $page.PHP_EOL;
+// echo $totalPage ?>
 
 
 <div class="pull-right">
