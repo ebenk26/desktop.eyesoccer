@@ -1,6 +1,9 @@
+<div class="tx-r">
+<a href="<?php echo base_url('member/galeri/?tab=album&act=add'); ?>" class="btn-white-orange fl-r mg-r5"><i class="fas fa-plus mg-r5"></i>Tambah Album</a>
+<a href="<?php echo base_url('member/galeri/?tab=photo&act=add'); ?>" class="btn-white-orange fl-r mg-r5"><i class="fas fa-images mg-r5"></i>Upload Photo</a>
 <a href="<?php echo base_url('member/galeri/?tab=video&act=add'); ?>" class="btn-white-orange fl-r"><i class="fas fa-video mg-r5"></i>Upload Video</a>
-<a href="<?php echo base_url('member/galeri/?tab=photo&act=add'); ?>" class="btn-white-orange fl-r"><i class="fas fa-images mg-r5"></i>Upload Photo</a>
-<a href="<?php echo base_url('member/galeri/?tab=album&act=add'); ?>" class="btn-white-orange fl-r"><i class="fas fa-plus mg-r5"></i>Tambah Album</a>
+</div>
+
 <div class="container mg-tb15">
     <div class="pp-profil">
         <img src="<?php echo ($club AND $club->url_logo) ? $club->url_logo : base_url("assets/themes/v1/img/fav.png"); ?>" alt="" class="viewimg">

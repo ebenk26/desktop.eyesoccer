@@ -1,6 +1,8 @@
-<a href="<?php echo base_url('member/galeri/?view='.$view.'&tab=video&act=add'); ?>" class="btn-white-orange fl-r"><i class="fas fa-video mg-r5"></i>Upload Video</a>
-<a href="<?php echo base_url('member/galeri/?view='.$view.'&tab=photo&act=add'); ?>" class="btn-white-orange fl-r"><i class="fas fa-images mg-r5"></i>Upload Photo</a>
-<a href="<?php echo base_url('member/galeri/?view='.$view.'&tab=album&act=add'); ?>" class="btn-white-orange fl-r"><i class="fas fa-plus mg-r5"></i>Tambah Album</a>
+<div class="tx-r">
+    <a href="<?php echo base_url('member/galeri/?view='.$view.'&tab=album&act=add'); ?>" class="btn-white-orange fl-r mg-r5"><i class="fas fa-plus mg-r5"></i>Tambah Album</a>
+    <a href="<?php echo base_url('member/galeri/?view='.$view.'&tab=photo&act=add'); ?>" class="btn-white-orange fl-r mg-r5"><i class="fas fa-images mg-r5"></i>Upload Photo</a>
+    <a href="<?php echo base_url('member/galeri/?view='.$view.'&tab=video&act=add'); ?>" class="btn-white-orange fl-r"><i class="fas fa-video mg-r5"></i>Upload Video</a>
+</div>
 <div class="container mg-tb15">
     <div class="pp-profil">
         <img src="<?php echo ($club AND $club->url_logo) ? $club->url_logo : base_url("assets/themes/v1/img/fav.png"); ?>" alt="" class="viewimg">
@@ -11,6 +13,7 @@
 </div>
 
 <div class="container mg-t15">
+    <div class="full-width mg-b15"><i class="fas fa-chevron-right"></i> <?php echo $album->title; ?></div>
     <?php
     if ($gallery) {
         foreach ($gallery->data as $g) {
