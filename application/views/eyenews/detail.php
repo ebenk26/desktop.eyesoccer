@@ -371,13 +371,7 @@
                     <div class="container banner-eyenews1 img-banner mt-20" style="background-color: unset;height: unset;background: url(https://www.eyesoccer.id/assets/img/banner/1065X255px.png);background-repeat: no-repeat;background-size: cover;height: 250px;position: relative;text-align: center;">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     <!-- EyesoccerDekstop 16#EyenewsDetailSquare336x280 -->
-                    <ins class="adsbygoogle"
-                        style="display:inline-block;width:336px;height:280px;position:  absolute;top:  0px;left: -11px;"
-                        data-ad-client="ca-pub-7635854626605122"
-                        data-ad-slot="3103367534"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    <ins class="adsbygoogle"></ins>
                         <!-- <img src="<?php echo base_url()?>assets/img/iklanbanner/banner 315x320px-01.jpg" alt="ads"> -->
                     </div>
 
@@ -470,9 +464,6 @@
 	<?php
     }
 ?>
-<script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 <script type='text/javascript' src='<?=base_url()?>bs/js/sharethis.js#property=596cf64cb69de60011989f08&product=inline-share-buttons' async='async'></script>
 <script>
     $(document).ready(function () 

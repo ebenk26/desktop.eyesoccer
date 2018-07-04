@@ -169,13 +169,7 @@
 	<div class="container banner-150 EyenewsHomeBanner970x90 tx-c" style="background-color: unset;height: unset;background: url(https://www.eyesoccer.id/assets/img/banner/1065X100px.png);background-repeat: no-repeat;padding-top: 5px;">
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- EyesoccerDekstop 18#EyenewsHomeBanner970x90 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:970px;height:90px"
-     data-ad-client="ca-pub-7635854626605122"
-     data-ad-slot="8746576453"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+<ins class="adsbygoogle"></ins>
 		<!-- <img src="<?php echo base_url()?>assets/img/banner-home.jpeg" alt="Banner Ads"> -->
 	</div>
 	

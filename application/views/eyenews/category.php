@@ -73,13 +73,7 @@
 		<div class="container banner-150 EyenewsKategoriBanner tx-c" style="background-color: unset;">
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- EyesoccerDekstop 17a#EyenewsKategoriBanner970x90 -->
-		<ins class="adsbygoogle"
-			style="display:inline-block;width:970px;height:90px;"
-			data-ad-client="ca-pub-7635854626605122"
-			data-ad-slot="9999948377"></ins>
-		<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+		<ins class="adsbygoogle"></ins>
 			<!-- <img src="<?php echo base_url();?>assets/img/banner-home.jpeg" alt="Banner Ads"> -->
 		</div>
 	</div>

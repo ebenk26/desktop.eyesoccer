@@ -207,13 +207,7 @@
             <div class="container banner-eyenews4 img-banner mt-30" style="background-color: unset;background: url('http://eyesoccer.id/assets/img/iklanbanner/banner 360x320px-01.jpg');background-repeat: no-repeat;text-align:  center;padding-top:  20px;">
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <!-- EyesoccerDekstop 16#EyenewsDetailSquare336x280 -->
-            <ins class="adsbygoogle"
-                style="display:inline-block;width:336px;height:280px"
-                data-ad-client="ca-pub-7635854626605122"
-                data-ad-slot="3103367534"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+            <ins class="adsbygoogle"></ins>
                 <!-- <img class="lazy" src="<?php echo base_url(); ?>assets/img/iklanbanner/banner 360x320px-01.jpg" alt=""> -->
             </div>
             <div class="container subjudul2">

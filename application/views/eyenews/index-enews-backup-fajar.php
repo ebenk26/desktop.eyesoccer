@@ -255,16 +255,7 @@ echo "</ul></center>";
 <div class="col-lg-4 col-md-4 col-xs-12"><div class="hidden-xs hiddem-sm"><br><br><br><br></div>
 
 <img src="<?php echo base_url()?>systems/eyeads_storage/<?php print $array[0][3]; ?>" class="img img-responsive"><div class="hidden-xs hidden-sm"></div>
-<!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- ads unit 3 -->
-<!--<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6403991612334960"
-     data-ad-slot="6701528663"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>--><div class="hidden-xs hidden-sm"><br></div>
+<div class="hidden-xs hidden-sm"><br></div>
 
 <div class="hidden-xs hidden-sm"><br>
 <form method="get" action="">
