@@ -233,8 +233,11 @@
         </div>
         <div class="container banner-eyeprofile1 img-banner mt-10 m-b-10 tx-c" style="height: unset; background-color: unset;">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- EyesoccerDekstop 6#EyeprofileKlubPemainDetail336x280 -->
-        <ins class="adsbygoogle"></ins>
+        <!-- Eyeprofile1 -->
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:336px;height:280px"
+            data-ad-client="ca-pub-2741155188155052"
+            data-ad-slot="9948195332"></ins>
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>

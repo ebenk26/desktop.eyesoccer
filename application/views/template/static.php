@@ -265,21 +265,20 @@
                     </div> 
                     <div class="container banner-a1 img-banner" style="background: unset; display:none;">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Eyesoccer 1#dekstopHomeTopBanner -->
-                    <ins class="adsbygoogle"
-                        style="display:block"
-                        data-ad-client="ca-pub-7635854626605122"
-                        data-ad-slot="4301959288"
-                        data-ad-format="auto"></ins>
-                    <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                        <!-- A1 -->
+                        <ins class="adsbygoogle"
+                            style="display:inline-block;width:468px;height:60px"
+                            data-ad-client="ca-pub-2741155188155052"
+                            data-ad-slot="4124188860"></ins>
+                        <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
                         <!-- <img src="<?php echo base_url()?>assets/img/iklanbanner/banner  320x60 px-01.jpg" alt="Static ads"> -->
                     </div>  
-                    <div class="container banner-a1 img-banner" style="background: unset;display:none;">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- <div class="container banner-a1 img-banner" style="background: unset;display:none;">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
                     <!-- Eyesoccer 1b#dekstopHomeTopBanner -->
-                    <ins class="adsbygoogle"
+                    <!-- <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-client="ca-pub-7635854626605122"
                         data-ad-slot="7928099633"
@@ -287,7 +286,7 @@
                     <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
-                    </div>  
+                    </div>   -->
                 </div>                
             </div>
         </nav>
@@ -461,32 +460,32 @@
         <tr>
             <td>
                 <div class="HomeBannerKiriResponsive">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
                     <!-- EyesoccerDekstop 2b#HomeBannerKiriResponsive -->
-                    <ins class="adsbygoogle"
+                    <!-- <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-client="ca-pub-7635854626605122"
                         data-ad-slot="3363818459"
                         data-ad-format="auto"></ins>
                     <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    </script> -->
                 </div>
             </td>
             <td style="width: 1065px;">
             </td>
             <td>
                 <div class="HomeBannerKananResponsive">
-                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
                     <!-- EyesoccerDekstop 2a#HomeBannerKananResponsive -->
-                    <ins class="adsbygoogle"
+                    <!-- <ins class="adsbygoogle"
                         style="display:block"
                         data-ad-client="ca-pub-7635854626605122"
                         data-ad-slot="5199644303"
                         data-ad-format="auto"></ins>
                     <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
+                    </script> -->
                 </div>
             </td>
         </tr>

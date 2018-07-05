@@ -479,16 +479,15 @@
 <!-- BANNER -->
 <div class="center-desktop">
     <div class="banner-150" style="margin-top: 20px;background-color: unset;height: unset;background: url('<?php echo base_url()?>assets/img/banner/1065X100px.png');background-repeat: no-repeat;">
-			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- Eyesoccer 24#dekstopHomeBannerBawah -->
-			<ins class="adsbygoogle"
-				 style="display:block"
-				 data-ad-client="ca-pub-7635854626605122"
-				 data-ad-slot="1567244418"
-				 data-ad-format="auto"></ins>
-			<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-			</script>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- dekstopHomeBannerBawah -->
+		<ins class="adsbygoogle"
+			style="display:inline-block;width:970px;height:90px"
+			data-ad-client="ca-pub-2741155188155052"
+			data-ad-slot="3625920443"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
         <!-- <img class="lazy" src="<?php echo base_url()?>assets/img/banner-home.jpeg" alt=""> -->
     </div>
 </div>

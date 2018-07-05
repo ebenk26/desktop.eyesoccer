@@ -282,11 +282,11 @@ body{
                     <div class="container news-rcm-r2">
 					<div class="container banner-eyenews4 img-banner mt-30" style="background-color: unset;background: url('http://eyesoccer.id/assets/img/iklanbanner/banner 360x320px-01.jpg');background-repeat: no-repeat;text-align:  center;padding-top:  20px;">
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-					<!-- EyesoccerDekstop 17b#EyenewsKategoriSquare336x280 -->
+					<!-- eyenews2b -->
 					<ins class="adsbygoogle"
 						style="display:inline-block;width:336px;height:280px"
-						data-ad-client="ca-pub-7635854626605122"
-						data-ad-slot="1738314979"></ins>
+						data-ad-client="ca-pub-2741155188155052"
+						data-ad-slot="8781156155"></ins>
 					<script>
 					(adsbygoogle = window.adsbygoogle || []).push({});
 					</script>

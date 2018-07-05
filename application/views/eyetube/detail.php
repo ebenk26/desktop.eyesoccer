@@ -142,16 +142,16 @@
                     <div class="garis-x3"></div>
                 </div>
                 <div class="container banner-eyetube2 img-banner" style="margin-bottom: 20px;background-color: unset;">
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
                 <!-- EyesoccerDekstop 21#EeyetubeDetailBannerResponsive -->
-                <ins class="adsbygoogle"
+                <!-- <ins class="adsbygoogle"
                     style="display:block"
                     data-ad-client="ca-pub-7635854626605122"
                     data-ad-slot="2853180005"
                     data-ad-format="auto"></ins>
                 <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                </script> -->
                     <!-- <img src="../../assets/img/iklanbanner/banner 690x100px-01.jpg" alt=""> -->
                 </div>
                 <!-- EMOTICON -->
@@ -453,16 +453,16 @@
                     <div class="down-r-tube">
                         <div class="pd">
                             <div class="container mt-20 banner-eyetube1 img-banner" style="background-color: unset;background: url('http://eyesoccer.id/assets/img/iklanbanner/banner 360x320px-01.jpg');background-repeat: no-repeat;">
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                            <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
                             <!-- EyesoccerDekstop 20#EeyetubeDetailSquareResponsive -->
-                            <ins class="adsbygoogle"
+                            <!-- <ins class="adsbygoogle"
                                 style="display:block"
                                 data-ad-client="ca-pub-7635854626605122"
                                 data-ad-slot="6050658173"
                                 data-ad-format="auto"></ins>
                             <script>
                             (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
+                            </script> -->
                                 <!-- <img src="../../assets/img/iklanbanner/banner 300x320px-01.jpg" alt=""> -->
                             </div>
                             <div class="container subjudul m-t-10">

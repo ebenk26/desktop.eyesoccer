@@ -241,11 +241,11 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 		<div class="container banner-150 img-banner mt-20 tx-c" style="background-color: unset;text-align: center;height: unset;background: url('https://www.eyesoccer.id/assets/img/banner/1065X255px.png');background-repeat: no-repeat;line-height: 0px;">
 			<!-- <img src="<?php echo base_url()?>assets/img/banner-home.jpeg" alt="banner ads full width"> -->
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-			<!-- EyesoccerDekstop 15a#EyeprofileLigaBanner970x250 -->
+			<!-- eyeprofile13 -->
 			<ins class="adsbygoogle"
-				style="display:inline-block;width:970px;height:250px"
-				data-ad-client="ca-pub-7635854626605122"
-				data-ad-slot="8424675076"></ins>
+				style="display:inline-block;width:970px;height:90px"
+				data-ad-client="ca-pub-2741155188155052"
+				data-ad-slot="1616572880"></ins>
 			<script>
 			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
@@ -374,15 +374,15 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
           		</div>			
                 </span>	
 				<div class="container img-banner tx-c" style="background-color: unset;text-align: center;height: unset;background: url('https://www.eyesoccer.id/assets/img/banner/1065X255px.png');background-repeat: no-repeat;line-height: 0px;min-height:  148px;">
-                            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                            <!-- EyesoccerDekstop 11#EyeprofileLigaKlub336x280 -->
-                            <ins class="adsbygoogle"
-                                style="display:inline-block;width:100%;height:140px;"
-                                data-ad-client="ca-pub-7635854626605122"
-                                data-ad-slot="9007490396"></ins>
-                            <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                            </script>
+				    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- desktopKlubHomeBawahKlasemen -->
+					<ins class="adsbygoogle"
+						style="display:inline-block;width:468px;height:60px"
+						data-ad-client="ca-pub-2741155188155052"
+						data-ad-slot="3510370378"></ins>
+					<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
                         </div>
 			
             </div>

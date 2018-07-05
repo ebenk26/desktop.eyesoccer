@@ -215,14 +215,14 @@
 
         <div class="center-desktop banner-150 tx-c" style="width:  1065px;float:  unset;background-color: unset;text-align: center;height: unset;background: url(https://www.eyesoccer.id/assets/img/banner/1065X255px.png);background-repeat: no-repeat;line-height: 0px;">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- EyesoccerDekstop 22#EeyetubeHome970x250 -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:970px;height:250px"
-     data-ad-client="ca-pub-7635854626605122"
-     data-ad-slot="8101910321"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+        <!-- eyetube3 -->
+        <ins class="adsbygoogle"
+            style="display:inline-block;width:970px;height:250px"
+            data-ad-client="ca-pub-2741155188155052"
+            data-ad-slot="4030574113"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
 			<!-- <img src="<?php echo base_url()?>assets/img/banner-home.jpeg" alt="Banner Ads"> -->
 		</div>
 
