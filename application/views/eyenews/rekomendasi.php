@@ -25,9 +25,6 @@
 		box-shadow: inset 0 0 10px #820000;
 		color: #FFEBEE !important;
 	}
-	.menu {
-		margin-top: -10px;
-	}
 </style>
 <?php 
 	$kanal  = "eyenews";

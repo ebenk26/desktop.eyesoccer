@@ -1,7 +1,4 @@
 <style>
-body{
-    margin-top: -10px;
-}
 .rx {
     width: 280px;
     top: -120px !important;

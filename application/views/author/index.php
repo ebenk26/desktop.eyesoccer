@@ -2,9 +2,6 @@
 .fixed-header {
     top: 0px;
 }
-body{
-	margin-top: -10px;
-}
 </style>
 
 <div class="center-desktop">

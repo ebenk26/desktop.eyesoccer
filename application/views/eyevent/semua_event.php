@@ -7,11 +7,6 @@
 			$page = 1;
 		}
 	?>
-	<style>
-    body{
-        margin-top: -10px; 
-    }
-    </style>
     <div class="fl-l">
         <h4 style="color: rgb(61, 139, 61); cursor: default !important;">Event Lainnya</h4>
     </div>

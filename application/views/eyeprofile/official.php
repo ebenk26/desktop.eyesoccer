@@ -11,9 +11,6 @@ $pageCtrl = ($this->uri->segment(5) ?  ($this->uri->segment(5) == 'page' ? $this
 	input{
 		font-size: .95em !important;
     }
-    body{
-        margin-top: -10px;
-    }
 </style>
 <div class="baseurl" val="<?php echo EYEPROFILE?>"></div>
 <div id="uri_segment" val="<?php echo $this->uri->segment(3)?>"></div>

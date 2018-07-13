@@ -25,9 +25,6 @@
 	border-bottom: 3px solid rgb(200, 0, 0);
 	color: rgb(200, 0, 0);
 	}
-	body{
-		margin-top: -10px;
-	}
 	.h-news-l {
     width: 600px;
     height: 340px;
