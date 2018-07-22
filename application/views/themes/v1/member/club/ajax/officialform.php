@@ -73,7 +73,7 @@
                 </td>
             </tr>
             <tr>
-                <td>No Identitas <span class="cl-red">*</span></td>
+                <td>No Identitas (KTP / SIM / Passport) <span class="cl-red">*</span></td>
                 <td>
                     <input type="text" name="no_identity" value="<?php echo ($official) ? $official->no_identity : ''; ?>">
                     <span class="err msgno_identity"></span>
@@ -114,7 +114,8 @@
                     <span class="err msgemail"></span>
                 </td>
             </tr>
-            <tr>
+            <input type="hidden" name="contact" value="<?php echo ($official) ? $official->contact : ''; ?>">
+            <tr style="display: none;">
                 <td>Kontak</td>
                 <td>
                     <input type="text" name="contact" value="<?php echo ($official) ? $official->contact : ''; ?>">
