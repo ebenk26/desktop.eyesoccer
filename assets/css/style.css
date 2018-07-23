@@ -1215,6 +1215,7 @@ ul, li {
 }
 .t-30>table>tbody>tr>td:nth-of-type(odd){
     color: #C5CAE9;
+    min-width: 94px;
 }
 .mb-30{
     margin-bottom: 30px;
