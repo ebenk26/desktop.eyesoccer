@@ -37,7 +37,7 @@ $player = json_decode($player)->data;
 								<table class="des-p">
 								<tr><td>Posisi</td><td>:</td><td><?= $p[$j]->position_a; ?></td></tr>
 								<tr><td>Klub</td><td>:</td><td><?= $p[$j]->club; ?></td></tr>
-								<tr><td>Tanggal Lahir</td><td>:</td><td><?php echo formatDate($p[$j]->birth_date)?></td></tr>
+								<tr><td>Tanggal Lahir</td><td>:</td><td><?php echo datefo(checkDate00($p[$j]->birth_date))?></td></tr>
 								</table>
 								</p>                        
 							</div>

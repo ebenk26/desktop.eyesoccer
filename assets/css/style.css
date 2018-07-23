@@ -1197,7 +1197,7 @@ ul, li {
     color: white;
     font-size: .8em;
     width: max-content;
-    min-width: 120px;
+    /*min-width: 120px;*/
 }
 .table-pd-3 td{
     color: black;

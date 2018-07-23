@@ -301,19 +301,23 @@
                         <tbody>
                         <tr>
                             <td>Nama Klub</td>
-                            <td>: <?= $r->name ?></td>
+                            <td>:</td>
+                            <td><?= $r->name ?></td>
                         </tr>
                         <tr>
                             <td>Julukan</td>
-                            <td>: <?= $r->nickname ?></td>
+                            <td>:</td>
+                            <td><?= $r->nickname ?></td>
                         </tr>
                         <tr>
                             <td>Tanggal Berdiri</td>
-                            <td>: <?= checkDate00(formatDate($r->establish_date)) ?></td>
+                            <td>:</td>
+                            <td><?= datefo(checkDate00($r->establish_date)) ?></td>
                         </tr>
                         <tr>
                             <td>Alamat Sekretariat</td>
-                            <td>: <?= strip_tags($r->address) ?></td>
+                            <td>:</td>
+                            <td><?= strip_tags($r->address) ?></td>
                         </tr>
 
                         </tbody>
@@ -325,23 +329,28 @@
                         <tbody>
                         <tr>
                             <td>Level Liga</td>
-                            <td>: <?= $r->competition ?></td>
+                            <td>:</td>
+                            <td><?= $r->competition ?></td>
                         </tr>
                         <tr>
                             <td>No. Telp</td>
-                            <td>: <?= $r->phone ?></td>
+                            <td>:</td>
+                            <td><?= $r->phone ?></td>
                         </tr>
                         <tr>
                             <td>Fax</td>
-                            <td>: <?= $r->fax ?></td>
+                            <td>:</td>
+                            <td><?= $r->fax ?></td>
                         </tr>
                         <tr>
                             <td>Manajer</td>
-                            <td>: <?= $r->manager ?></td>
+                            <td>:</td>
+                            <td><?= $r->manager ?></td>
                         </tr>
                         <tr>
                             <td>Pelatih</td>
-                            <td>: <?= $r->coach ?></td>
+                            <td>:</td>
+                            <td><?= $r->coach ?></td>
                         </tr>
                         </tbody>
                     </table>
@@ -351,15 +360,18 @@
                         <tbody>
                         <tr>
                             <td style="width: 120px;">Jumlah Pemain</td>
-                            <td>: <?= $r->number_of_player ?> <?= ($r->competition == 'Liga Usia Muda' ? ' Siswa' : ' Pemain') ?></td>
+                            <td>:</td>
+                            <td><?= $r->number_of_player ?> <?= ($r->competition == 'Liga Usia Muda' ? ' Siswa' : ' Pemain') ?></td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td>: <?= $r->email ?></td>
+                            <td>:</td>
+                            <td><?= $r->email ?></td>
                         </tr>
                         <tr>
                             <td>Stadium</td>
-                            <td>: <?= $r->stadium ?></td>
+                            <td>:</td>
+                            <td><?= $r->stadium ?></td>
                         </tr>
                         </tbody>
                     </table>
@@ -422,7 +434,7 @@
                     </tr>
                     <tr>
                         <td>Tgl Lahir</td>
-                        <td><?= formatDate($p->birth_date) ?></td>
+                        <td><?= datefo(checkDate00($p->birth_date)) ?></td>
                     </tr>
                     <tr>
                         <td>Usia</td>
@@ -460,7 +472,7 @@
                     </tr>
                     <tr>
                         <td>Tgl Lahir</td>
-                        <td><?= checkDate00(formatDate($o->birth_date)) ?></td>
+                        <td><?= datefo(checkDate00($o->birth_date)) ?></td>
                     </tr>
                     <tr>
                         <td>Lisensi</td>
@@ -484,7 +496,92 @@
             </div>
         </div>
 
-        <div class="center-desktop m-0">
+        <div class="center-desktop m-0 mb-30 maintab" style='display: none;' id="tabs-prestasi">
+            <div class="w-60 m-r-1 formasi" style="width: 1062px;overflow: hidden;">
+                <h3 class="">Prestasi Klub</h3>
+                <div class="container box-pertandingan">
+                    <table class="table table-stripped table-hover">
+
+                        <thead>
+                        <tr>
+                            <th>NO</th>
+                            <th>Bulan</th>
+                            <th>Tahun</th>
+                            <th>Turnamen</th>
+                            <th>peringkat</th>
+                            <th>pelatih</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <?php
+                        $no = 0;
+                        for ($i = 0; $i < count($cr); $i++) {
+                            $no++;
+                            echo '<tr>';
+                            echo '<td>' . $no . '</td>';
+                            echo '<td>' . $cr[$i]->month . '</td>';
+                            echo '<td>' . $cr[$i]->year . '</td>';
+                            echo '<td>' . $cr[$i]->tournament . '</td>';
+                            echo '<td>' . $cr[$i]->rank . '</td>';
+                            echo '<td>' . $cr[$i]->coach . '</td>';
+                            echo '</tr>';
+                        }
+                        ?>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-desktop m-0 mb-30 maintab" style='display: none;' id="tabs-galeri">
+            <div class="w-60 m-r-1 formasi" style="width: 100%;">
+                <h3 class="">Galeri</h3>
+                <div id="em2Slide" class="carousel slide pemain-foto">
+                    <div role="listbox" class="carousel-inner">
+                        <?php
+                        $gl = $gallery;
+
+                        for ($i = 0; $i < count($gallery); $i += 4):?>
+
+                            <div class="box item <?php echo($i == 0 ? 'active' : '') ?>">
+                                <?php
+                                $k = 0;
+
+                                for ($j = $i; $j < count($gl); $j++):
+                                    $exp = explode('/', $gl[$j]->url_pic);
+                                    $exp_img = explode('-', $exp[6]);
+                                    $k++;
+                                    if ($k === 5) {
+                                        break;
+                                    }
+                                    if (!empty($exp_img[1])):?>
+                                        <div class="em-box">
+                                            <img src="<?php echo $gl[$j]->url_pic; ?>" alt="klub galeri" width="220">
+                                        </div>
+                                    <?php endif ?>
+
+                                <?php endfor;
+
+                                ?>
+
+                            </div>
+
+
+                        <?php endfor; ?>
+
+                        <div class="carousel-indicators bx-dot ep-dot">
+                            <span data-target="#em2Slide" data-slide-to="0" class="dot active"></span>
+                            <span data-target="#em2Slide" data-slide-to="1" class="dot"></span>
+                            <span data-target="#em2Slide" data-slide-to="2" class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-desktop mb-30">
             <div class="et-content1">
                 <?php
                 if (!empty($get_result_klub)) {
@@ -1037,91 +1134,6 @@
                 ?>
             </div>
 
-        </div>
-
-        <div class="center-desktop m-0 mb-30 maintab" style='display: none;' id="tabs-prestasi">
-            <div class="w-60 m-r-1 formasi" style="width: 1062px;overflow: hidden;">
-                <h3 class="">Prestasi Klub</h3>
-                <div class="container box-pertandingan">
-                    <table class="table table-stripped table-hover">
-
-                        <thead>
-                        <tr>
-                            <th>NO</th>
-                            <th>Bulan</th>
-                            <th>Tahun</th>
-                            <th>Turnamen</th>
-                            <th>peringkat</th>
-                            <th>pelatih</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        <?php
-                        $no = 0;
-                        for ($i = 0; $i < count($cr); $i++) {
-                            $no++;
-                            echo '<tr>';
-                            echo '<td>' . $no . '</td>';
-                            echo '<td>' . $cr[$i]->month . '</td>';
-                            echo '<td>' . $cr[$i]->year . '</td>';
-                            echo '<td>' . $cr[$i]->tournament . '</td>';
-                            echo '<td>' . $cr[$i]->rank . '</td>';
-                            echo '<td>' . $cr[$i]->coach . '</td>';
-                            echo '</tr>';
-                        }
-                        ?>
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="center-desktop m-0 mb-30 maintab" style='display: none;' id="tabs-galeri">
-            <div class="w-60 m-r-1 formasi" style="width: 100%;">
-                <h3 class="">Galeri</h3>
-                <div id="em2Slide" class="carousel slide pemain-foto">
-                    <div role="listbox" class="carousel-inner">
-                        <?php
-                        $gl = $gallery;
-
-                        for ($i = 0; $i < count($gallery); $i += 4):?>
-
-                            <div class="box item <?php echo($i == 0 ? 'active' : '') ?>">
-                                <?php
-                                $k = 0;
-
-                                for ($j = $i; $j < count($gl); $j++):
-                                    $exp = explode('/', $gl[$j]->url_pic);
-                                    $exp_img = explode('-', $exp[6]);
-                                    $k++;
-                                    if ($k === 5) {
-                                        break;
-                                    }
-                                    if (!empty($exp_img[1])):?>
-                                        <div class="em-box">
-                                            <img src="<?php echo $gl[$j]->url_pic; ?>" alt="klub galeri" width="220">
-                                        </div>
-                                    <?php endif ?>
-
-                                <?php endfor;
-
-                                ?>
-
-                            </div>
-
-
-                        <?php endfor; ?>
-
-                        <div class="carousel-indicators bx-dot ep-dot">
-                            <span data-target="#em2Slide" data-slide-to="0" class="dot active"></span>
-                            <span data-target="#em2Slide" data-slide-to="1" class="dot"></span>
-                            <span data-target="#em2Slide" data-slide-to="2" class="dot"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
