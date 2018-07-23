@@ -405,7 +405,7 @@
                 <ul>
                     <li class="klubtab active" onclick="openTab(event,'tabs-pemain')">Pemain</li>
                     <li class="klubtab" onclick="openTab(event,'tabs-ofisial')">Ofisial</li>
-                    <li class="klubtab" onclick="openTab(event,'tabs-supporter')">Supporter</li>
+<!--                    <li class="klubtab" onclick="openTab(event,'tabs-supporter')">Supporter</li>-->
                     <li class="klubtab" onclick="openTab(event,'tabs-prestasi')">Prestasi</li>
                     <li class="klubtab" onclick="openTab(event,'tabs-galeri')">Galeri</li>
                 </ul>
