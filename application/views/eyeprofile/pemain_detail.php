@@ -16,26 +16,31 @@
                         <tbody>
                             <tr>
                                 <td>Tempat Lahir </td>
-                                <td>:  <?php echo (!empty($res->birth_place) ? $res->birth_place : '-');?></td>
+                                <td>:</td>
+                                <td><?php echo (!empty($res->birth_place) ? $res->birth_place : '-');?></td>
                             </tr>
                             <tr>
                                 <td>Tanggal lahir</td>
-                                <td>: <?php echo (!empty($res->birth_date) ? datefo(checkDate00($res->birth_date)) : '-')?></td>
+                                <td>:</td>
+                                <td><?php echo (!empty($res->birth_date) ? datefo(checkDate00($res->birth_date)) : '-')?></td>
                             </tr>
                             <tr>
                                 <td>Kewarganegaraan</td>
-                                <td>: <?php echo (!empty($res->nationality) ? $res->nationality: '-') ?></td>
+                                <td>:</td>
+                                <td><?php echo (!empty($res->nationality) ? $res->nationality: '-') ?></td>
                             </tr>
 							<?php 
 								if($res->level != "Profesional" && $res->mother != ""){
 							?>
 							<tr>
                                 <td>Nama Ayah</td>
-                                <td>: <?php echo(!empty($res->father) ? $res->father : '-'); ?></td>
+                                <td>:</td>
+                                <td><?php echo(!empty($res->father) ? $res->father : '-'); ?></td>
                             </tr>
 							<tr>
                                 <td>Nama Ibu</td>
-                                <td>: <?php echo(!empty($res->mother) ? $res->mother : '-'); ?></td>
+                                <td>:</td>
+                                <td><?php echo(!empty($res->mother) ? $res->mother : '-'); ?></td>
                             </tr>
 							<?php
 								}
@@ -48,30 +53,36 @@
                         <tbody>
                             <tr>
                                 <td>Klub Sekarang </td>
-                                <td>: <?php echo (!empty($res->club) ? $res->club : '-')?></td>
+                                <td>:</td>
+                                <td><?php echo (!empty($res->club) ? $res->club : '-')?></td>
                             </tr>
                             <tr>
                                 <td>Posisi</td>
-                                <td>: <?php echo(!empty($res->position) ? $res->position : '-')?></td>
+                                <td>:</td>
+                                <td><?php echo(!empty($res->position) ? $res->position : '-')?></td>
                             </tr>
                             <tr>
                                 <td> Kontrak</td>
-                                <td>: <?php echo (empty($res->contract_range1) || empty($res->contract_range1) ? ' - ' : $res->contract_range1.'-'.$res->contract_range2)?></td>
+                                <td>:</td>
+                                <td><?php echo (empty($res->contract_range1) || empty($res->contract_range1) ? ' - ' : $res->contract_range1.'-'.$res->contract_range2)?></td>
                             </tr>
 							<?php 
 								if($res->level != "Profesional" && $res->mother != ""){
 							?>
 							<tr>
                                 <td>Klub Favorit</td>
-                                <td>: <?php echo(!empty($res->fav_club) ? $res->fav_club : '-')?></td>
+                                <td>:</td>
+                                <td><?php echo(!empty($res->fav_club) ? $res->fav_club : '-')?></td>
                             </tr>
 							<tr>
                                 <td>Pemain Favorit</td>
-                                <td>: <?php echo(!empty($res->fav_player) ? $res->fav_player : '-')?></td>
+                                <td>:</td>
+                                <td><?php echo(!empty($res->fav_player) ? $res->fav_player : '-')?></td>
                             </tr>
 							<tr>
                                 <td>Pelatih Favorit</td>
-                                <td>: <?php echo(!empty($res->fav_coach) ? $res->fav_coach : '-')?></td>
+                                <td>:</td>
+                                <td><?php echo(!empty($res->fav_coach) ? $res->fav_coach : '-')?></td>
                             </tr>
 							<?php
 								}
@@ -84,19 +95,23 @@
                         <tbody>
                             <tr>
                                 <td>Tinggi badan</td>
-                                <td>: <?php echo (!empty($res->height) ? $res->height : '')?> cm</td>
+                                <td>:</td>
+                                <td><?php echo (!empty($res->height) ? $res->height : '')?> cm</td>
                             </tr>
                             <tr>
                                 <td>Berat Badan</td>
-                                <td>: <?php echo (!empty($res->weight) ? $res->weight : '') ?> kg</td>
+                                <td>:</td>
+                                <td><?php echo (!empty($res->weight) ? $res->weight : '') ?> kg</td>
                             </tr>
                             <tr>
                                 <td>Kemampuan Kaki</td>
-                                <td>: <?php echo (!empty($res->foot) ? $res->foot : '')?></td>
+                                <td>:</td>
+                                <td><?php echo (!empty($res->foot) ? $res->foot : '')?></td>
                             </tr>
 							<tr>
                                 <td>Jenis Kelamin</td>
-                                <td>: <?php echo (!empty($res->gender) ? ($res->gender == '1' ? 'Laki-laki' : 'Perempuan') : '')?></td>
+                                <td>:</td>
+                                <td><?php echo (!empty($res->gender) ? ($res->gender == '1' ? 'Laki-laki' : 'Perempuan') : '')?></td>
                             </tr>
                         </tbody>
                     </table>
