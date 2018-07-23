@@ -26,7 +26,7 @@ $uri = ($competition == null ? 'Liga Indonesia 1' : ($league != null || $league 
 			<td><?php echo $no?></td>
 			<td style=""><img  src="<?php echo $r->url_pic?>" style="width: 40px;height:40px;border-radius:50%;vertical-align: inherit;"> 
 				 <?php echo anchor(PLAYERDETAIL.$r->slug,$r->name)?></td>
-			<td><?php echo formatDate($r->birth_date)?></td>
+			<td><?php echo datefo(checkDate00($r->birth_date))?></td>
 			<td><?php echo $r->position_a?></td>
 			<td><?php echo $r->club?></td>
 			<td><?php echo $r->nationality?></td>
