@@ -20,7 +20,7 @@
                             </tr>
                             <tr>
                                 <td>Tanggal lahir</td>
-                                <td>: <?php echo (!empty($res->birth_date) ? date("d-m-Y", strtotime($res->birth_date)) : '-')?></td>
+                                <td>: <?php echo (!empty($res->birth_date) ? datefo(checkDate00($res->birth_date)) : '-')?></td>
                             </tr>
                             <tr>
                                 <td>Kewarganegaraan</td>
@@ -47,7 +47,7 @@
                     <table>
                         <tbody>
                             <tr>
-                                <td>klub Sekarang </td>
+                                <td>Klub Sekarang </td>
                                 <td>: <?php echo (!empty($res->club) ? $res->club : '-')?></td>
                             </tr>
                             <tr>
