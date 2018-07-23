@@ -47,12 +47,16 @@ class Eyeprofile extends CI_Controller {
 
 		$data['meta']['share'] = set_meta(['uri'=> 'club']);
 		$jml_klub = null;
-		$nama_liga = urldecode($liga);
+		$nama_liga = str_replace('-', ' ', urldecode($liga));
 		$data["title_liga"] = $nama_liga;
-		$nama_liga_event = 'LIGA 1 GOJEK';
-		$above_datetime = '2018-12-29 00:00:00';
+        $nama_liga_event = $nama_liga;
+		switch ($nama_liga) {
+            case 'Liga Indonesia 1':
+                $nama_liga_event = 'LIGA 1 GOJEK';
+                break;
+        }
 		$cat_liga = null;
-		if($nama_liga == 'Liga Indonesia 1'){
+		/*if($nama_liga == 'Liga Indonesia 1'){
 			$jml_klub = 18;	
 		}else if($nama_liga == 'Liga Indonesia 2'){
 			$jml_klub = 24;
@@ -86,9 +90,9 @@ class Eyeprofile extends CI_Controller {
 			$nama_liga_event = 'Indonesia Junior League U-11';
 			$cat_liga = $nama_liga;
 			$nama_liga = "Liga Usia Muda"; 
-		}
-		$data['club_main'] = $this->Eyeprofile_model->get_club_liga($nama_liga,$jml_klub,$cat_liga);
-		$data['avg_year'] = $this->Eyeprofile_model->get_club_liga_avggyear($nama_liga,$jml_klub,$cat_liga);
+		}*/
+		//$data['club_main'] = $this->Eyeprofile_model->get_club_liga($nama_liga,$jml_klub,$cat_liga);
+		//$data['avg_year'] = $this->Eyeprofile_model->get_club_liga_avggyear($nama_liga,$jml_klub,$cat_liga);
 		$data['get_jadwal_hasil'] = $this->Eyeprofile_model->get_jadwal_hasil($nama_liga_event);
 		$data['get_jadwal_hasil1'] = $this->Eyeprofile_model->get_jadwal_hasil1($nama_liga_event);
 		$data['get_jadwal_hasil2'] = $this->Eyeprofile_model->get_jadwal_hasil2($nama_liga_event);
