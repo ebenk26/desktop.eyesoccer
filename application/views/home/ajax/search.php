@@ -55,7 +55,7 @@ $query = $query['search'];
 	?>
 		<div>
 			<div class="box-img-radius" style="float: left;width: 50px;top: -8px;height: 55px;left: 0;padding: 10px;box-shadow: 3px 4px 5px #888888;margin-right: 20px;">
-				<img src="<?php echo  $value->url_pic?>">                
+				<img src="<?php echo  $value->url_pic.'/medium'?>">
 			</div>
 			<a href="<?php echo base_url()?>eyeprofile/pemain_detail/<?php echo $value->slug?>"><?php echo str_replace(array($query,ucwords($query),strtoupper($query),strtolower($query)),'<span style="background-color:yellow;">'.$query.'</span>',$value->name)?></a>
 			<br>
@@ -76,7 +76,7 @@ $query = $query['search'];
 	?>
 		<div>
 			<div class="box-img-radius" style="float: left;width: 50px;top: -8px;height: 55px;left: 0;padding: 10px;box-shadow: 3px 4px 5px #888888;margin-right: 20px;">
-				<img src="<?php echo imgUrl()?>systems/club_logo/<?php if(!empty($value->logo)){echo $value->logo;}else{echo 'LOGO UNTUK APLIKASI.jpg';}?>">                
+				<img src="<?php echo $value->url_logo.'/medium'; ?>">
 			</div>
 			<a href="<?php echo base_url()?>eyeprofile/klub_detail/<?php echo $value->slug?>"><?php echo str_replace(array($query,ucwords($query),strtoupper($query),strtolower($query)),'<span style="background-color:yellow;">'.$query.'</span>',$value->name)?></a>
 			<br>
